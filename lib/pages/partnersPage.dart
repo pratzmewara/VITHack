@@ -57,7 +57,13 @@ class _PartnersPageState extends State<PartnersPage> {
         title: Text('About',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
         backgroundColor : Colors.white,
         //shape: BeveledRectangleBorder( borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10.0) , bottomRight: Radius.circular(10.0)),),
-        bottom: PreferredSize(
+        bottom: TabBar(
+          tabs: <Widget>[
+            Tab(text: 'Partners',),
+            Tab(text: 'Sponsors',)
+          ],
+        )
+        /*PreferredSize(
           preferredSize: Size.fromHeight(80.0), 
           child :  Container( 
             color: Colors.white,
@@ -110,15 +116,21 @@ class _PartnersPageState extends State<PartnersPage> {
               )
             ],
           )),
-        )
+        )*/
       ),
       backgroundColor: Colors.white,
-      body: Center(
+      body: TabBarView(
+        children: <Widget>[
+          PromotionsPage(),
+          SponsorsPage()
+        ],
+      )
+      /*Center(
         child : Container(
             color: Colors.white,
             child : pressAttentionP==true ? PromotionsPage() : SponsorsPage()
               )
-            )
+      )*/
             
            
 ,);
