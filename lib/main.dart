@@ -58,10 +58,6 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     HomePage(),
     PartnersPage(),
     ContactUsPage()
-    //HomePage(),
-    //HomePage(),
-    
-    // ContactPage()
   ];
 
 
