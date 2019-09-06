@@ -65,12 +65,12 @@ class _LoginScreenState extends State<LoginScreen> {
           width: 250,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10.0),
-//            gradient:RadialGradient(
-//              stops: [ 0.1,10],
-//              colors: [
-//                Colors.grey[200],
-//                Colors.grey[400],
-//              ],),
+           gradient:RadialGradient(
+             stops: [ 0.1,10],
+             colors: [
+               Colors.grey[200],
+               Colors.grey[400],
+             ],),
           ),
           child: new Padding(padding: const EdgeInsets.all(16.0),child: new Center(child:Container(
               child: Column(
@@ -265,8 +265,8 @@ class _LoginScreenState extends State<LoginScreen> {
       print("qwertyuiopsdfghjkzxcvbnm,");
       String qrResult =await  QRCodeReader().scan();
       if(qrResult!=null){
-sendToServerQR(qrResult);
-    }
+        sendToServerQR(qrResult);
+      }
     }
 
      on FormatException {
@@ -302,21 +302,52 @@ sendToServerQR(qrResult);
           body: json.encode(body),);
 
         print(response.statusCode);
+        
         if (response.statusCode == 200) {
           final data = json.decode(response.body);
-          s.setEmail(data["email"]);
-          s.setToken(data["token"]);
-          setState(() {
-            _load=false;
-          });
-          s.setLogincheck('true');
-          Navigator.of(context).pushNamedAndRemoveUntil('/homepage', (Route<dynamic> route) => false);
-
+          if(data["err"]=="Max team login size reached" || data=={}){
+            setState(() {
+              _load=false;
+            });
+            s.setLogincheck('false');
+            Fluttertoast.showToast(
+              msg: "Max team login size reached",
+              toastLength: Toast.LENGTH_SHORT,
+              gravity: ToastGravity.BOTTOM,
+              timeInSecForIos: 1,
+              backgroundColor: Colors.grey[700],
+              textColor: Colors.white);
+          }
+          else if(data["err"] == "Not found"){
+            setState(() {
+              _load=false;
+            });
+            s.setLogincheck('false');
+            Fluttertoast.showToast(
+              msg: "Code not found",
+              toastLength: Toast.LENGTH_SHORT,
+              gravity: ToastGravity.BOTTOM,
+              timeInSecForIos: 1,
+              backgroundColor: Colors.grey[700],
+              textColor: Colors.white);
+          }
+          else{
+            s.setEmail(data["email"]);
+            s.setToken(data["token"]);
+            setState(() {
+              _load=false;
+            });
+            print(data.toString());
+            print("Email is "+data["email"]);
+            s.setLogincheck('true');
+            Navigator.of(context).pushNamedAndRemoveUntil('/homepage', (Route<dynamic> route) => false);
+          }
         }
         else {
           setState(() {
             _load=false;
           });
+          s.setLogincheck('false');
           Fluttertoast.showToast(
               msg: "Sorry, Server Error",
               toastLength: Toast.LENGTH_SHORT,

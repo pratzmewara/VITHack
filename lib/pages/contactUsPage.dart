@@ -4,6 +4,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'dart:convert';
 import 'dart:async';
+import 'package:flip_card/flip_card.dart';
 
 class ContactUsPage extends StatefulWidget {
   ContactUsPage({Key key,this.restaurantID,this.workerID}) : super(key: key);
@@ -45,88 +46,907 @@ class _ContactUsPageState extends State<ContactUsPage> {
     crossAxisAlignment: CrossAxisAlignment.center,
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: <Widget>[
-
-    GestureDetector(
-    onTap : (){
-
-    },
-    child : Container(
-    // color: Colors.white,
-    margin: EdgeInsets.all(12),
-    width: (MediaQuery.of(context).size.width/2),
-    height: (MediaQuery.of(context).size.width/2),
-    padding: EdgeInsets.only(top: 10.0),
-    decoration: BoxDecoration(
-    boxShadow:<BoxShadow>[
-    BoxShadow(blurRadius: 10.0,
-    color:Colors.grey[400] ,
-    offset: Offset(0.5,0.5))
-
-    ],
-    shape: BoxShape.rectangle,
-    color: Colors.white ,
-    borderRadius: BorderRadius.all(Radius.circular(10))
-    ),
-    child: Column(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: <Widget>[
-    Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
-    ],
-    )),),
-    GestureDetector(
-    onTap : (){
-
-    },
-    child : Container(
-    // color: Colors.white,
-    margin: EdgeInsets.all(12),
-    width: (MediaQuery.of(context).size.width/2),
-    height: (MediaQuery.of(context).size.width/2),
-    padding: EdgeInsets.only(top: 10.0),
-    decoration: BoxDecoration(
-    boxShadow:<BoxShadow>[
-    BoxShadow(blurRadius: 10.0,
-    color:Colors.grey[400] ,
-    offset: Offset(0.5,0.5))
-
-    ],
-    shape: BoxShape.rectangle,
-    color: Colors.white ,
-    borderRadius: BorderRadius.all(Radius.circular(10))
-    ),
-    child: Column(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: <Widget>[
-    Image.asset('lib/assests/tekno.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
-    ],
-    )),),
-    GestureDetector(
-    onTap : (){
-
-    },
-    child : Container(
-    // color: Colors.white,
-    margin: EdgeInsets.all(12),
-    width: (MediaQuery.of(context).size.width/2),
-    height: (MediaQuery.of(context).size.width/2),
-    padding: EdgeInsets.only(top: 10.0),
-    decoration: BoxDecoration(
-    boxShadow:<BoxShadow>[
-    BoxShadow(blurRadius: 10.0,
-    color:Colors.grey[400] ,
-    offset: Offset(0.5,0.5))
-
-    ],
-    shape: BoxShape.rectangle,
-    color: Colors.white ,
-    borderRadius: BorderRadius.all(Radius.circular(10))
-    ),
-    child: Column(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: <Widget>[
-    Image.asset('lib/assests/edtimes.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
-    ],
-    )),),
+      FlipCard(
+        direction: FlipDirection.HORIZONTAL,
+        front: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+          height: (MediaQuery.of(context).size.width/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[ 
+              Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+              Text("Name"),
+              Text("Designation")
+              ],
+            )
+          ),
+          back: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+          height: (MediaQuery.of(context).size.width/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text("Email"),
+              Text("Phone Number")
+            ],
+            )
+          ),
+      ),
+      FlipCard(
+        direction: FlipDirection.HORIZONTAL,
+        front: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+          height: (MediaQuery.of(context).size.width/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[ 
+              Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+              Text("Name"),
+              Text("Designation")
+              ],
+            )
+          ),
+          back: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+          height: (MediaQuery.of(context).size.width/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text("Email"),
+              Text("Phone Number")
+            ],
+            )
+          ),
+      ),
+      FlipCard(
+        direction: FlipDirection.HORIZONTAL,
+        front: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+          height: (MediaQuery.of(context).size.width/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[ 
+              Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+              Text("Name"),
+              Text("Designation")
+              ],
+            )
+          ),
+          back: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+          height: (MediaQuery.of(context).size.width/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text("Email"),
+              Text("Phone Number")
+            ],
+            )
+          ),
+      ),
+      FlipCard(
+        direction: FlipDirection.HORIZONTAL,
+        front: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+          height: (MediaQuery.of(context).size.width/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[ 
+              Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+              Text("Name"),
+              Text("Designation")
+              ],
+            )
+          ),
+          back: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+          height: (MediaQuery.of(context).size.width/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text("Email"),
+              Text("Phone Number")
+            ],
+            )
+          ),
+      ),
+      FlipCard(
+        direction: FlipDirection.HORIZONTAL,
+        front: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+          height: (MediaQuery.of(context).size.width/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[ 
+              Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+              Text("Name"),
+              Text("Designation")
+              ],
+            )
+          ),
+          back: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+          height: (MediaQuery.of(context).size.width/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text("Email"),
+              Text("Phone Number")
+            ],
+            )
+          ),
+      ),
+      FlipCard(
+        direction: FlipDirection.HORIZONTAL,
+        front: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+          height: (MediaQuery.of(context).size.width/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[ 
+              Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+              Text("Name"),
+              Text("Designation")
+              ],
+            )
+          ),
+          back: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+          height: (MediaQuery.of(context).size.width/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text("Email"),
+              Text("Phone Number")
+            ],
+            )
+          ),
+      ),
+      FlipCard(
+        direction: FlipDirection.HORIZONTAL,
+        front: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+          height: (MediaQuery.of(context).size.width/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[ 
+              Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+              Text("Name"),
+              Text("Designation")
+              ],
+            )
+          ),
+          back: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+          height: (MediaQuery.of(context).size.width/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text("Email"),
+              Text("Phone Number")
+            ],
+            )
+          ),
+      ),
+      FlipCard(
+        direction: FlipDirection.HORIZONTAL,
+        front: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+          height: (MediaQuery.of(context).size.width/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[ 
+              Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+              Text("Name"),
+              Text("Designation")
+              ],
+            )
+          ),
+          back: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+          height: (MediaQuery.of(context).size.width/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text("Email"),
+              Text("Phone Number")
+            ],
+            )
+          ),
+      ),
+      FlipCard(
+        direction: FlipDirection.HORIZONTAL,
+        front: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+          height: (MediaQuery.of(context).size.width/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[ 
+              Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+              Text("Name"),
+              Text("Designation")
+              ],
+            )
+          ),
+          back: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+          height: (MediaQuery.of(context).size.width/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text("Email"),
+              Text("Phone Number")
+            ],
+            )
+          ),
+      ),
+      FlipCard(
+        direction: FlipDirection.HORIZONTAL,
+        front: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+          height: (MediaQuery.of(context).size.width/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[ 
+              Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+              Text("Name"),
+              Text("Designation")
+              ],
+            )
+          ),
+          back: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+          height: (MediaQuery.of(context).size.width/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text("Email"),
+              Text("Phone Number")
+            ],
+            )
+          ),
+      ),
+      FlipCard(
+        direction: FlipDirection.HORIZONTAL,
+        front: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+          height: (MediaQuery.of(context).size.width/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[ 
+              Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+              Text("Name"),
+              Text("Designation")
+              ],
+            )
+          ),
+          back: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+          height: (MediaQuery.of(context).size.width/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text("Email"),
+              Text("Phone Number")
+            ],
+            )
+          ),
+      ),
+      FlipCard(
+        direction: FlipDirection.HORIZONTAL,
+        front: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+          height: (MediaQuery.of(context).size.width/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[ 
+              Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+              Text("Name"),
+              Text("Designation")
+              ],
+            )
+          ),
+          back: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+          height: (MediaQuery.of(context).size.width/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text("Email"),
+              Text("Phone Number")
+            ],
+            )
+          ),
+      ),
+      FlipCard(
+        direction: FlipDirection.HORIZONTAL,
+        front: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+          height: (MediaQuery.of(context).size.width/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[ 
+              Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+              Text("Name"),
+              Text("Designation")
+              ],
+            )
+          ),
+          back: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+          height: (MediaQuery.of(context).size.width/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text("Email"),
+              Text("Phone Number")
+            ],
+            )
+          ),
+      ),
+      FlipCard(
+        direction: FlipDirection.HORIZONTAL,
+        front: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+          height: (MediaQuery.of(context).size.width/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[ 
+              Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+              Text("Name"),
+              Text("Designation")
+              ],
+            )
+          ),
+          back: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+          height: (MediaQuery.of(context).size.width/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text("Email"),
+              Text("Phone Number")
+            ],
+            )
+          ),
+      ),
+      FlipCard(
+        direction: FlipDirection.HORIZONTAL,
+        front: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+          height: (MediaQuery.of(context).size.width/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[ 
+              Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+              Text("Name"),
+              Text("Designation")
+              ],
+            )
+          ),
+          back: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+          height: (MediaQuery.of(context).size.width/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text("Email"),
+              Text("Phone Number")
+            ],
+            )
+          ),
+      ),
+      FlipCard(
+        direction: FlipDirection.HORIZONTAL,
+        front: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+          height: (MediaQuery.of(context).size.width/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[ 
+              Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+              Text("Name"),
+              Text("Designation")
+              ],
+            )
+          ),
+          back: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+          height: (MediaQuery.of(context).size.width/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text("Email"),
+              Text("Phone Number")
+            ],
+            )
+          ),
+      ),
+      FlipCard(
+        direction: FlipDirection.HORIZONTAL,
+        front: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+          height: (MediaQuery.of(context).size.width/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[ 
+              Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+              Text("Name"),
+              Text("Designation")
+              ],
+            )
+          ),
+          back: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+          height: (MediaQuery.of(context).size.width/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text("Email"),
+              Text("Phone Number")
+            ],
+            )
+          ),
+      ),
     ],),
     )
     );

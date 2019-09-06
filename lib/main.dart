@@ -5,6 +5,7 @@ import 'package:vit_hack/pages/contactUsPage.dart';
 import 'package:vit_hack/pages/homePage.dart';
 import 'package:vit_hack/pages/loginScreen.dart';
 import 'package:vit_hack/pages/partnersPage.dart';
+import 'package:vit_hack/pages/qrCodePage.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
@@ -57,6 +58,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   final _widgetOptions = [
     HomePage(),
     PartnersPage(),
+    QRCodePage(),
     ContactUsPage()
   ];
 
@@ -115,6 +117,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
               items: <BottomNavigationBarItem>[
               BottomNavigationBarItem(icon:Icon(Icons.home,color: Colors.black,), activeIcon: Icon(Icons.home,color: Colors.blue,),title: Text("Home")),
               BottomNavigationBarItem(icon:Icon(Icons.info,color: Colors.black), activeIcon: Icon(Icons.info,color: Colors.blue,), title:Text("Partners")),
+              BottomNavigationBarItem(icon:Icon(Icons.code,color: Colors.black), activeIcon: Icon(Icons.code,color: Colors.blue,),title:Text("QR Code")),
               BottomNavigationBarItem(icon:Icon(Icons.phone,color: Colors.black), activeIcon: Icon(Icons.phone,color: Colors.blue,),title:Text("Contact")),
               ],
               currentIndex: _selectedIndex,
