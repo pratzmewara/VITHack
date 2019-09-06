@@ -3,6 +3,22 @@ import 'dart:async';
 
 class SharedPreferencesTest {
 
+//  Future<bool> getLoginCheck() async{
+//    final SharedPreferences prefs = await SharedPreferences.getInstance();
+//
+//    final key = 'check';
+//    bool value = prefs.getBool(key);
+//    return value;
+//  }
+//
+//  setLoginCheck(bool value) async{
+//    final SharedPreferences prefs = await SharedPreferences.getInstance();
+//
+//    final key = 'check';
+//    prefs.setBool(key, value);
+//
+//  }
+
  Future<String>  getPersonName() async {
    final SharedPreferences prefs = await SharedPreferences.getInstance();
 
@@ -16,10 +32,37 @@ class SharedPreferencesTest {
 
    final key = 'PersonName';
    prefs.setString(key, value);
-   print('saved $value');
-   prefs.setString("PersonName", value);
+
  }
 
+ Future<String>  getEmail() async {
+   final SharedPreferences prefs = await SharedPreferences.getInstance();
+
+   final key = 'email';
+   String value = prefs.getString(key);
+   return value;
+ }
+
+ setEmail(String value) async {
+   final SharedPreferences prefs = await SharedPreferences.getInstance();
+
+   final key = 'email';
+   prefs.setString(key, value);
+ }
+ Future<String>  getToken() async {
+   final SharedPreferences prefs = await SharedPreferences.getInstance();
+
+   final key = 'token';
+   String value = prefs.getString(key);
+   return value;
+ }
+
+ setToken(String value) async {
+   final SharedPreferences prefs = await SharedPreferences.getInstance();
+
+   final key = 'token';
+   prefs.setString(key, value);
+ }
   Future<String>  getPersonID() async {
    final SharedPreferences prefs = await SharedPreferences.getInstance();
 
@@ -37,21 +80,20 @@ class SharedPreferencesTest {
    prefs.setString("PersonID", value);
  }
 
-  Future<bool>  getLogincheck() async {
+  Future<String>  getLogincheck() async {
    final SharedPreferences prefs = await SharedPreferences.getInstance();
 
    final key = 'logincheck';
-   bool value = prefs.getBool(key);
+   String value = prefs.getString(key);
    return value;
  }
 
- setLogincheck(bool value) async {
+ setLogincheck(String value) async {
    final SharedPreferences prefs = await SharedPreferences.getInstance();
 
    final key = 'logincheck';
 
-   prefs.setBool(key, value);
-   print('saved $value');
-   prefs.setBool("logincheck", value);
+   prefs.setString(key, value);
+
  }
 }

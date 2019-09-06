@@ -2,6 +2,13 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'package:qrcode_reader/qrcode_reader.dart';
+import 'package:vit_hack/Presentation/util.dart';
+import 'package:http/http.dart' as http;
+import 'dart:async';
+import 'dart:convert';
+import 'package:vit_hack/models/sharedPref.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:vit_hack/models/global.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -22,6 +29,10 @@ class _LoginScreenState extends State<LoginScreen> {
   bool _validate = false;
   String code;
 
+  SharedPreferencesTest s=new SharedPreferencesTest();
+
+
+
   @override
   Widget build(BuildContext context) {
    return Scaffold(
@@ -34,7 +45,14 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   bool _load = false;
-  
+  Map<String,dynamic> body=
+
+  {
+    "passcode":"7f08c63e-3e6e-411d-8286-a0e35fdbc820"
+  };
+
+
+
   Widget FormUI() {
 
     Widget loadingIndicator =_load? new Container(
@@ -47,12 +65,12 @@ class _LoginScreenState extends State<LoginScreen> {
           width: 250,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10.0),
-            gradient:RadialGradient(
-              stops: [ 0.1,10],
-              colors: [
-                Colors.grey[200],
-                Colors.grey[400],
-              ],),
+//            gradient:RadialGradient(
+//              stops: [ 0.1,10],
+//              colors: [
+//                Colors.grey[200],
+//                Colors.grey[400],
+//              ],),
           ),
           child: new Padding(padding: const EdgeInsets.all(16.0),child: new Center(child:Container(
               child: Column(
@@ -66,25 +84,29 @@ class _LoginScreenState extends State<LoginScreen> {
           ) )),
         ))):new Container();
 
-    return  Stack(
+    return  Scaffold(
+      appBar: AppBar(title:Text("Login",style: TextStyle(color: Colors.black),),
+      centerTitle: true,
+        backgroundColor: background,
+        elevation: 0,
+        automaticallyImplyLeading: false,
+      ),
+    body:Stack(
       children: <Widget>[
+
       SingleChildScrollView(
       child : Container(
-        height: MediaQuery.of(context).size.height,
+        height: MediaQuery.of(context).size.height-100,
         width: MediaQuery.of(context).size.width,
         padding: const EdgeInsets.all(16.0),
-        color: Colors.white,
+        color:background,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              "Login",
-                style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-                fontSize: 18.0),
-              ),
+            Image.asset('lib/assests/logo.png' , width: (MediaQuery.of(context).size.width/2), height: 200.0,),
+
             Container(
+                margin: EdgeInsets.only(top: MediaQuery.of(context).size.height/20),
                         padding: EdgeInsets.only(left: 16.0,right:16.0,top: 26.0),
                         child: TextFormField(
                             style: TextStyle(color: Colors.blue,fontFamily: 'Raleway'),
@@ -103,37 +125,39 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   GestureDetector(
                       child: Container(
-                        width: 200.0,
+                        margin: EdgeInsets.only(top: MediaQuery.of(context).size.height/20),
+                        width: MediaQuery.of(context).size.width/2,
                         alignment: Alignment.center,
                          decoration: BoxDecoration(
                   boxShadow:<BoxShadow>[
                     BoxShadow(
-                      blurRadius: 5.0,
-                      color:Colors.grey[600] ,
+                      blurRadius: 10.0,
+                      color:Colors.grey[400] ,
                       offset: Offset(0.5,0.5)
                     )
 
                   ],
                   shape: BoxShape.rectangle,
-                  color: Colors.blue[400] ,
+                  color: Colors.blue[500] ,
                   borderRadius: BorderRadius.all(Radius.circular(10))
                 ),
                         child : Text("Login", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
                         padding: EdgeInsets.all(20.0),
                       ),
                       onTap: (){
-                        _login_Server();
+                        sendToServer();
                         }, 
                     ),
                     GestureDetector(
                       child: Container(
+                        margin: EdgeInsets.only(top: MediaQuery.of(context).size.height/20),
                         alignment: Alignment.center,
-                        width: 200.0,
+                        width: MediaQuery.of(context).size.width/2,
                          decoration: BoxDecoration(
                   boxShadow:<BoxShadow>[
                     BoxShadow(
-                      blurRadius: 5.0,
-                      color:Colors.grey[600] ,
+                      blurRadius: 10.0,
+                      color:Colors.grey[400] ,
                       offset: Offset(0.5,0.5)
                     )
 
@@ -142,7 +166,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   color: Colors.white,
                   borderRadius: BorderRadius.all(Radius.circular(10))
                 ),
-                        child : Text("QR Code", style: TextStyle (fontWeight: FontWeight.bold),),
+                        child :Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            Image.asset('lib/assests/qr.png' , width: (MediaQuery.of(context).size.width/17), ),
+
+                            Text("QR Code", style: TextStyle (fontWeight: FontWeight.bold),),
+                          ],
+                        ) ,
                         padding: EdgeInsets.all(20.0),
                       ),
                       onTap: (){
@@ -210,7 +241,7 @@ class _LoginScreenState extends State<LoginScreen> {
         ),*/
               ),),
       new Align(child: loadingIndicator,alignment: FractionalOffset.center,),
-    ]);
+    ]));
   }
 
   String validateEM(String value) {
@@ -226,19 +257,6 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
-  _login_Server() {
-    if(_key.currentState.validate())
-    {
-      _key.currentState.save();
-
-      // setState(() {
-      //   _load=true;
-      // });
-
-       Navigator.of(context).pushNamedAndRemoveUntil('/homepage', (Route<dynamic> route) => false);
-       
-  }
-  }
 
   String result = "Press Scan";
 
@@ -247,7 +265,7 @@ class _LoginScreenState extends State<LoginScreen> {
       print("qwertyuiopsdfghjkzxcvbnm,");
       String qrResult =await  QRCodeReader().scan();
       if(qrResult!=null){
-      Navigator.of(context).pushNamedAndRemoveUntil('/homepage', (Route<dynamic> route) => false);
+sendToServerQR(qrResult);
     }
     }
 
@@ -262,5 +280,165 @@ class _LoginScreenState extends State<LoginScreen> {
         result = "Nothing Scanned";
       });
     }
+  }
+
+
+  sendToServer(){
+    if(_key.currentState.validate())
+    {
+      _key.currentState.save();
+      setState(() {
+        _load=true;
+      });
+
+
+
+      body["passcode"]='$code';
+
+      Future fetchPosts(http.Client client) async {
+        print("yjhtgfdsyutrgds");
+        var response = await http.post(
+          URL_LOGIN, headers: {"Content-Type": "application/json"},
+          body: json.encode(body),);
+
+        print(response.statusCode);
+        if (response.statusCode == 200) {
+          final data = json.decode(response.body);
+          s.setEmail(data["email"]);
+          s.setToken(data["token"]);
+          setState(() {
+            _load=false;
+          });
+          s.setLogincheck('true');
+          Navigator.of(context).pushNamedAndRemoveUntil('/homepage', (Route<dynamic> route) => false);
+
+        }
+        else {
+          setState(() {
+            _load=false;
+          });
+          Fluttertoast.showToast(
+              msg: "Sorry, Server Error",
+              toastLength: Toast.LENGTH_SHORT,
+              gravity: ToastGravity.BOTTOM,
+              timeInSecForIos: 1,
+              backgroundColor: Colors.grey[700],
+              textColor: Colors.white);
+        }
+      }
+
+
+      print(body);
+
+      return FutureBuilder(
+
+          future: fetchPosts(http.Client()),
+          builder: (BuildContext context,AsyncSnapshot snapshot){
+            if(snapshot.data==null){
+              return Container(
+                child: Center(
+                  child: CircularProgressIndicator(),
+                ),
+              );
+
+            }
+            else{
+              return Container();
+
+            }
+          });
+
+
+
+
+    }
+
+
+
+    else{
+
+      // validation error
+      setState(() {
+        _validate = true;
+      });
+
+    }
+
+
+
+  }
+  sendToServerQR(String val){
+
+    setState(() {
+      _load=true;
+    });
+
+
+      body["passcode"]='$val';
+
+      Future fetchPosts(http.Client client) async {
+        print("yjhtgfdsyutrgds");
+        var response = await http.post(
+          URL_LOGIN, headers: {"Content-Type": "application/json"},
+          body: json.encode(body),);
+
+        print(response.statusCode);
+        if (response.statusCode == 200) {
+          final data = json.decode(response.body);
+          s.setEmail(data["email"]);
+          s.setToken(data["token"]);
+          setState(() { 
+            _load=false;
+          });
+          s.setLogincheck('true');
+          Navigator.of(context).pushNamedAndRemoveUntil('/homepage', (Route<dynamic> route) => false);
+
+        }
+        else {
+          setState(() {
+            _load=false;
+          });
+          Fluttertoast.showToast(
+              msg: "Sorry, Server Error",
+              toastLength: Toast.LENGTH_SHORT,
+              gravity: ToastGravity.BOTTOM,
+              timeInSecForIos: 1,
+              backgroundColor: Colors.grey[700],
+              textColor: Colors.white);
+        }
+      }
+
+
+      print(body);
+
+      return FutureBuilder(
+
+          future: fetchPosts(http.Client()),
+          builder: (BuildContext context,AsyncSnapshot snapshot){
+            if(snapshot.data==null){
+              return Container(
+                child: Center(
+                  child: CircularProgressIndicator(),
+                ),
+              );
+
+            }
+            else{
+              return Container();
+
+            }
+          });
+
+
+
+
+
+
+
+
+
+
+
+
   }
 }

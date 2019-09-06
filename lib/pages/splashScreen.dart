@@ -17,73 +17,56 @@ class _SplashScreenState extends State<SplashScreen> {
 
   SharedPreferencesTest s= new SharedPreferencesTest();
 
-  Future<bool> checkLogin;
-  String setLogin ="false";
-
-  Future<String> checkPersonName;
-  String setPersonName ="false";
-
-  Future<String> checkPersonID;
-  String setPersonID ="false";
+  Future<String> checkLogin;
+  String setLogin = "false";
 
 
   _SplashScreenState({Key key });
   @override
   void initState() {
     super.initState();
+   checkText();
     go();
+
   }
+
+  checkText(){
+
+    checkLogin=s.getLogincheck();
+    checkLogin.then((res){
+      setState(() {
+        setLogin=res;
+      });
+    });
+
+  }
+
 
   go(){
       Future.delayed(const Duration(seconds:3),()
     {
-      Navigator.push(
-                  context,
-                  new MaterialPageRoute(
-                      builder: (BuildContext context) =>
-                      new LoginScreen()));
-      /*if (setLogin.compareTo(true.toString()) == 0 || setLogin=="true") {
+
+      if (setLogin == 'false' || setLogin == null) {
         new Future.delayed(
             const Duration(seconds: 0),
-                () => Navigator.push(
-                  context,
-                  new MaterialPageRoute(
-                      builder: (BuildContext context) =>
-                      new MyHomePage()))
 
-          );
+                () => Navigator.of(context).pushReplacementNamed('/intro')
+
+        );
+
         }
         else{
-          new Future.delayed(
-              const Duration(seconds: 0),
+        new Future.delayed(
+            const Duration(seconds: 0),
+                () => Navigator.of(context).pushReplacementNamed('/homepage')
 
-                  () => Navigator.of(context).pushReplacementNamed('/intro')
-
-          );
-        }*/
+        );
+        }
     });
   }
 
-  String checktext() {
-    checkLogin = s.getLogincheck();
-    checkLogin.then((resultString) {
-      setState(() {
-        setLogin = resultString.toString();
-        print(setLogin);
-        print("Value of login check is" + setLogin.toString());
-      });
-    });
 
-    checkPersonName = s.getPersonName();
-    checkPersonName.then((resultString) {
-      setState(() {
-        setPersonName = resultString.toString();
-        print(setPersonName);
-        print("Value of Person Name check is" + setPersonName.toString());
-      });
-    });
 
-  }
 
 
   @override
