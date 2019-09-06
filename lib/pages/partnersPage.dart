@@ -53,6 +53,7 @@ class _PartnersPageState extends State<PartnersPage> {
       length: 4,
       child: Scaffold(
       appBar: AppBar(
+
           titleSpacing: 50.0,
           elevation: 0,
           title: Text('About',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, fontSize: 23.0),),
@@ -70,6 +71,7 @@ class _PartnersPageState extends State<PartnersPage> {
               Tab(child: Text("Speakers", style: TextStyle(fontSize: 18.0),))
             ],
           )
+
 
         /*PreferredSize(
           preferredSize: Size.fromHeight(80.0), 
@@ -130,11 +132,13 @@ class _PartnersPageState extends State<PartnersPage> {
       body: TabBarView(
         children: <Widget>[
           PromotionsPage(),
+
           CollaboratorsPage(),
           SponsorsPage(),
           CollaboratorsPage(),
         ],
       )
+
             
       )
 ,);
