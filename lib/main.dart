@@ -23,9 +23,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       builder: (context, child) =>
         MediaQuery(data: MediaQuery.of(context).copyWith(alwaysUse24HourFormat: false), child: child),
-        title: 'Peekwhole',
+        title: 'VITHack',
         theme: ThemeData(
-          primarySwatch: Colors.pink
+          primarySwatch: Colors.blue
         ),
         home : SplashScreen(),
         debugShowCheckedModeBanner: false,
@@ -108,14 +108,14 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     return new WillPopScope(
       onWillPop: _onWillPop,
         child : Scaffold(
-          backgroundColor: Color(0xFFEEEEEE),
+          backgroundColor: Colors.grey[200],
           body:_widgetOptions[_selectedIndex],
           bottomNavigationBar: 
             BottomNavigationBar(
               items: <BottomNavigationBarItem>[
-              BottomNavigationBarItem(icon:Icon(Icons.home,color: Colors.black,),title: Text("Home",style: TextStyle(color: Colors.black),)),
-              BottomNavigationBarItem(icon:Icon(Icons.info,color: Colors.black),title:Text("Partners",style: TextStyle(color: Colors.black))),
-              BottomNavigationBarItem(icon:Icon(Icons.phone,color: Colors.black),title:Text("Contact",style: TextStyle(color: Colors.black))),
+              BottomNavigationBarItem(icon:Icon(Icons.home,color: Colors.black,), activeIcon: Icon(Icons.home,color: Colors.blue,),title: Text("Home")),
+              BottomNavigationBarItem(icon:Icon(Icons.info,color: Colors.black), activeIcon: Icon(Icons.info,color: Colors.blue,), title:Text("Partners")),
+              BottomNavigationBarItem(icon:Icon(Icons.phone,color: Colors.black), activeIcon: Icon(Icons.phone,color: Colors.blue,),title:Text("Contact")),
               ],
               currentIndex: _selectedIndex,
                 fixedColor: Colors.blue,

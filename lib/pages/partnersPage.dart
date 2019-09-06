@@ -49,24 +49,34 @@ class _PartnersPageState extends State<PartnersPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return DefaultTabController(
+      length: 4,
+      child: Scaffold(
       appBar: AppBar(
-        elevation: 0,
-        centerTitle: true,
-        automaticallyImplyLeading: false,
-        title: Text('About',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
-        backgroundColor : Colors.white,
-        //shape: BeveledRectangleBorder( borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10.0) , bottomRight: Radius.circular(10.0)),),
-        bottom: TabBar(
-          tabs: <Widget>[
-            Tab(text: 'Partners',),
-            Tab(text: 'Sponsors',)
-          ],
-        )
+
+          titleSpacing: 50.0,
+          elevation: 0,
+          title: Text('About',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, fontSize: 23.0),),
+          backgroundColor : Colors.white,
+          //shape: BeveledRectangleBorder( borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10.0) , bottomRight: Radius.circular(10.0)),),
+          bottom: TabBar(
+            isScrollable: true,
+            indicatorColor: Colors.white,
+            labelColor: Colors.blue,
+            unselectedLabelColor: Colors.grey,
+            tabs: <Widget>[
+              Tab(child: Text("Partners", style: TextStyle(fontSize: 18.0),),),
+              Tab(child: Text("Collaborators", style: TextStyle(fontSize: 18.0),)),
+              Tab(child: Text("Sponsors", style: TextStyle(fontSize: 18.0),)),
+              Tab(child: Text("Speakers", style: TextStyle(fontSize: 18.0),))
+            ],
+          )
+
+
         /*PreferredSize(
           preferredSize: Size.fromHeight(80.0), 
           child :  Container( 
-            color: Colors.white,
+            color: Colors.grey[50],
             padding:  EdgeInsets.symmetric(horizontal: 50.0 , vertical: 20.0) ,
             child : Column(
             children: <Widget>[
@@ -74,7 +84,7 @@ class _PartnersPageState extends State<PartnersPage> {
                 padding: EdgeInsets.symmetric(vertical: 5.0),
                 decoration: new BoxDecoration(
                   //border: new Border.all(color: Colors.blue),
-                  color: Colors.white,
+                  color: Colors.grey[50],
                   shape: BoxShape.rectangle,
                   borderRadius: BorderRadius.all(Radius.circular(70))),   
                 child: Row(
@@ -89,9 +99,9 @@ class _PartnersPageState extends State<PartnersPage> {
                             width: 120.0,
                             padding: EdgeInsets.all(5.0),
                             decoration: new BoxDecoration(
-                              border: Border.all(width: 1.0,color:  pressAttentionPBorder ? Colors.blue:Colors.grey[200],),
+                              border: Border.all(width: 1.0,color:  pressAttentionPBorder ? Colors.blue:Colors.grey[50],),
                               borderRadius: new BorderRadius.all(Radius.circular(70.0)),
-                              color: pressAttentionP ? Colors.blue : Colors.white
+                              color: pressAttentionP ? Colors.blue : Colors.grey[50]
                               ),
                             child: Text('Partners',style: TextStyle(fontWeight:pressAttentionPBorder ? FontWeight.bold:FontWeight.normal,color:  pressAttentionP ? Colors.white : Colors.blue , fontSize: 13.0),)
                           
@@ -105,9 +115,9 @@ class _PartnersPageState extends State<PartnersPage> {
                             width: 120.0,
                             padding: EdgeInsets.all(5.0),
                             decoration: new BoxDecoration(
-                              border: Border.all(width: 1.0,color: pressAttentionSBorder ? Colors.blue:Colors.grey[200],),
+                              border: Border.all(width: 1.0,color: pressAttentionSBorder ? Colors.blue:Colors.grey[50],),
                               borderRadius: new BorderRadius.all(Radius.circular(70.0)),
-                              color:  pressAttentionS ? Colors.blue : Colors.white
+                              color:  pressAttentionS ? Colors.blue : Colors.grey[50]
                             ),
                             child:  Text('Sponsors',style: TextStyle(fontWeight: pressAttentionSBorder ? FontWeight.bold:FontWeight.normal,color: pressAttentionS ? Colors.white : Colors.blue , fontSize: 13.0),)
                     )),
@@ -122,23 +132,22 @@ class _PartnersPageState extends State<PartnersPage> {
       body: TabBarView(
         children: <Widget>[
           PromotionsPage(),
-          SponsorsPage()
+
+          CollaboratorsPage(),
+          SponsorsPage(),
+          CollaboratorsPage(),
         ],
       )
-      /*Center(
-        child : Container(
-            color: Colors.white,
-            child : pressAttentionP==true ? PromotionsPage() : SponsorsPage()
-              )
-      )*/
+
             
-           
+      )
 ,);
 }
 
 Widget PromotionsPage(){
-  return  Center(
-        child : LayoutBuilder(
+  return Container(
+      width: MediaQuery.of(context).size.width,
+      child: LayoutBuilder(
       builder: (BuildContext context, BoxConstraints viewportConstraints) {
       return SingleChildScrollView(
         padding: EdgeInsets.only(bottom:20.0),
@@ -152,35 +161,90 @@ Widget PromotionsPage(){
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
 
-               GestureDetector(
-                onTap : (){
-                 
-                },
-                child : Container(
-          // color: Colors.white,
-          margin: EdgeInsets.all(10),
-          width: 150.0,
-          padding: EdgeInsets.only(top: 10.0),
-          decoration: BoxDecoration(
-            boxShadow:<BoxShadow>[
-              BoxShadow(blurRadius: 5.0,
-              color:Colors.grey[600] ,
-              offset: Offset(0.5,0.5))
+            GestureDetector(
+              onTap : (){
 
-            ],
-            shape: BoxShape.rectangle,
-            color: Colors.white ,
-            borderRadius: BorderRadius.all(Radius.circular(10))
-          ),
-           child: Column(
-             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-             children: <Widget>[
-              // Image.asset('lib/images/settingssettings.png' , width: 70.0, height: 70.0,),
-               Container(
-                margin: EdgeInsets.all(15.0),
-                child : Text('' , style: TextStyle(fontFamily: 'Raleway'),)),
-             ],
-           )),),
+              },
+              child : Container(
+                // color: Colors.white,
+                  margin: EdgeInsets.all(12),
+                  width: (MediaQuery.of(context).size.width/2),
+                  height: (MediaQuery.of(context).size.width/2),
+                  padding: EdgeInsets.only(top: 10.0),
+                  decoration: BoxDecoration(
+                      boxShadow:<BoxShadow>[
+                        BoxShadow(blurRadius: 10.0,
+                            color:Colors.grey[400] ,
+                            offset: Offset(0.5,0.5))
+
+                      ],
+                      shape: BoxShape.rectangle,
+                      color: Colors.white ,
+                      borderRadius: BorderRadius.all(Radius.circular(10))
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Image.asset('lib/assests/codeasylums.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+                    ],
+                  )),),
+
+            GestureDetector(
+              onTap : (){
+
+              },
+              child : Container(
+                // color: Colors.white,
+                  margin: EdgeInsets.all(12),
+                  width: (MediaQuery.of(context).size.width/2),
+                  height: (MediaQuery.of(context).size.width/2),
+                  padding: EdgeInsets.only(top: 10.0),
+                  decoration: BoxDecoration(
+                      boxShadow:<BoxShadow>[
+                        BoxShadow(blurRadius: 10.0,
+                            color:Colors.grey[400] ,
+                            offset: Offset(0.5,0.5))
+
+                      ],
+                      shape: BoxShape.rectangle,
+                      color: Colors.white ,
+                      borderRadius: BorderRadius.all(Radius.circular(10))
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Image.asset('lib/assests/crodera.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+                    ],
+                  )),),
+
+
+            GestureDetector(
+              onTap : (){
+
+              },
+              child : Container(
+                // color: Colors.white,
+                  margin: EdgeInsets.all(12),
+                  width: (MediaQuery.of(context).size.width/2),
+                  height: (MediaQuery.of(context).size.width/2),
+                  padding: EdgeInsets.only(top: 10.0),
+                  decoration: BoxDecoration(
+                      boxShadow:<BoxShadow>[
+                        BoxShadow(blurRadius: 10.0,
+                            color:Colors.grey[400] ,
+                            offset: Offset(0.5,0.5))
+
+                      ],
+                      shape: BoxShape.rectangle,
+                      color: Colors.white ,
+                      borderRadius: BorderRadius.all(Radius.circular(10))
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Image.asset('lib/assests/valeo.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+                    ],
+                  )),),
 
             GestureDetector(
                 onTap : (){
@@ -188,13 +252,14 @@ Widget PromotionsPage(){
                 },
                 child : Container(
           // color: Colors.white,
-          margin: EdgeInsets.all(10),
-          width: 150.0,
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/2),
+                    height: (MediaQuery.of(context).size.width/2),
           padding: EdgeInsets.only(top: 10.0),
           decoration: BoxDecoration(
             boxShadow:<BoxShadow>[
-              BoxShadow(blurRadius: 5.0,
-              color:Colors.grey[600] ,
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
               offset: Offset(0.5,0.5))
 
             ],
@@ -203,135 +268,13 @@ Widget PromotionsPage(){
             borderRadius: BorderRadius.all(Radius.circular(10))
           ),
            child: Column(
-             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+             mainAxisAlignment: MainAxisAlignment.center,
              children: <Widget>[
-              // Image.asset('lib/images/settingssettings.png' , width: 70.0, height: 70.0,),
-               Container(
-                margin: EdgeInsets.all(15.0),
-                child : Text('' , style: TextStyle(fontFamily: 'Raleway'),)),
+               Image.asset('lib/assests/Honeywell.jpg' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
              ],
            )),),
            
-               GestureDetector(
-                onTap : (){
-                 
-                },
-                child : Container(
-          // color: Colors.white,
-          margin: EdgeInsets.all(10),
-          width: 150.0,
-          padding: EdgeInsets.only(top: 10.0),
-          decoration: BoxDecoration(
-            boxShadow:<BoxShadow>[
-              BoxShadow(blurRadius: 5.0,
-              color:Colors.grey[600] ,
-              offset: Offset(0.5,0.5))
 
-            ],
-            shape: BoxShape.rectangle,
-            color: Colors.white ,
-            borderRadius: BorderRadius.all(Radius.circular(10))
-          ),
-           child: Column(
-             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-             children: <Widget>[
-              // Image.asset('lib/images/settingssettings.png' , width: 70.0, height: 70.0,),
-               Container(
-                margin: EdgeInsets.all(15.0),
-                child : Text('' , style: TextStyle(fontFamily: 'Raleway'),)),
-             ],
-           )),),
-
-            GestureDetector(
-                onTap : (){
-                 
-                },
-                child : Container(
-          // color: Colors.white,
-          margin: EdgeInsets.all(10),
-          width: 150.0,
-          padding: EdgeInsets.only(top: 10.0),
-          decoration: BoxDecoration(
-            boxShadow:<BoxShadow>[
-              BoxShadow(blurRadius: 5.0,
-              color:Colors.grey[600] ,
-              offset: Offset(0.5,0.5))
-
-            ],
-            shape: BoxShape.rectangle,
-            color: Colors.white ,
-            borderRadius: BorderRadius.all(Radius.circular(10))
-          ),
-           child: Column(
-             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-             children: <Widget>[
-              // Image.asset('lib/images/settingssettings.png' , width: 70.0, height: 70.0,),
-               Container(
-                margin: EdgeInsets.all(15.0),
-                child : Text('' , style: TextStyle(fontFamily: 'Raleway'),)),
-             ],
-           )),),
-          
-               GestureDetector(
-                onTap : (){
-                 
-                },
-                child : Container(
-          // color: Colors.white,
-          margin: EdgeInsets.all(10),
-          width: 150.0,
-          padding: EdgeInsets.only(top: 10.0),
-          decoration: BoxDecoration(
-            boxShadow:<BoxShadow>[
-              BoxShadow(blurRadius: 5.0,
-              color:Colors.grey[600] ,
-              offset: Offset(0.5,0.5))
-
-            ],
-            shape: BoxShape.rectangle,
-            color: Colors.white ,
-            borderRadius: BorderRadius.all(Radius.circular(10))
-          ),
-           child: Column(
-             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-             children: <Widget>[
-              // Image.asset('lib/images/settingssettings.png' , width: 70.0, height: 70.0,),
-               Container(
-                margin: EdgeInsets.all(15.0),
-                child : Text('' , style: TextStyle(fontFamily: 'Raleway'),)),
-             ],
-           )),),
-
-
-           GestureDetector(
-                onTap : (){
-                 
-                },
-                child : Container(
-          // color: Colors.white,
-          margin: EdgeInsets.all(10),
-          width: 150.0,
-          padding: EdgeInsets.only(top: 10.0),
-          decoration: BoxDecoration(
-            boxShadow:<BoxShadow>[
-              BoxShadow(blurRadius: 5.0,
-              color:Colors.grey[600] ,
-              offset: Offset(0.5,0.5))
-
-            ],
-            shape: BoxShape.rectangle,
-            color: Colors.white ,
-            borderRadius: BorderRadius.all(Radius.circular(10))
-          ),
-           child: Column(
-             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-             children: <Widget>[
-              // Image.asset('lib/images/settingssettings.png' , width: 70.0, height: 70.0,),
-               Container(
-                margin: EdgeInsets.all(15.0),
-                child : Text('' , style: TextStyle(fontFamily: 'Raleway'),)),
-             ],
-           )),),
             ],),
         )
     );
@@ -339,9 +282,61 @@ Widget PromotionsPage(){
 ));
 }
 
-Widget SponsorsPage(){
-  return Center(
+  Widget SponsorsPage(){
+    return Container(
+        width: MediaQuery.of(context).size.width,
         child : LayoutBuilder(
+            builder: (BuildContext context, BoxConstraints viewportConstraints) {
+              return SingleChildScrollView(
+                  padding: EdgeInsets.only(bottom:20.0),
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      minHeight: viewportConstraints.maxHeight,
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+
+                        GestureDetector(
+                          onTap : (){
+
+                          },
+                          child : Container(
+                            // color: Colors.white,
+                              margin: EdgeInsets.all(12),
+                              width: (MediaQuery.of(context).size.width/2),
+                              height: (MediaQuery.of(context).size.width/2),
+                              padding: EdgeInsets.only(top: 10.0),
+                              decoration: BoxDecoration(
+                                  boxShadow:<BoxShadow>[
+                                    BoxShadow(blurRadius: 10.0,
+                                        color:Colors.grey[400] ,
+                                        offset: Offset(0.5,0.5))
+
+                                  ],
+                                  shape: BoxShape.rectangle,
+                                  color: Colors.white ,
+                                  borderRadius: BorderRadius.all(Radius.circular(10))
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Image.asset('lib/assests/challengeRocket.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+                                ],
+                              )),),
+                      ],),
+                  )
+              );
+            }
+        ));
+  }
+
+Widget CollaboratorsPage(){
+  return Container(
+      width: MediaQuery.of(context).size.width,
+      child : LayoutBuilder(
       builder: (BuildContext context, BoxConstraints viewportConstraints) {
       return SingleChildScrollView(
         padding: EdgeInsets.only(bottom:20.0),
@@ -355,186 +350,87 @@ Widget SponsorsPage(){
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
 
-               GestureDetector(
-                onTap : (){
-                 
-                },
-                child : Container(
-          // color: Colors.white,
-          margin: EdgeInsets.all(10),
-          width: 150.0,
-          padding: EdgeInsets.only(top: 10.0),
-          decoration: BoxDecoration(
-            boxShadow:<BoxShadow>[
-              BoxShadow(blurRadius: 5.0,
-              color:Colors.grey[600] ,
-              offset: Offset(0.5,0.5))
-
-            ],
-            shape: BoxShape.rectangle,
-            color: Colors.white ,
-            borderRadius: BorderRadius.all(Radius.circular(10))
-          ),
-           child: Column(
-             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-             children: <Widget>[
-              // Image.asset('lib/images/settingssettings.png' , width: 70.0, height: 70.0,),
-               Container(
-                margin: EdgeInsets.all(15.0),
-                child : Text('' , style: TextStyle(fontFamily: 'Raleway'),)),
-             ],
-           )),),
-
             GestureDetector(
-                onTap : (){
-                 
-                },
-                child : Container(
-          // color: Colors.white,
-          margin: EdgeInsets.all(10),
-          width: 150.0,
-          padding: EdgeInsets.only(top: 10.0),
-          decoration: BoxDecoration(
-            boxShadow:<BoxShadow>[
-              BoxShadow(blurRadius: 5.0,
-              color:Colors.grey[600] ,
-              offset: Offset(0.5,0.5))
+              onTap : (){
 
-            ],
-            shape: BoxShape.rectangle,
-            color: Colors.white ,
-            borderRadius: BorderRadius.all(Radius.circular(10))
-          ),
-           child: Column(
-             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-             children: <Widget>[
-              // Image.asset('lib/images/settingssettings.png' , width: 70.0, height: 70.0,),
-               Container(
-                margin: EdgeInsets.all(15.0),
-                child : Text('' , style: TextStyle(fontFamily: 'Raleway'),)),
-             ],
-           )),),
-           
-               GestureDetector(
-                onTap : (){
-                 
-                },
-                child : Container(
-          // color: Colors.white,
-          margin: EdgeInsets.all(10),
-          width: 150.0,
-          padding: EdgeInsets.only(top: 10.0),
-          decoration: BoxDecoration(
-            boxShadow:<BoxShadow>[
-              BoxShadow(blurRadius: 5.0,
-              color:Colors.grey[600] ,
-              offset: Offset(0.5,0.5))
+              },
+              child : Container(
+                // color: Colors.white,
+                  margin: EdgeInsets.all(12),
+                  width: (MediaQuery.of(context).size.width/2),
+                  height: (MediaQuery.of(context).size.width/2),
+                  padding: EdgeInsets.only(top: 10.0),
+                  decoration: BoxDecoration(
+                      boxShadow:<BoxShadow>[
+                        BoxShadow(blurRadius: 10.0,
+                            color:Colors.grey[400] ,
+                            offset: Offset(0.5,0.5))
 
-            ],
-            shape: BoxShape.rectangle,
-            color: Colors.white ,
-            borderRadius: BorderRadius.all(Radius.circular(10))
-          ),
-           child: Column(
-             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-             children: <Widget>[
-              // Image.asset('lib/images/settingssettings.png' , width: 70.0, height: 70.0,),
-               Container(
-                margin: EdgeInsets.all(15.0),
-                child : Text('' , style: TextStyle(fontFamily: 'Raleway'),)),
-             ],
-           )),),
-
+                      ],
+                      shape: BoxShape.rectangle,
+                      color: Colors.white ,
+                      borderRadius: BorderRadius.all(Radius.circular(10))
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+                    ],
+                  )),),
             GestureDetector(
-                onTap : (){
-                 
-                },
-                child : Container(
-          // color: Colors.white,
-          margin: EdgeInsets.all(10),
-          width: 150.0,
-          padding: EdgeInsets.only(top: 10.0),
-          decoration: BoxDecoration(
-            boxShadow:<BoxShadow>[
-              BoxShadow(blurRadius: 5.0,
-              color:Colors.grey[600] ,
-              offset: Offset(0.5,0.5))
+              onTap : (){
 
-            ],
-            shape: BoxShape.rectangle,
-            color: Colors.white ,
-            borderRadius: BorderRadius.all(Radius.circular(10))
-          ),
-           child: Column(
-             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-             children: <Widget>[
-              // Image.asset('lib/images/settingssettings.png' , width: 70.0, height: 70.0,),
-               Container(
-                margin: EdgeInsets.all(15.0),
-                child : Text('' , style: TextStyle(fontFamily: 'Raleway'),)),
-             ],
-           )),),
-          
-               GestureDetector(
-                onTap : (){
-                 
-                },
-                child : Container(
-          // color: Colors.white,
-          margin: EdgeInsets.all(10),
-          width: 150.0,
-          padding: EdgeInsets.only(top: 10.0),
-          decoration: BoxDecoration(
-            boxShadow:<BoxShadow>[
-              BoxShadow(blurRadius: 5.0,
-              color:Colors.grey[600] ,
-              offset: Offset(0.5,0.5))
+              },
+              child : Container(
+                // color: Colors.white,
+                  margin: EdgeInsets.all(12),
+                  width: (MediaQuery.of(context).size.width/2),
+                  height: (MediaQuery.of(context).size.width/2),
+                  padding: EdgeInsets.only(top: 10.0),
+                  decoration: BoxDecoration(
+                      boxShadow:<BoxShadow>[
+                        BoxShadow(blurRadius: 10.0,
+                            color:Colors.grey[400] ,
+                            offset: Offset(0.5,0.5))
 
-            ],
-            shape: BoxShape.rectangle,
-            color: Colors.white ,
-            borderRadius: BorderRadius.all(Radius.circular(10))
-          ),
-           child: Column(
-             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-             children: <Widget>[
-              // Image.asset('lib/images/settingssettings.png' , width: 70.0, height: 70.0,),
-               Container(
-                margin: EdgeInsets.all(15.0),
-                child : Text('' , style: TextStyle(fontFamily: 'Raleway'),)),
-             ],
-           )),),
+                      ],
+                      shape: BoxShape.rectangle,
+                      color: Colors.white ,
+                      borderRadius: BorderRadius.all(Radius.circular(10))
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Image.asset('lib/assests/tekno.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+                    ],
+                  )),),
+            GestureDetector(
+              onTap : (){
 
+              },
+              child : Container(
+                // color: Colors.white,
+                  margin: EdgeInsets.all(12),
+                  width: (MediaQuery.of(context).size.width/2),
+                  height: (MediaQuery.of(context).size.width/2),
+                  padding: EdgeInsets.only(top: 10.0),
+                  decoration: BoxDecoration(
+                      boxShadow:<BoxShadow>[
+                        BoxShadow(blurRadius: 10.0,
+                            color:Colors.grey[400] ,
+                            offset: Offset(0.5,0.5))
 
-           GestureDetector(
-                onTap : (){
-                 
-                },
-                child : Container(
-          // color: Colors.white,
-          margin: EdgeInsets.all(10),
-          width: 150.0,
-          padding: EdgeInsets.only(top: 10.0),
-          decoration: BoxDecoration(
-            boxShadow:<BoxShadow>[
-              BoxShadow(blurRadius: 5.0,
-              color:Colors.grey[600] ,
-              offset: Offset(0.5,0.5))
-
-            ],
-            shape: BoxShape.rectangle,
-            color: Colors.white ,
-            borderRadius: BorderRadius.all(Radius.circular(10))
-          ),
-           child: Column(
-             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-             children: <Widget>[
-              // Image.asset('lib/images/settingssettings.png' , width: 70.0, height: 70.0,),
-               Container(
-                margin: EdgeInsets.all(15.0),
-                child : Text('' , style: TextStyle(fontFamily: 'Raleway'),)),
-             ],
-           )),),
+                      ],
+                      shape: BoxShape.rectangle,
+                      color: Colors.white ,
+                      borderRadius: BorderRadius.all(Radius.circular(10))
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Image.asset('lib/assests/edtimes.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+                    ],
+                  )),),
             ],),
         )
     );

@@ -25,9 +25,11 @@ dependencies:
   cupertino_icons: ^0.1.2
 
   shared_preferences:
+  fluttertoast: ^3.0.4
   qrcode_reader: ^0.4.4
 
 dev_dependencies:
+  http: ^0.12.0+1
   flutter_test:
     sdk: flutter
 
@@ -44,9 +46,18 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #  - images/a_dot_burr.jpeg
-  #  - images/a_dot_ham.jpeg
+  assets:
+    - lib/assests/codeasylums.png
+    - lib/assests/crodera.png
+    - lib/assests/Honeywell.jpg
+    - lib/assests/challengeRocket.png
+    - lib/assests/valeo.png
+    - lib/assests/logo.png
+    - lib/assests/qr.png
+    - lib/reliance.png
+    - lib/tekno.png
+    - lib/edtimes.png
+    - lib/challengeRocket.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
