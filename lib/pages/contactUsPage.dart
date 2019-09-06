@@ -30,7 +30,7 @@ class _ContactUsPageState extends State<ContactUsPage> {
         //shape: BeveledRectangleBorder( borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10.0) , bottomRight: Radius.circular(10.0)),),
       ),
       backgroundColor: Colors.white,
-      body: return Container(
+      body: Container(
         width: MediaQuery.of(context).size.width,
     child : LayoutBuilder(
     builder: (BuildContext context, BoxConstraints viewportConstraints) {
@@ -131,7 +131,7 @@ class _ContactUsPageState extends State<ContactUsPage> {
     )
     );
     }
-    )););
+    )));
 }
 }
 
