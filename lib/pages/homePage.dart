@@ -1,10 +1,12 @@
 import 'dart:async';
 import 'dart:convert';
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:vit_hack/models/sharedPref.dart';
 import 'package:vit_hack/pages/loginScreen.dart';
+import 'package:http/http.dart' as http;
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:vit_hack/models/global.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key,}) : super(key: key);
@@ -12,9 +14,6 @@ class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => new _HomePageState();
 }
-
-
-
  
 class CustomPopupMenu {
   CustomPopupMenu({this.title, this.icon});
@@ -28,7 +27,19 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
+    getToken();
 }
+
+String token="";
+SharedPreferencesTest s = new SharedPreferencesTest();
+Future<String> futureToken;
+getToken() async{
+    futureToken=s.getToken();
+    futureToken.then((res){
+    setState(() {
+        token=res; 
+    });
+});}
 
 
 Widget bullet(){
@@ -41,28 +52,111 @@ Widget bullet(){
       ),
     );
 }
+
 List<CustomPopupMenu> choices = <CustomPopupMenu>[
   CustomPopupMenu(title: 'Logout'),
 ];
-SharedPreferencesTest s=new SharedPreferencesTest();
+
 
  void _select(CustomPopupMenu choice) {
-    setState(() {
-      
-    });
+    
     if(choice.title=='Logout'){
-      s.setEmail("");
-      s.setLogincheck("false");
-      s.setToken("");
-        Navigator.of(context).popUntil((route) => route.isFirst);
-          Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => LoginScreen()));
+      logOut();
+      // s.setEmail("");
+      // s.setLogincheck("false");
+      // s.setToken("");
+      // Navigator.of(context).popUntil((route) => route.isFirst);
+      // Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => LoginScreen()));
 
     }
   }
+
+  logOut() async{
+     Future fetchPosts(http.Client client) async {
+        print("In logout");
+        var response = await http.get(URL_LOGOUT, headers: {"Content-Type": "application/json", "Authorization":token},);
+
+        print(response.statusCode);
+        setState(() {
+         _load=true; 
+        });
+        
+        if (response.statusCode == 200) {
+          setState(() {
+         _load=false; 
+        });
+            s.setEmail("");
+            s.setLogincheck("false");
+            s.setToken("");
+            Navigator.of(context).popUntil((route) => route.isFirst);
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => LoginScreen()));
+        }
+        else{
+          setState(() {
+         _load=false; 
+        });
+          Fluttertoast.showToast(
+            msg: "Some error occured"
+          );
+        }
+      }
+
+      return FutureBuilder(
+
+          future: fetchPosts(http.Client()),
+          builder: (BuildContext context,AsyncSnapshot snapshot){
+            if(snapshot.data==null){
+              return Container(
+                child: Center(
+                  child: CircularProgressIndicator(),
+                ),
+              );
+
+            }
+            else{
+              return Container();
+
+            }
+          });
+  }
+
+  bool _load = false;
+
   @override
   Widget build(BuildContext context) {
 
-    return new Scaffold(
+     Widget loadingIndicator =_load? new Container(
+        color: Colors.transparent,
+        height: MediaQuery.of(context).size.height,
+        width:  MediaQuery.of(context).size.width,
+        child:Center( child:
+        Container(
+          height: 200,
+          width: 250,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10.0),
+           gradient:RadialGradient(
+             stops: [ 0.1,10],
+             colors: [
+               Colors.grey[200],
+               Colors.grey[400],
+             ],),
+          ),
+          child: new Padding(padding: const EdgeInsets.all(16.0),child: new Center(child:Container(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  new CircularProgressIndicator(),
+                  Padding(padding: EdgeInsets.all(5),),
+                  Text("Logging out",style: TextStyle(fontSize: 16.0 ,fontWeight: FontWeight.w500,decoration: TextDecoration.none),)
+                ],
+              )
+          ) )),
+        ))):new Container();
+
+    return new Stack(
+      children: <Widget>[
+        Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.white,
             elevation: 0.0,
@@ -76,31 +170,29 @@ SharedPreferencesTest s=new SharedPreferencesTest();
             ),
             child: ListTileTheme(
               iconColor: Colors.black,
-              child: 
-      PopupMenuButton<CustomPopupMenu>(
-            elevation: 3.2,
-            initialValue: choices[0],
-            
-            onCanceled: () {
-              print('You have not choosed anything');
-            },
-            tooltip: 'This is tooltip',
-            onSelected: _select,
-            itemBuilder: (BuildContext context) {
-              return choices.map((CustomPopupMenu choice) {
-                return PopupMenuItem<CustomPopupMenu>(
-                  value: choice,
-                  child: Text(choice.title),
-                );
-              }).toList();
-            },
+              child: PopupMenuButton<CustomPopupMenu>(
+                elevation: 3.2,
+                initialValue: choices[0],
+                onCanceled: () {
+                  print('You have not choosed anything');
+                },
+                tooltip: 'This is tooltip',
+                onSelected: _select,
+                itemBuilder: (BuildContext context) {
+                  return choices.map((CustomPopupMenu choice) {
+                    return PopupMenuItem<CustomPopupMenu>(
+                      value: choice,
+                      child: Text(choice.title),
+                    );
+                  }).toList();
+                },
           )))
         ],
          
           ),
           backgroundColor: Colors.white,
           body : Container(
-            margin: EdgeInsets.only(top: 10.0, left: 30.0),
+            margin: EdgeInsets.only(top: 10.0, left: 15.0),
             alignment: Alignment.centerLeft,
           child : Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -117,7 +209,6 @@ SharedPreferencesTest s=new SharedPreferencesTest();
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-
                       Container(
                       margin: EdgeInsets.only(top: 10.0, bottom: 20.0),
                         child : Text('Bootcamp'  , style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold,)),
@@ -174,6 +265,9 @@ SharedPreferencesTest s=new SharedPreferencesTest();
               ),),
             ],
           )),
-     );
+     ),
+         new Align(child: loadingIndicator,alignment: FractionalOffset.center,),
+      ],
+    ) ;
   }
 }

@@ -16,38 +16,35 @@ class QRCodePage extends StatefulWidget {
   _QRCodePageState createState() => _QRCodePageState();
 }
 class _QRCodePageState extends State<QRCodePage> {
- List<Widget> pages;
+
   @override
   void initState() {
-    setState(() {
-      currentIndex=0;
-    });
-    pages=[noQrPage(),qrPage()];
     super.initState(); 
     getEmail();
   }
-int currentIndex=0;
-  String email="";
 
+  int currentIndex=0;
+  String email="";
 
   SharedPreferencesTest s = new SharedPreferencesTest();
   Future<String> futureEmail;
   getEmail() async{
     futureEmail=s.getEmail();
     futureEmail.then((res){
-       if(res.compareTo("")==0||res==null||res.compareTo("yo")==0){
+
+      if(res.compareTo("")==0||res==null||res.compareTo("yo")==0){
  
       setState(() {
         email=res; 
-         currentIndex=0;
+        currentIndex=0;
       
     });
    
        }
        else{
           setState(() {
-        email=res; 
-         currentIndex=1;
+          email=res; 
+          currentIndex=1;
       
     });
        }
@@ -57,11 +54,11 @@ int currentIndex=0;
   @override
   Widget build(BuildContext context) {
     print("Email is "+email+currentIndex.toString());
-    if(email.compareTo("")==0||email==null||email.compareTo("yo")==0){
-setState(() {
-  currentIndex=1;
-});
-    }
+//     if(email.compareTo("")==0||email==null||email.compareTo("yo")==0){
+// setState(() {
+//   currentIndex=1;
+// });
+//     }
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -71,11 +68,15 @@ setState(() {
         //shape: BeveledRectangleBorder( borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10.0) , bottomRight: Radius.circular(10.0)),),
       ),
       backgroundColor: Colors.white,
-      body: pages[currentIndex]);
+      body: Center(
+        child : currentIndex==0 ? noQrPage() : qrPage()
+      )
+    );
 }
 
 Widget qrPage(){
   return Container(
+    alignment: Alignment.center,
         // width: MediaQuery.of(context).size.width,
     child : LayoutBuilder(
     builder: (BuildContext context, BoxConstraints viewportConstraints) {
@@ -107,13 +108,16 @@ Widget qrPage(){
 
 Widget noQrPage(){
   return Container(
+    alignment: Alignment.center,
     child: Column(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        Text("Sorry you have not Logged In"),
+        Text("Log in to redeem your coupons."),
          GestureDetector(
                       child: Container(
                         // margin: EdgeInsets.only(top: MediaQuery.of(context).size.height/20),
-                        // width: MediaQuery.of(context).size.width/2,
+                        width: MediaQuery.of(context).size.width/2,
                         alignment: Alignment.center,
                          decoration: BoxDecoration(
                   boxShadow:<BoxShadow>[
@@ -132,7 +136,6 @@ Widget noQrPage(){
                         padding: EdgeInsets.all(20.0),
                       ),
                       onTap: (){
-                        // sendToServer();
                         s.setLogincheck('false');
                         Navigator.of(context).popUntil((route) => route.isFirst);
                         Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => LoginScreen()));

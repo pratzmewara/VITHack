@@ -187,7 +187,7 @@ class IntroScreenState extends State<IntroScreen> {
           Container(
             height: (MediaQuery.of(context).size.height/4)*3,
             child:
-IntroSlider(
+    IntroSlider(
       // List slides
       slides: this.slides,
 
@@ -262,8 +262,8 @@ IntroSlider(
                       
                   color: Colors.white,
                         child :Row(children: <Widget>[
-Text("Skip Login ", style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),),
-Icon(Icons.arrow_forward,color: Colors.grey,)
+                        Text("Skip Login ", style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),),
+                        Icon(Icons.arrow_forward,color: Colors.grey,)
                         ],) ,
                         padding: EdgeInsets.all(20.0),
                       ),
@@ -271,7 +271,7 @@ Icon(Icons.arrow_forward,color: Colors.grey,)
                         s.setEmail("yo");
                         s.setLogincheck('true');
                         // sendToServer();
-                          Navigator.of(context).popUntil((route) => route.isFirst);
+                        Navigator.of(context).popUntil((route) => route.isFirst);
                         Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => MyHomePage()));
                         }, 
                     ),
