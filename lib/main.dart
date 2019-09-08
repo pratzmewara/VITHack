@@ -8,6 +8,7 @@ import 'package:vit_hack/pages/partnersPage.dart';
 import 'package:vit_hack/pages/qrCodePage.dart';
 import 'dart:async';
 import 'dart:convert';
+import 'package:vit_hack/pages/introductoryPage.dart';
 import 'dart:io';
 
 import 'package:vit_hack/pages/splashScreen.dart';
@@ -33,7 +34,8 @@ class MyApp extends StatelessWidget {
         routes: <String, WidgetBuilder>{
           '/start':(BuildContext context)=>SplashScreen(),
           '/homepage': (BuildContext context) => MyHomePage(),
-          '/intro':(BuildContext context)=>LoginScreen()
+          '/intro':(BuildContext context)=>IntroScreen(),
+          '/login':(BuildContext context)=>LoginScreen()
         }
      );
   }
