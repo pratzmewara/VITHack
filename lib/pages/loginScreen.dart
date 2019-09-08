@@ -99,7 +99,7 @@ class _LoginScreenState extends State<LoginScreen> {
         height: MediaQuery.of(context).size.height-100,
         width: MediaQuery.of(context).size.width,
         padding: const EdgeInsets.all(16.0),
-        color:background,
+        color:white,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
