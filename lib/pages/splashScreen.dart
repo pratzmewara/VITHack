@@ -86,9 +86,10 @@ class _SplashScreenState extends State<SplashScreen> {
             Padding(
               padding: EdgeInsets.only(top: 42.0),
             ),
+             Image.asset('lib/assests/logo.png' , width: (MediaQuery.of(context).size.width/2), height: 200.0,),
             Expanded(
               child: Text(
-                        "VITHack",
+                        "VIT Hack",
                         style: TextStyle(
                           color: Colors.blue,
                             fontWeight: FontWeight.w900,

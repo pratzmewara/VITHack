@@ -117,7 +117,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
               items: <BottomNavigationBarItem>[
               BottomNavigationBarItem(icon:Icon(Icons.home,color: Colors.black,), activeIcon: Icon(Icons.home,color: Colors.blue,),title: Text("Home")),
               BottomNavigationBarItem(icon:Icon(Icons.info,color: Colors.black), activeIcon: Icon(Icons.info,color: Colors.blue,), title:Text("Partners")),
-              BottomNavigationBarItem(icon:Icon(Icons.code,color: Colors.black), activeIcon: Icon(Icons.code,color: Colors.blue,),title:Text("QR Code")),
+              BottomNavigationBarItem(icon:Icon(Icons.filter_center_focus,color: Colors.black), activeIcon: Icon(Icons.filter_center_focus,color: Colors.blue,),title:Text("QR Code")),
               BottomNavigationBarItem(icon:Icon(Icons.phone,color: Colors.black), activeIcon: Icon(Icons.phone,color: Colors.blue,),title:Text("Contact")),
               ],
               currentIndex: _selectedIndex,

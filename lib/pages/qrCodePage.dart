@@ -40,7 +40,7 @@ class _QRCodePageState extends State<QRCodePage> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        titleSpacing: 50.0,
+        //titleSpacing: 50.0,
         title: Text('QR Code',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, fontSize: 23.0),),
         backgroundColor : Colors.white,
         //shape: BeveledRectangleBorder( borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10.0) , bottomRight: Radius.circular(10.0)),),
@@ -50,7 +50,7 @@ class _QRCodePageState extends State<QRCodePage> {
         width: MediaQuery.of(context).size.width,
     child : LayoutBuilder(
     builder: (BuildContext context, BoxConstraints viewportConstraints) {
-    return SingleChildScrollView(
+    return Container(
     padding: EdgeInsets.only(bottom:20.0),
     child: ConstrainedBox(
     constraints: BoxConstraints(
@@ -66,6 +66,9 @@ class _QRCodePageState extends State<QRCodePage> {
         //version: 3,
         size: 200.0,
       ),
+      Container(
+        child:Text("Email : "+email)
+      )
     ],),
     )
     );

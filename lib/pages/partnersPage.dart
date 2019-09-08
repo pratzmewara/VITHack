@@ -53,8 +53,7 @@ class _PartnersPageState extends State<PartnersPage> {
       length: 4,
       child: Scaffold(
       appBar: AppBar(
-
-          titleSpacing: 50.0,
+          //titleSpacing: 50.0,
           elevation: 0,
           title: Text('About',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, fontSize: 23.0),),
           backgroundColor : Colors.white,

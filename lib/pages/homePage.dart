@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:vit_hack/models/sharedPref.dart';
+import 'package:vit_hack/pages/loginScreen.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key,}) : super(key: key);
@@ -12,12 +13,23 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => new _HomePageState();
 }
 
+
+
+ 
+class CustomPopupMenu {
+  CustomPopupMenu({this.title, this.icon});
+ 
+  String title;
+  IconData icon;
+}
+
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
   @override
   void initState() {
     super.initState();
 }
+
 
 Widget bullet(){
     return new Container(
@@ -29,7 +41,24 @@ Widget bullet(){
       ),
     );
 }
+List<CustomPopupMenu> choices = <CustomPopupMenu>[
+  CustomPopupMenu(title: 'Logout'),
+];
+SharedPreferencesTest s=new SharedPreferencesTest();
 
+ void _select(CustomPopupMenu choice) {
+    setState(() {
+      
+    });
+    if(choice.title=='Logout'){
+      s.setEmail("");
+      s.setLogincheck("false");
+      s.setToken("");
+        Navigator.of(context).popUntil((route) => route.isFirst);
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => LoginScreen()));
+
+    }
+  }
   @override
   Widget build(BuildContext context) {
 
@@ -37,10 +66,37 @@ Widget bullet(){
           appBar: AppBar(
             backgroundColor: Colors.white,
             elevation: 0.0,
-            titleSpacing: 50.0,
-            title: Container(
-              margin: EdgeInsets.only(top: 20.0),
-              child : Text("Home" , style: TextStyle(fontSize:23.0, fontWeight: FontWeight.bold, color: Colors.black),),),
+            //titleSpacing: 50.0,
+            title:  Text("Home" , style: TextStyle(fontSize:23.0, fontWeight: FontWeight.bold, color: Colors.black),),
+       actions: <Widget>[
+          Theme(
+            data: Theme.of(context).copyWith(
+              cardColor: Colors.white,
+              iconTheme: IconThemeData(color: Colors.black),
+            ),
+            child: ListTileTheme(
+              iconColor: Colors.black,
+              child: 
+      PopupMenuButton<CustomPopupMenu>(
+            elevation: 3.2,
+            initialValue: choices[0],
+            
+            onCanceled: () {
+              print('You have not choosed anything');
+            },
+            tooltip: 'This is tooltip',
+            onSelected: _select,
+            itemBuilder: (BuildContext context) {
+              return choices.map((CustomPopupMenu choice) {
+                return PopupMenuItem<CustomPopupMenu>(
+                  value: choice,
+                  child: Text(choice.title),
+                );
+              }).toList();
+            },
+          )))
+        ],
+         
           ),
           backgroundColor: Colors.white,
           body : Container(
