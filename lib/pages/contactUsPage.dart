@@ -61,8 +61,20 @@ class _ContactUsPageState extends State<ContactUsPage> {
       appBar: AppBar(
         elevation: 0,
         //titleSpacing: 50.0,
-        title: Text('Contact Us',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, fontSize: 23.0),),
+        title: Text('',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, fontSize: 23.0),),
         backgroundColor : Colors.white,
+         bottom: PreferredSize(
+child: 
+Container(
+child:Row(
+  // mainAxisAlignment: MainAxisAlignment.start,
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: <Widget>[
+  Container( margin: EdgeInsets.fromLTRB(32, 8, 16, 8),
+  child: Text("Contact Us" , style: TextStyle(fontSize:23.0, fontWeight: FontWeight.bold, color: Colors.black),textAlign: TextAlign.left,),),
+      
+],)),
+  preferredSize: const Size.fromHeight(50.0)),
         //shape: BeveledRectangleBorder( borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10.0) , bottomRight: Radius.circular(10.0)),),
       ),
       backgroundColor: Colors.white,

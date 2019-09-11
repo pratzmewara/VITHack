@@ -7,6 +7,7 @@ import 'package:vit_hack/pages/loginScreen.dart';
 import 'package:http/http.dart' as http;
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:vit_hack/models/global.dart';
+import 'package:vit_hack/pages/introductoryPage.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key,}) : super(key: key);
@@ -27,6 +28,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
+    getEmail();
     getToken();
 }
 
@@ -43,29 +45,51 @@ getToken() async{
     setState(() {
         token=res; 
     });
+<<<<<<< HEAD
 });
 
  futureEmail=s.getEmail();
+=======
+});}
+String email="";
+  int currentIndex=0;
+  Future<String> futureEmail;
+  getEmail() async{
+    futureEmail=s.getEmail();
+>>>>>>> Design changes
     futureEmail.then((res){
 
       if(res.compareTo("")==0||res==null||res.compareTo("yo")==0){
  
       setState(() {
         email=res; 
+<<<<<<< HEAD
         currentIndex=0;
       
+=======
+      currentIndex=0;
+>>>>>>> Design changes
     });
    
        }
        else{
           setState(() {
           email=res; 
+<<<<<<< HEAD
           currentIndex=1;
       
     });
        }
     });
     }
+=======
+        
+      currentIndex=1;
+    });
+       }
+    });
+  }
+>>>>>>> Design changes
 
 
 Widget bullet(){
@@ -87,7 +111,7 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
  void _select(CustomPopupMenu choice) {
     
     if(choice.title=='Logout'){
-      logOut();
+     currentIndex==0?logoutSkip(): logOut();
       // s.setEmail("");
       // s.setLogincheck("false");
       // s.setToken("");
@@ -106,9 +130,11 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
      else{
        Future fetchPosts(http.Client client) async {
         print("In logout");
+      
         var response = await http.get(URL_LOGOUT, headers: {"Content-Type": "application/json", "Authorization":token},);
 
         print(response.statusCode);
+        print(response.body);
         setState(() {
          _load=true; 
         });
@@ -121,7 +147,7 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
             s.setLogincheck("false");
             s.setToken("");
             Navigator.of(context).popUntil((route) => route.isFirst);
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => LoginScreen()));
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => IntroScreen()));
         }
         else{
           setState(() {
@@ -151,6 +177,14 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
             }
           });
       }
+  }
+
+  logoutSkip(){
+    s.setEmail("");
+            s.setLogincheck("false");
+            s.setToken("");
+            Navigator.of(context).popUntil((route) => route.isFirst);
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => IntroScreen()));
   }
 
   bool _load = false;
@@ -190,10 +224,14 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
     return new Stack(
       children: <Widget>[
         Scaffold(
-          appBar: AppBar(
+          appBar:
+          
+          AppBar(
             backgroundColor: Colors.white,
             elevation: 0.0,
+          
             //titleSpacing: 50.0,
+<<<<<<< HEAD
             title:  Text("Home" , style: TextStyle(fontSize:23.0, fontWeight: FontWeight.bold, color: Colors.black),),
             actions: <Widget>[
               Theme(
@@ -220,11 +258,57 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
                       }).toList();
                     },
               )))
+=======
+            title:  Container(
+            
+            child:Text("" , style: TextStyle(fontSize:23.0, fontWeight: FontWeight.bold, color: Colors.black),)),
+       
+       bottom: PreferredSize(
+child: 
+Container(
+child:Row(
+  // mainAxisAlignment: MainAxisAlignment.start,
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: <Widget>[
+  Container( margin: EdgeInsets.fromLTRB(32, 8, 16, 8),
+  child: Text("Home" , style: TextStyle(fontSize:23.0, fontWeight: FontWeight.bold, color: Colors.black),textAlign: TextAlign.left,),),
+      
+],)),
+  preferredSize: const Size.fromHeight(50.0)),
+        
+      
+       actions: <Widget>[
+          Theme(
+            data: Theme.of(context).copyWith(
+              cardColor: Colors.white,
+              iconTheme: IconThemeData(color: Colors.black),
+            ),
+            child: ListTileTheme(
+              iconColor: Colors.black,
+              child: PopupMenuButton<CustomPopupMenu>(
+                elevation: 3.2,
+                initialValue: choices[0],
+                onCanceled: () {
+                  print('You have not choosed anything');
+                },
+                tooltip: 'This is tooltip',
+                onSelected: _select,
+                itemBuilder: (BuildContext context) {
+                  return choices.map((CustomPopupMenu choice) {
+                    return PopupMenuItem<CustomPopupMenu>(
+                      value: choice,
+                      child: Text(choice.title),
+                    );
+                  }).toList();
+                },
+          )))
+>>>>>>> Design changes
         ],
          
           ),
           backgroundColor: Colors.white,
           body : Container(
+            padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
             margin: EdgeInsets.only(top: 10.0, left: 15.0),
             alignment: Alignment.centerLeft,
           child : Column(

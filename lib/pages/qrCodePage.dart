@@ -63,10 +63,24 @@ class _QRCodePageState extends State<QRCodePage> {
       appBar: AppBar(
         elevation: 0,
         //titleSpacing: 50.0,
-        title: Text('QR Code',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, fontSize: 23.0),),
+        title: Text('',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, fontSize: 23.0),),
         backgroundColor : Colors.white,
+
+         bottom: PreferredSize(
+child: 
+Container(
+child:Row(
+  // mainAxisAlignment: MainAxisAlignment.start,
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: <Widget>[
+  Container( margin: EdgeInsets.fromLTRB(32, 8, 16, 8),
+  child: Text("Qr Code" , style: TextStyle(fontSize:23.0, fontWeight: FontWeight.bold, color: Colors.black),textAlign: TextAlign.left,),),
+      
+],)),
+  preferredSize: const Size.fromHeight(50.0)),
         //shape: BeveledRectangleBorder( borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10.0) , bottomRight: Radius.circular(10.0)),),
-      ),
+     
+     ),
       backgroundColor: Colors.white,
       body: Center(
         child : currentIndex==0 ? noQrPage() : qrPage()
@@ -120,6 +134,24 @@ Widget noQrPage(){
                         width: MediaQuery.of(context).size.width/2,
                         alignment: Alignment.center,
                          decoration: BoxDecoration(
+
+                                                              gradient: LinearGradient(
+                                                                begin: Alignment.topRight,
+                                                                end: Alignment.bottomLeft,
+                                                                stops: [ 0.1,0.3,0.7,0.9],
+                                                                colors: [
+Color(0xFF2196F3),
+ Color(0xFF1E88E5),
+  Color(0xFF1976D2),
+                                                                  Color(0xFF1565C0),
+                                                                 
+                                                                 
+
+      
+
+
+                                                                ],),
+                                                            
                   boxShadow:<BoxShadow>[
                     BoxShadow(
                       blurRadius: 10.0,
@@ -129,7 +161,6 @@ Widget noQrPage(){
 
                   ],
                   shape: BoxShape.rectangle,
-                  color: Colors.blue[500] ,
                   borderRadius: BorderRadius.all(Radius.circular(10))
                 ),
                         child : Text("Login", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),

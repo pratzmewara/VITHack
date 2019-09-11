@@ -56,21 +56,42 @@ class _PartnersPageState extends State<PartnersPage> {
       appBar: AppBar(
           //titleSpacing: 50.0,
           elevation: 0,
-          title: Text('About',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, fontSize: 23.0),),
+          title: Text('',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, fontSize: 23.0),),
           backgroundColor : Colors.white,
           //shape: BeveledRectangleBorder( borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10.0) , bottomRight: Radius.circular(10.0)),),
-          bottom: TabBar(
+          bottom: PreferredSize(
+child: 
+Container(
+child:Column(children: <Widget>[
+  Row(
+  // mainAxisAlignment: MainAxisAlignment.start,
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: <Widget>[
+  Container( margin: EdgeInsets.fromLTRB(32, 8, 16, 8),
+  child: Text("About" , style: TextStyle(fontSize:23.0, fontWeight: FontWeight.bold, color: Colors.black),textAlign: TextAlign.left,),),
+      
+],),
+ TabBar(
             isScrollable: true,
             indicatorColor: Colors.white,
             labelColor: Colors.blue,
             unselectedLabelColor: Colors.grey,
             tabs: <Widget>[
-              Tab(child: Text("Partners", style: TextStyle(fontSize: 18.0),),),
-              Tab(child: Text("Collaborators", style: TextStyle(fontSize: 18.0),)),
-              Tab(child: Text("Sponsors", style: TextStyle(fontSize: 18.0),)),
-              Tab(child: Text("Speakers", style: TextStyle(fontSize: 18.0),))
+              Tab(child:Container(
+                margin: EdgeInsets.only(left: 32,right: 32),
+                child: Text("Partners", style: TextStyle(fontSize: 21.0),)),),
+              Tab(child:Container(
+                margin: EdgeInsets.only(left: 32,right: 32),
+                child:  Text("Collaborators", style: TextStyle(fontSize: 21.0)),)),
+              Tab(child:Container(
+                margin: EdgeInsets.only(left: 32,right: 32),
+                child: Text("Sponsors", style: TextStyle(fontSize: 21.0),))),
+              Tab(child: Container(
+                margin: EdgeInsets.only(left: 32,right: 32),
+                child: Text("Speakers", style: TextStyle(fontSize: 21.0),)))
             ],
           )
+],)), preferredSize: const Size.fromHeight(100.0)),),
 
 
         /*PreferredSize(
@@ -127,7 +148,7 @@ class _PartnersPageState extends State<PartnersPage> {
             ],
           )),
         )*/
-      ),
+      
       backgroundColor: Colors.white,
       body: TabBarView(
         children: <Widget>[
@@ -168,8 +189,8 @@ Widget PromotionsPage(){
               child : Container(
                 // color: Colors.white,
                   margin: EdgeInsets.all(12),
-                  width: (MediaQuery.of(context).size.width/2),
-                  height: (MediaQuery.of(context).size.width/2),
+                  width: (MediaQuery.of(context).size.width/4)*3,
+                  height: (MediaQuery.of(context).size.width/4)*3,
                   padding: EdgeInsets.only(top: 10.0),
                   decoration: BoxDecoration(
                       boxShadow:<BoxShadow>[
@@ -196,8 +217,8 @@ Widget PromotionsPage(){
               child : Container(
                 // color: Colors.white,
                   margin: EdgeInsets.all(12),
-                  width: (MediaQuery.of(context).size.width/2),
-                  height: (MediaQuery.of(context).size.width/2),
+                  width: (MediaQuery.of(context).size.width/4)*3,
+                  height: (MediaQuery.of(context).size.width/4)*3,
                   padding: EdgeInsets.only(top: 10.0),
                   decoration: BoxDecoration(
                       boxShadow:<BoxShadow>[
@@ -225,8 +246,8 @@ Widget PromotionsPage(){
               child : Container(
                 // color: Colors.white,
                   margin: EdgeInsets.all(12),
-                  width: (MediaQuery.of(context).size.width/2),
-                  height: (MediaQuery.of(context).size.width/2),
+                  width: (MediaQuery.of(context).size.width/4)*3,
+                  height: (MediaQuery.of(context).size.width/4)*3,
                   padding: EdgeInsets.only(top: 10.0),
                   decoration: BoxDecoration(
                       boxShadow:<BoxShadow>[
@@ -253,8 +274,8 @@ Widget PromotionsPage(){
                 child : Container(
           // color: Colors.white,
           margin: EdgeInsets.all(12),
-          width: (MediaQuery.of(context).size.width/2),
-                    height: (MediaQuery.of(context).size.width/2),
+          width: (MediaQuery.of(context).size.width/4)*3,
+                    height: (MediaQuery.of(context).size.width/4)*3,
           padding: EdgeInsets.only(top: 10.0),
           decoration: BoxDecoration(
             boxShadow:<BoxShadow>[
@@ -306,8 +327,8 @@ Widget PromotionsPage(){
                           child : Container(
                             // color: Colors.white,
                               margin: EdgeInsets.all(12),
-                              width: (MediaQuery.of(context).size.width/2),
-                              height: (MediaQuery.of(context).size.width/2),
+                              width: (MediaQuery.of(context).size.width/4)*3,
+                              height: (MediaQuery.of(context).size.width/4)*3,
                               padding: EdgeInsets.only(top: 10.0),
                               decoration: BoxDecoration(
                                   boxShadow:<BoxShadow>[
@@ -357,8 +378,8 @@ Widget CollaboratorsPage(){
               child : Container(
                 // color: Colors.white,
                   margin: EdgeInsets.all(12),
-                  width: (MediaQuery.of(context).size.width/2),
-                  height: (MediaQuery.of(context).size.width/2),
+                  width: (MediaQuery.of(context).size.width/4)*3,
+                  height: (MediaQuery.of(context).size.width/4)*3,
                   padding: EdgeInsets.only(top: 10.0),
                   decoration: BoxDecoration(
                       boxShadow:<BoxShadow>[
@@ -384,8 +405,8 @@ Widget CollaboratorsPage(){
               child : Container(
                 // color: Colors.white,
                   margin: EdgeInsets.all(12),
-                  width: (MediaQuery.of(context).size.width/2),
-                  height: (MediaQuery.of(context).size.width/2),
+                  width: (MediaQuery.of(context).size.width/4)*3,
+                  height: (MediaQuery.of(context).size.width/4)*3,
                   padding: EdgeInsets.only(top: 10.0),
                   decoration: BoxDecoration(
                       boxShadow:<BoxShadow>[
@@ -411,8 +432,8 @@ Widget CollaboratorsPage(){
               child : Container(
                 // color: Colors.white,
                   margin: EdgeInsets.all(12),
-                  width: (MediaQuery.of(context).size.width/2),
-                  height: (MediaQuery.of(context).size.width/2),
+                  width: (MediaQuery.of(context).size.width/4)*3,
+                  height:(MediaQuery.of(context).size.width/4)*3,
                   padding: EdgeInsets.only(top: 10.0),
                   decoration: BoxDecoration(
                       boxShadow:<BoxShadow>[
