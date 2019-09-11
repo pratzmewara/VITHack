@@ -129,6 +129,24 @@ class _LoginScreenState extends State<LoginScreen> {
                         width: MediaQuery.of(context).size.width/2,
                         alignment: Alignment.center,
                          decoration: BoxDecoration(
+
+                                                              gradient: LinearGradient(
+                                                                begin: Alignment.topRight,
+                                                                end: Alignment.bottomLeft,
+                                                                stops: [ 0.1,0.3,0.7,0.9],
+                                                                colors: [
+Color(0xFF2196F3),
+ Color(0xFF1E88E5),
+  Color(0xFF1976D2),
+                                                                  Color(0xFF1565C0),
+                                                                 
+                                                                 
+
+      
+
+
+                                                                ],),
+                                                            
                   boxShadow:<BoxShadow>[
                     BoxShadow(
                       blurRadius: 10.0,
@@ -138,7 +156,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                   ],
                   shape: BoxShape.rectangle,
-                  color: Colors.blue[500] ,
+              
                   borderRadius: BorderRadius.all(Radius.circular(10))
                 ),
                         child : Text("Login", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
@@ -266,6 +284,15 @@ class _LoginScreenState extends State<LoginScreen> {
       String qrResult =await  QRCodeReader().scan();
       if(qrResult!=null){
         sendToServerQR(qrResult);
+      }
+      else{
+         Fluttertoast.showToast(
+              msg: "QR Code Not Scanned",
+              toastLength: Toast.LENGTH_SHORT,
+              gravity: ToastGravity.BOTTOM,
+              timeInSecForIos: 1,
+              backgroundColor: Colors.grey[700],
+              textColor: Colors.white);
       }
     }
 
