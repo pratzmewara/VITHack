@@ -161,8 +161,8 @@ child:Row(
             )
           ),
       ),
-      Text("Name : "+name[index]),
-      Text("Designation : "+des[index]),
+      Text(name[index]),
+      Text(des[index]),
       Container(
         height: 100.0,
       )
