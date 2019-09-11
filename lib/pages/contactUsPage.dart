@@ -161,8 +161,8 @@ child:Row(
             )
           ),
       ),
-      Text(name[index]),
-      Text(des[index]),
+      Text(name[index], style: TextStyle(fontSize: 17.0, fontWeight: FontWeight.bold),),
+      Text(des[index], style: TextStyle(fontSize: 17.0)),
       Container(
         height: 100.0,
       )
