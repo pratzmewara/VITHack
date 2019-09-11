@@ -56,7 +56,10 @@ String email="";
   Future<String> futureEmail;
   getEmail() async{
     futureEmail=s.getEmail();
+<<<<<<< HEAD
 >>>>>>> Design changes
+=======
+>>>>>>> e03d1b13151498b9699484c84c3a9ef4f3a5419b
     futureEmail.then((res){
 
       if(res.compareTo("")==0||res==null||res.compareTo("yo")==0){
@@ -64,17 +67,22 @@ String email="";
       setState(() {
         email=res; 
 <<<<<<< HEAD
+<<<<<<< HEAD
         currentIndex=0;
       
 =======
       currentIndex=0;
 >>>>>>> Design changes
+=======
+      currentIndex=0;
+>>>>>>> e03d1b13151498b9699484c84c3a9ef4f3a5419b
     });
    
        }
        else{
           setState(() {
           email=res; 
+<<<<<<< HEAD
 <<<<<<< HEAD
           currentIndex=1;
       
@@ -83,13 +91,18 @@ String email="";
     });
     }
 =======
+=======
+>>>>>>> e03d1b13151498b9699484c84c3a9ef4f3a5419b
         
       currentIndex=1;
     });
        }
     });
   }
+<<<<<<< HEAD
 >>>>>>> Design changes
+=======
+>>>>>>> e03d1b13151498b9699484c84c3a9ef4f3a5419b
 
 
 Widget bullet(){
@@ -187,6 +200,14 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
             Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => IntroScreen()));
   }
 
+  logoutSkip(){
+    s.setEmail("");
+            s.setLogincheck("false");
+            s.setToken("");
+            Navigator.of(context).popUntil((route) => route.isFirst);
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => IntroScreen()));
+  }
+
   bool _load = false;
 
   @override
@@ -232,6 +253,7 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
           
             //titleSpacing: 50.0,
 <<<<<<< HEAD
+<<<<<<< HEAD
             title:  Text("Home" , style: TextStyle(fontSize:23.0, fontWeight: FontWeight.bold, color: Colors.black),),
             actions: <Widget>[
               Theme(
@@ -259,6 +281,8 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
                     },
               )))
 =======
+=======
+>>>>>>> e03d1b13151498b9699484c84c3a9ef4f3a5419b
             title:  Container(
             
             child:Text("" , style: TextStyle(fontSize:23.0, fontWeight: FontWeight.bold, color: Colors.black),)),
