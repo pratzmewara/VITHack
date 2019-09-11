@@ -62,7 +62,7 @@ child:Row(
   crossAxisAlignment: CrossAxisAlignment.start,
   children: <Widget>[
   Container( margin: EdgeInsets.fromLTRB(32, 8, 16, 8),
-  child: Text("Qr Code" , style: TextStyle(fontSize:23.0, fontWeight: FontWeight.bold, color: Colors.black),textAlign: TextAlign.left,),),
+  child: Text("QR Code" , style: TextStyle(fontSize:23.0, fontWeight: FontWeight.bold, color: Colors.black),textAlign: TextAlign.left,),),
       
 ],)),
   preferredSize: const Size.fromHeight(50.0)),

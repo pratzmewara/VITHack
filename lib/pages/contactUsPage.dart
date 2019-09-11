@@ -28,7 +28,7 @@ class _ContactUsPageState extends State<ContactUsPage> {
   List<String> name=["Druvang Wagh","Hardik Kataria","Ekaansh Arora","Ayush Priya","Samarth Nayyar","Kriti Kacker","Dhruvika Sharma","Pranav Sharma",
 "Rohan Kumar", "Vipul Kothari","Naynika Wason","Sameeran Bandishti","Shreyansh Ojha","Shaanvi Mehta","Bhavitha Kosaraju"];
 
-  List<String> des=["Director","Co-Director","Co-Director","Organizer (Tech)","Organizer","Organizer","Organizer","Organizer",
+  List<String> des=["Director","Co-Director","Co-Director","Organizer (Techical)","Organizer","Organizer","Organizer","Organizer",
 "Organizer", "Organizer","Organizer","Organizer","Organizer","Organizer","Organizer"];
 
   List<String> image=["lib/Druvang_Wagh.jpg", "lib/Hardik_Kataria.jpg", "lib/Ekaansh_Arora.jpg", "lib/Ayush_Priya.jpg", "lib/Samarth_Nayyar.jpg", "lib/Kriti_Kacker.jpg",
@@ -70,7 +70,6 @@ class _ContactUsPageState extends State<ContactUsPage> {
 child: 
 Container(
 child:Row(
-  // mainAxisAlignment: MainAxisAlignment.start,
   crossAxisAlignment: CrossAxisAlignment.start,
   children: <Widget>[
   Container( margin: EdgeInsets.fromLTRB(32, 8, 16, 8),
@@ -78,27 +77,16 @@ child:Row(
       
 ],)),
   preferredSize: const Size.fromHeight(50.0)),
-        //shape: BeveledRectangleBorder( borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10.0) , bottomRight: Radius.circular(10.0)),),
       ),
       backgroundColor:background,
       body: Container(
         color: background,
         width: MediaQuery.of(context).size.width,
-    // child : LayoutBuilder(
-    // builder: (BuildContext context, BoxConstraints viewportConstraints) {
-    // return SingleChildScrollView(
-    // padding: EdgeInsets.only(bottom:20.0),
-    // child: ConstrainedBox(
-    // constraints: BoxConstraints(
-    // minHeight: viewportConstraints.maxHeight,
-    // ),
     child: SnapList(
     axis: Axis.vertical,
-    sizeProvider : (index, data) => Size(MediaQuery.of(context).size.width, MediaQuery.of(context).size.height-20.0),
+    sizeProvider : (index, data) => Size(MediaQuery.of(context).size.width, 3*MediaQuery.of(context).size.height/5),
     separatorProvider : (index, data) => Size(0.0, 0.0),
     builder: (context, index, data) => Container(
-      //margin: EdgeInsets.only(bottom: 50.0),
-     // color: Colors.yellow,
       child : Column(
     mainAxisSize: MainAxisSize.min,
     crossAxisAlignment: CrossAxisAlignment.center,
@@ -130,9 +118,25 @@ child:Row(
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-           
             children: <Widget>[ 
-              Image.asset( image[index], width: (MediaQuery.of(context).size.width), height: 3*MediaQuery.of(context).size.height/7 , ),
+              new Container(
+                    width: 210.0,
+                    height: 210.0,
+                    decoration: new BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: new DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage(image[index])
+                        ),
+                            //image: Image.asset( image[index] ),
+                )
+              ),
+              Container(
+                height: 20.0,
+                width: 20.0,
+              ),
+              Text(name[index], style: TextStyle(fontSize: 17.0, fontWeight: FontWeight.bold),),
+              Text(des[index], style: TextStyle(fontSize: 17.0)),
               ],
             )
           )),
@@ -161,11 +165,11 @@ child:Row(
             )
           ),
       ),
-      Text(name[index], style: TextStyle(fontSize: 17.0, fontWeight: FontWeight.bold),),
-      Text(des[index], style: TextStyle(fontSize: 17.0)),
-      Container(
-        height: 100.0,
-      )
+      // Text(name[index], style: TextStyle(fontSize: 17.0, fontWeight: FontWeight.bold),),
+      // Text(des[index], style: TextStyle(fontSize: 17.0)),
+      // Container(
+      //   height: 100.0,
+      // )
       ])),
       count: 15,
       snaplistController: snaplistController,
