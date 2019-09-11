@@ -45,64 +45,32 @@ getToken() async{
     setState(() {
         token=res; 
     });
-<<<<<<< HEAD
-});
 
- futureEmail=s.getEmail();
-=======
 });}
-String email="";
-  int currentIndex=0;
-  Future<String> futureEmail;
+
   getEmail() async{
     futureEmail=s.getEmail();
-<<<<<<< HEAD
->>>>>>> Design changes
-=======
->>>>>>> e03d1b13151498b9699484c84c3a9ef4f3a5419b
+
     futureEmail.then((res){
 
       if(res.compareTo("")==0||res==null||res.compareTo("yo")==0){
  
       setState(() {
         email=res; 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        currentIndex=0;
-      
-=======
       currentIndex=0;
->>>>>>> Design changes
-=======
-      currentIndex=0;
->>>>>>> e03d1b13151498b9699484c84c3a9ef4f3a5419b
     });
    
        }
        else{
           setState(() {
           email=res; 
-<<<<<<< HEAD
-<<<<<<< HEAD
-          currentIndex=1;
-      
-    });
-       }
-    });
-    }
-=======
-=======
->>>>>>> e03d1b13151498b9699484c84c3a9ef4f3a5419b
+
         
       currentIndex=1;
     });
        }
     });
   }
-<<<<<<< HEAD
->>>>>>> Design changes
-=======
->>>>>>> e03d1b13151498b9699484c84c3a9ef4f3a5419b
 
 
 Widget bullet(){
@@ -200,14 +168,6 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
             Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => IntroScreen()));
   }
 
-  logoutSkip(){
-    s.setEmail("");
-            s.setLogincheck("false");
-            s.setToken("");
-            Navigator.of(context).popUntil((route) => route.isFirst);
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => IntroScreen()));
-  }
-
   bool _load = false;
 
   @override
@@ -252,37 +212,6 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
             elevation: 0.0,
           
             //titleSpacing: 50.0,
-<<<<<<< HEAD
-<<<<<<< HEAD
-            title:  Text("Home" , style: TextStyle(fontSize:23.0, fontWeight: FontWeight.bold, color: Colors.black),),
-            actions: <Widget>[
-              Theme(
-                data: Theme.of(context).copyWith(
-                  cardColor: Colors.white,
-                  iconTheme: IconThemeData(color: Colors.black),
-                ),
-                child: ListTileTheme(
-                  iconColor: Colors.black,
-                  child: PopupMenuButton<CustomPopupMenu>(
-                    elevation: 3.2,
-                    initialValue: choices[0],
-                    onCanceled: () {
-                      print('You have not choosed anything');
-                    },
-                    tooltip: 'This is tooltip',
-                    onSelected: _select,
-                    itemBuilder: (BuildContext context) {
-                      return choices.map((CustomPopupMenu choice) {
-                        return PopupMenuItem<CustomPopupMenu>(
-                          value: choice,
-                          child: Text(choice.title),
-                        );
-                      }).toList();
-                    },
-              )))
-=======
-=======
->>>>>>> e03d1b13151498b9699484c84c3a9ef4f3a5419b
             title:  Container(
             
             child:Text("" , style: TextStyle(fontSize:23.0, fontWeight: FontWeight.bold, color: Colors.black),)),
@@ -326,7 +255,6 @@ child:Row(
                   }).toList();
                 },
           )))
->>>>>>> Design changes
         ],
          
           ),
