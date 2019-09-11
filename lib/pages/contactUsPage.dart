@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'dart:convert';
 import 'dart:async';
 import 'package:flip_card/flip_card.dart';
+import 'package:snaplist/snaplist.dart';
 
 class ContactUsPage extends StatefulWidget {
   ContactUsPage({Key key,this.restaurantID,this.workerID}) : super(key: key);
@@ -18,7 +19,41 @@ class _ContactUsPageState extends State<ContactUsPage> {
   @override
   void initState() {
     super.initState(); 
+    addList();
   }
+
+  List<String> name=["Druvang Wagh","Hardik Kataria","Ekaansh Arora","Ayush Priya","Samarth Nayyar","Kriti Kacker","Dhruvika Sharma","Pranav Sharma",
+"Rohan Kumar", "Vipul Kothari","Naynika Wason","Sameeran Bandishti","Shreyansh Ojha","Shaanvi Mehta","Bhavitha Kosaraju"];
+
+  List<String> des=["Director","Co-Director","Co-Director","Organizer (Tech)","Organizer","Organizer","Organizer","Organizer",
+"Organizer", "Organizer","Organizer","Organizer","Organizer","Organizer","Organizer"];
+
+  List<String> image=["lib/Druvang_Wagh.jpg", "lib/Hardik_Kataria.jpg", "lib/Ekaansh_Arora.jpg", "lib/Ayush_Priya.jpg", "lib/Samarth_Nayyar.jpg", "lib/Kriti_Kacker.jpg",
+  "lib/Dhruvika_Sharma.JPG", "lib/Pranav_Sharma.jpg", "lib/Rohan_Kumar.jpg", "lib/Vipul_Kothari.jpg","lib/Naynika_Wason.jpg", "lib/Sameeran_Bandishti.jpg", 
+  "lib/Shreyansh_Ojha.jpg", "lib/Shaanvi_mehta.jpg", "lib/Bhavitha_kosaraju.jpg"];
+
+
+  addList(){
+    setState(() {
+    list.add(new Details("Name", "Designation", "Email", 123456789));
+    list.add(new Details("Name", "Designation", "Email", 123456789));
+    list.add(new Details("Name", "Designation", "Email", 123456789));
+    list.add(new Details("Name", "Designation", "Email", 123456789));
+    list.add(new Details("Name", "Designation", "Email", 123456789));
+    list.add(new Details("Name", "Designation", "Email", 123456789));
+    list.add(new Details("Name", "Designation", "Email", 123456789));
+    list.add(new Details("Name", "Designation", "Email", 123456789));
+    list.add(new Details("Name", "Designation", "Email", 123456789));
+    list.add(new Details("Name", "Designation", "Email", 123456789));
+    list.add(new Details("Name", "Designation", "Email", 123456789));
+     });
+    //print(list[0].name.toString());
+  }
+
+  List<Details> list=[];
+  SnaplistController snaplistController = new SnaplistController(
+    initialPosition: 3
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -33,15 +68,87 @@ class _ContactUsPageState extends State<ContactUsPage> {
       backgroundColor: Colors.white,
       body: Container(
         width: MediaQuery.of(context).size.width,
-    child : LayoutBuilder(
-    builder: (BuildContext context, BoxConstraints viewportConstraints) {
-    return SingleChildScrollView(
-    padding: EdgeInsets.only(bottom:20.0),
-    child: ConstrainedBox(
-    constraints: BoxConstraints(
-    minHeight: viewportConstraints.maxHeight,
-    ),
-    child: Column(
+    // child : LayoutBuilder(
+    // builder: (BuildContext context, BoxConstraints viewportConstraints) {
+    // return SingleChildScrollView(
+    // padding: EdgeInsets.only(bottom:20.0),
+    // child: ConstrainedBox(
+    // constraints: BoxConstraints(
+    // minHeight: viewportConstraints.maxHeight,
+    // ),
+    child: SnapList(
+    axis: Axis.vertical,
+    sizeProvider : (index, data) => Size(MediaQuery.of(context).size.width, MediaQuery.of(context).size.height-20.0),
+    separatorProvider : (index, data) => Size(0.0, 0.0),
+    builder: (context, index, data) => Container(
+      //margin: EdgeInsets.only(bottom: 50.0),
+     // color: Colors.yellow,
+      child : Column(
+    mainAxisSize: MainAxisSize.min,
+    crossAxisAlignment: CrossAxisAlignment.center,
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    children: <Widget>[
+      FlipCard(
+        direction: FlipDirection.HORIZONTAL,
+        front: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width-20),
+          height: (MediaQuery.of(context).size.height/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[ 
+              Image.asset( image[index] , width: (MediaQuery.of(context).size.width), height: 3*MediaQuery.of(context).size.height/7,),
+              ],
+            )
+          ),
+          back: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width-20),
+          height: (MediaQuery.of(context).size.height/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text("Email : "),
+              Text("Phone Number : ")
+            ],
+            )
+          ),
+      ),
+      Text("Name : "+name[index]),
+      Text("Designation : "+des[index]),
+      Container(
+        height: 100.0,
+      )
+      ])),
+      count: 15,
+      snaplistController: snaplistController,
+  )
+   /* Column(
     mainAxisSize: MainAxisSize.min,
     crossAxisAlignment: CrossAxisAlignment.center,
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -947,11 +1054,160 @@ class _ContactUsPageState extends State<ContactUsPage> {
             )
           ),
       ),
-    ],),
-    )
-    );
-    }
-    )));
+    ],),*/
+    //)
+    //);
+    //}
+    //)
+    ));
 }
 }
+
+class  Details{
+  String name, designation,email;
+  int phone;
+  Details(String name, String designation,String email, int phone){
+   name = this.name;
+   designation = this.designation;
+   email = this.email;
+   phone = this.phone; 
+  }
+}
+
+
+/*import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
+import 'dart:convert';
+import 'dart:async';
+import 'package:flip_card/flip_card.dart';
+import 'package:snaplist/snaplist.dart';
+import 'package:indexed_list_view/indexed_list_view.dart';
+
+class ContactUsPage extends StatefulWidget {
+  ContactUsPage({Key key,this.restaurantID,this.workerID}) : super(key: key);
+  final String restaurantID, workerID;
+
+  @override
+  _ContactUsPageState createState() => _ContactUsPageState();
+}
+class _ContactUsPageState extends State<ContactUsPage> {
+
+  @override
+  void initState() {
+    super.initState(); 
+    addList();
+  }
+
+  addList(){
+    setState(() {
+    list.add(new Details("Name", "Designation", "Email", 123456789));
+    list.add(new Details("Name", "Designation", "Email", 123456789));
+    list.add(new Details("Name", "Designation", "Email", 123456789));
+    list.add(new Details("Name", "Designation", "Email", 123456789));
+    list.add(new Details("Name", "Designation", "Email", 123456789));
+    list.add(new Details("Name", "Designation", "Email", 123456789));
+    list.add(new Details("Name", "Designation", "Email", 123456789));
+    list.add(new Details("Name", "Designation", "Email", 123456789));
+    list.add(new Details("Name", "Designation", "Email", 123456789));
+    list.add(new Details("Name", "Designation", "Email", 123456789));
+    list.add(new Details("Name", "Designation", "Email", 123456789));
+     });
+    //print(list[0].name.toString());
+  }
+
+  List<Details> list=[];
+  static IndexedScrollController controller = IndexedScrollController(initialIndex: 5);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        title: Text('Contact Us',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, fontSize: 23.0),),
+        backgroundColor : Colors.white,
+      ),
+      backgroundColor: Colors.white,
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+    child: IndexedListView.builder(
+        maxItemCount: 11,
+        minItemCount: 0,
+        controller: controller,
+        itemBuilder: (context, index) =>  Column(
+    mainAxisSize: MainAxisSize.min,
+    crossAxisAlignment: CrossAxisAlignment.center,
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    children: <Widget>[
+      FlipCard(
+        direction: FlipDirection.HORIZONTAL,
+        front: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width-20),
+          height: (MediaQuery.of(context).size.height/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[ 
+              Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+              ],
+            )
+          ),
+          back: Container(
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width-20),
+          height: (MediaQuery.of(context).size.height/2),
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 10.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10)
+            )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text("Email : "),
+              Text("Phone Number : ")
+            ],
+            )
+          ),
+      ),
+      Text("Name : "+index.toString()),
+      Text("Designation : ")]),
+        ),
+      ),
+      );
+}
+}
+
+class  Details{
+  String name, designation,email;
+  int phone;
+  Details(String name, String designation,String email, int phone){
+   name = this.name;
+   designation = this.designation;
+   email = this.email;
+   phone = this.phone; 
+  }
+}*/
+
 

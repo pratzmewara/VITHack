@@ -31,15 +31,41 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 }
 
 String token="";
+String email="";
+int currentIndex=0;
+  
 SharedPreferencesTest s = new SharedPreferencesTest();
 Future<String> futureToken;
+Future<String> futureEmail;
 getToken() async{
     futureToken=s.getToken();
     futureToken.then((res){
     setState(() {
         token=res; 
     });
-});}
+});
+
+ futureEmail=s.getEmail();
+    futureEmail.then((res){
+
+      if(res.compareTo("")==0||res==null||res.compareTo("yo")==0){
+ 
+      setState(() {
+        email=res; 
+        currentIndex=0;
+      
+    });
+   
+       }
+       else{
+          setState(() {
+          email=res; 
+          currentIndex=1;
+      
+    });
+       }
+    });
+    }
 
 
 Widget bullet(){
@@ -72,7 +98,13 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
   }
 
   logOut() async{
-     Future fetchPosts(http.Client client) async {
+    if(currentIndex == 0){
+      Navigator.of(context).popUntil((route) => route.isFirst);
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => LoginScreen()));
+    }
+     
+     else{
+       Future fetchPosts(http.Client client) async {
         print("In logout");
         var response = await http.get(URL_LOGOUT, headers: {"Content-Type": "application/json", "Authorization":token},);
 
@@ -118,6 +150,7 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
 
             }
           });
+      }
   }
 
   bool _load = false;
@@ -162,31 +195,31 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
             elevation: 0.0,
             //titleSpacing: 50.0,
             title:  Text("Home" , style: TextStyle(fontSize:23.0, fontWeight: FontWeight.bold, color: Colors.black),),
-       actions: <Widget>[
-          Theme(
-            data: Theme.of(context).copyWith(
-              cardColor: Colors.white,
-              iconTheme: IconThemeData(color: Colors.black),
-            ),
-            child: ListTileTheme(
-              iconColor: Colors.black,
-              child: PopupMenuButton<CustomPopupMenu>(
-                elevation: 3.2,
-                initialValue: choices[0],
-                onCanceled: () {
-                  print('You have not choosed anything');
-                },
-                tooltip: 'This is tooltip',
-                onSelected: _select,
-                itemBuilder: (BuildContext context) {
-                  return choices.map((CustomPopupMenu choice) {
-                    return PopupMenuItem<CustomPopupMenu>(
-                      value: choice,
-                      child: Text(choice.title),
-                    );
-                  }).toList();
-                },
-          )))
+            actions: <Widget>[
+              Theme(
+                data: Theme.of(context).copyWith(
+                  cardColor: Colors.white,
+                  iconTheme: IconThemeData(color: Colors.black),
+                ),
+                child: ListTileTheme(
+                  iconColor: Colors.black,
+                  child: PopupMenuButton<CustomPopupMenu>(
+                    elevation: 3.2,
+                    initialValue: choices[0],
+                    onCanceled: () {
+                      print('You have not choosed anything');
+                    },
+                    tooltip: 'This is tooltip',
+                    onSelected: _select,
+                    itemBuilder: (BuildContext context) {
+                      return choices.map((CustomPopupMenu choice) {
+                        return PopupMenuItem<CustomPopupMenu>(
+                          value: choice,
+                          child: Text(choice.title),
+                        );
+                      }).toList();
+                    },
+              )))
         ],
          
           ),

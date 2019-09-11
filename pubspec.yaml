@@ -31,6 +31,9 @@ dependencies:
   qr_flutter:
   intro_slider: ^2.2.8
 
+  snaplist:
+  indexed_list_view:
+
 
 dev_dependencies:
   http: ^0.12.0+1
@@ -62,6 +65,22 @@ flutter:
     - lib/tekno.png
     - lib/edtimes.png
     - lib/challengeRocket.png
+    - lib/Ayush_Priya.jpg
+    - lib/Bhavitha_kosaraju.jpg
+    - lib/Dhruvika_Sharma.JPG
+    - lib/Druvang_Wagh.jpg
+    - lib/Ekaansh_Arora.jpg
+    - lib/Hardik_Kataria.jpg
+    - lib/Kriti_Kacker.jpg
+    - lib/Naynika_Wason.jpg
+    - lib/Pranav_Sharma.jpg
+    - lib/Rohan_Kumar.jpg
+    - lib/Samarth_Nayyar.jpg
+    - lib/Sameeran_Bandishti.jpg
+    - lib/Vipul_Kothari.jpg
+    - lib/Shreyansh_Ojha.jpg
+    - lib/Shaanvi_mehta.jpg
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
