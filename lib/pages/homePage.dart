@@ -202,64 +202,93 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
           ) )),
         ))):new Container();
 
-    return new Stack(
-      children: <Widget>[
+    return DefaultTabController(
+      length: 3,
+      child: Stack(children: <Widget>[
+
+     
+        
         Scaffold(
-          appBar:
-          
-          AppBar(
-            backgroundColor: Colors.white,
-            elevation: 0.0,
-          
-            //titleSpacing: 50.0,
-            title:  Container(
-            
-            child:Text("" , style: TextStyle(fontSize:23.0, fontWeight: FontWeight.bold, color: Colors.black),)),
-       
-       bottom: PreferredSize(
+      appBar: AppBar(
+          //titleSpacing: 50.0,
+          elevation: 0,
+           actions: <Widget>[
+              Theme(
+                data: Theme.of(context).copyWith(
+                  cardColor: Colors.white,
+                  iconTheme: IconThemeData(color: Colors.black),
+                ),
+                child: ListTileTheme(
+                  iconColor: Colors.black,
+                  child: PopupMenuButton<CustomPopupMenu>(
+                    elevation: 3.2,
+                    initialValue: choices[0],
+                    onCanceled: () {
+                      print('You have not choosed anything');
+                    },
+                    tooltip: 'This is tooltip',
+                    onSelected: _select,
+                    itemBuilder: (BuildContext context) {
+                      return choices.map((CustomPopupMenu choice) {
+                        return PopupMenuItem<CustomPopupMenu>(
+                          value: choice,
+                          child: Text(choice.title),
+                        );
+                      }).toList();
+                    },
+              )))],
+          title: Text('',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, fontSize: 23.0),),
+          backgroundColor : Colors.white,
+          //shape: BeveledRectangleBorder( borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10.0) , bottomRight: Radius.circular(10.0)),),
+          bottom: PreferredSize(
 child: 
 Container(
-child:Row(
+child:Column(children: <Widget>[
+  Row(
   // mainAxisAlignment: MainAxisAlignment.start,
   crossAxisAlignment: CrossAxisAlignment.start,
   children: <Widget>[
   Container( margin: EdgeInsets.fromLTRB(32, 8, 16, 8),
   child: Text("Home" , style: TextStyle(fontSize:23.0, fontWeight: FontWeight.bold, color: Colors.black),textAlign: TextAlign.left,),),
       
-],)),
-  preferredSize: const Size.fromHeight(50.0)),
-        
-      
-       actions: <Widget>[
-          Theme(
-            data: Theme.of(context).copyWith(
-              cardColor: Colors.white,
-              iconTheme: IconThemeData(color: Colors.black),
-            ),
-            child: ListTileTheme(
-              iconColor: Colors.black,
-              child: PopupMenuButton<CustomPopupMenu>(
-                elevation: 3.2,
-                initialValue: choices[0],
-                onCanceled: () {
-                  print('You have not choosed anything');
-                },
-                tooltip: 'This is tooltip',
-                onSelected: _select,
-                itemBuilder: (BuildContext context) {
-                  return choices.map((CustomPopupMenu choice) {
-                    return PopupMenuItem<CustomPopupMenu>(
-                      value: choice,
-                      child: Text(choice.title),
-                    );
-                  }).toList();
-                },
-          )))
+],),
+ TabBar(
+            isScrollable: true,
+            indicatorColor: Colors.white,
+            labelColor: Colors.blue,
+            unselectedLabelColor: Colors.grey,
+            tabs: <Widget>[
+              Tab(child:Container(
+                margin: EdgeInsets.only(left: 32,right: 32),
+                child: Text("Day 1", style: TextStyle(fontSize: 21.0),)),),
+              Tab(child:Container(
+                margin: EdgeInsets.only(left: 32,right: 32),
+                child:  Text("Day 2", style: TextStyle(fontSize: 21.0)),)),
+              Tab(child:Container(
+                margin: EdgeInsets.only(left: 32,right: 32),
+                child: Text("Day 3", style: TextStyle(fontSize: 21.0),))),
+              
+            ],
+          )
+],)), preferredSize: const Size.fromHeight(100.0)),),
+
+
+     
+      backgroundColor: Colors.white,
+      body: TabBarView(
+        children: <Widget>[
+          DayOne(),
+          DayTwo(),
+          DayThree()
         ],
-         
-          ),
-          backgroundColor: Colors.white,
-          body : Container(
+      )
+
+        ),
+         new Align(child: loadingIndicator,alignment: FractionalOffset.center,), ],));
+     
+  }
+   Widget DayThree(){
+    return  Container(
             padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
             margin: EdgeInsets.only(top: 10.0, left: 15.0),
             alignment: Alignment.centerLeft,
@@ -267,11 +296,7 @@ child:Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-          Container(
-            margin: EdgeInsets.only(top: 10.0, bottom: 10.0),
-            alignment:Alignment.center,
-            child :Text('Day 1', style: TextStyle(fontSize:27.0, fontWeight: FontWeight.bold, color: Colors.blue),),
-          ),
+        
               Container(
                 margin: EdgeInsets.only(top: 10.0, bottom: 20.0),
                 child : Column(
@@ -333,10 +358,152 @@ child:Row(
                   ]
               ),),
             ],
-          )),
-     ),
-         new Align(child: loadingIndicator,alignment: FractionalOffset.center,),
-      ],
-    ) ;
+          ));
+  }
+ Widget DayTwo(){
+    return  Container(
+            padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
+            margin: EdgeInsets.only(top: 10.0, left: 15.0),
+            alignment: Alignment.centerLeft,
+          child : Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+         
+              Container(
+                margin: EdgeInsets.only(top: 10.0, bottom: 20.0),
+                child : Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Container(
+                      margin: EdgeInsets.only(top: 10.0, bottom: 20.0),
+                        child : Text('Bootcamp'  , style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold,)),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(top: 10.0, bottom: 2.0),
+                        child : Row(
+                          children: <Widget>[
+                            bullet(),
+                            Padding(
+                              padding: EdgeInsets.only(left: 10.0),
+                            ),
+                            Text('10:00 am - 3:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
+                          ],
+                        )
+                      ),
+                      Container(
+                          margin: EdgeInsets.only(top: 5.0, bottom: 20.0),
+                          child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
+                      ),
+                      Container(
+                          margin: EdgeInsets.only(top: 10.0, bottom: 2.0),
+                          child : Row(
+                            children: <Widget>[
+                              bullet(),
+                              Padding(
+                                padding: EdgeInsets.only(left: 10.0),
+                              ),
+                              Text('10:00 am - 3:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
+                            ],
+                          )
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(top: 5.0, bottom: 20.0),
+                        child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
+                      ),
+                      Container(
+                          margin: EdgeInsets.only(top: 10.0, bottom: 2.0),
+                          child : Row(
+                            children: <Widget>[
+                              bullet(),
+                              Padding(
+                                padding: EdgeInsets.only(left: 10.0),
+                              ),
+                              Text('10:00 am - 3:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
+                            ],
+                          )
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(top: 5.0, bottom: 20.0),
+                        child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
+                      ),
+                  ]
+              ),),
+            ],
+          ));
+  }
+  Widget DayOne(){
+    return  Container(
+            padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
+            margin: EdgeInsets.only(top: 10.0, left: 15.0),
+            alignment: Alignment.centerLeft,
+          child : Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+       
+              Container(
+                margin: EdgeInsets.only(top: 10.0, bottom: 20.0),
+                child : Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Container(
+                      margin: EdgeInsets.only(top: 10.0, bottom: 20.0),
+                        child : Text('Bootcamp'  , style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold,)),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(top: 10.0, bottom: 2.0),
+                        child : Row(
+                          children: <Widget>[
+                            bullet(),
+                            Padding(
+                              padding: EdgeInsets.only(left: 10.0),
+                            ),
+                            Text('10:00 am - 3:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
+                          ],
+                        )
+                      ),
+                      Container(
+                          margin: EdgeInsets.only(top: 5.0, bottom: 20.0),
+                          child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
+                      ),
+                      Container(
+                          margin: EdgeInsets.only(top: 10.0, bottom: 2.0),
+                          child : Row(
+                            children: <Widget>[
+                              bullet(),
+                              Padding(
+                                padding: EdgeInsets.only(left: 10.0),
+                              ),
+                              Text('10:00 am - 3:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
+                            ],
+                          )
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(top: 5.0, bottom: 20.0),
+                        child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
+                      ),
+                      Container(
+                          margin: EdgeInsets.only(top: 10.0, bottom: 2.0),
+                          child : Row(
+                            children: <Widget>[
+                              bullet(),
+                              Padding(
+                                padding: EdgeInsets.only(left: 10.0),
+                              ),
+                              Text('10:00 am - 3:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
+                            ],
+                          )
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(top: 5.0, bottom: 20.0),
+                        child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
+                      ),
+                  ]
+              ),),
+            ],
+          ));
   }
 }

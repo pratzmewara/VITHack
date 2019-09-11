@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:vit_hack/Presentation/util.dart';
 import 'package:vit_hack/models/sharedPref.dart';
 import 'package:vit_hack/pages/contactUsPage.dart';
 import 'package:vit_hack/pages/homePage.dart';
@@ -112,7 +113,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     return new WillPopScope(
       onWillPop: _onWillPop,
         child : Scaffold(
-          backgroundColor: Colors.grey[200],
+          backgroundColor: background,
           body:_widgetOptions[_selectedIndex],
           bottomNavigationBar: 
             BottomNavigationBar(
