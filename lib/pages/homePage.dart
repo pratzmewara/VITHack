@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:vit_hack/models/sharedPref.dart';
@@ -50,9 +49,7 @@ getToken() async{
 
   getEmail() async{
     futureEmail=s.getEmail();
-
     futureEmail.then((res){
-
       if(res.compareTo("")==0||res==null||res.compareTo("yo")==0){
  
       setState(() {
@@ -64,8 +61,6 @@ getToken() async{
        else{
           setState(() {
           email=res; 
-
-        
       currentIndex=1;
     });
        }
@@ -92,7 +87,8 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
  void _select(CustomPopupMenu choice) {
     
     if(choice.title=='Logout'){
-     currentIndex==0?logoutSkip(): logOut();
+     //currentIndex==0?logoutSkip(): 
+     logOut();
       // s.setEmail("");
       // s.setLogincheck("false");
       // s.setToken("");
@@ -160,13 +156,13 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
       }
   }
 
-  logoutSkip(){
-    s.setEmail("");
-            s.setLogincheck("false");
-            s.setToken("");
-            Navigator.of(context).popUntil((route) => route.isFirst);
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => IntroScreen()));
-  }
+  // logoutSkip(){
+  //   s.setEmail("");
+  //           s.setLogincheck("false");
+  //           s.setToken("");
+  //           Navigator.of(context).popUntil((route) => route.isFirst);
+  //           Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => IntroScreen()));
+  // }
 
   bool _load = false;
 
