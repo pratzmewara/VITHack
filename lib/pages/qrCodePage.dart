@@ -101,7 +101,7 @@ Widget qrPage(){
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text("Email: ", style: TextStyle(fontWeight: FontWeight.bold),),
+            Text("Email : ", style: TextStyle(fontWeight: FontWeight.bold),),
             Text(email)
           ],
         )
