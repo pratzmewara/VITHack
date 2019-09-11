@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
-import 'dart:convert';
 import 'dart:async';
 import 'package:vit_hack/pages/loginScreen.dart';
 import 'package:qr_flutter/qr_flutter.dart';
@@ -33,19 +32,15 @@ class _QRCodePageState extends State<QRCodePage> {
     futureEmail.then((res){
 
       if(res.compareTo("")==0||res==null||res.compareTo("yo")==0){
- 
       setState(() {
         email=res; 
         currentIndex=0;
-      
     });
-   
        }
        else{
           setState(() {
           email=res; 
           currentIndex=1;
-      
     });
        }
     });
@@ -54,15 +49,9 @@ class _QRCodePageState extends State<QRCodePage> {
   @override
   Widget build(BuildContext context) {
     print("Email is "+email+currentIndex.toString());
-//     if(email.compareTo("")==0||email==null||email.compareTo("yo")==0){
-// setState(() {
-//   currentIndex=1;
-// });
-//     }
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        //titleSpacing: 50.0,
         title: Text('',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, fontSize: 23.0),),
         backgroundColor : Colors.white,
 
@@ -70,7 +59,6 @@ class _QRCodePageState extends State<QRCodePage> {
 child: 
 Container(
 child:Row(
-  // mainAxisAlignment: MainAxisAlignment.start,
   crossAxisAlignment: CrossAxisAlignment.start,
   children: <Widget>[
   Container( margin: EdgeInsets.fromLTRB(32, 8, 16, 8),
@@ -78,7 +66,6 @@ child:Row(
       
 ],)),
   preferredSize: const Size.fromHeight(50.0)),
-        //shape: BeveledRectangleBorder( borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10.0) , bottomRight: Radius.circular(10.0)),),
      
      ),
       backgroundColor: Colors.white,
@@ -91,7 +78,6 @@ child:Row(
 Widget qrPage(){
   return Container(
     alignment: Alignment.center,
-        // width: MediaQuery.of(context).size.width,
     child : LayoutBuilder(
     builder: (BuildContext context, BoxConstraints viewportConstraints) {
     return Container(
@@ -111,7 +97,14 @@ Widget qrPage(){
         size: 200.0,
       ),
       Container(
-        child:Text("Email : "+email)
+        width: MediaQuery.of(context).size.width,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text("Email: ", style: TextStyle(fontWeight: FontWeight.bold),),
+            Text(email)
+          ],
+        )
       )
     ],),
     )
@@ -135,22 +128,16 @@ Widget noQrPage(){
                         alignment: Alignment.center,
                          decoration: BoxDecoration(
 
-                                                              gradient: LinearGradient(
-                                                                begin: Alignment.topRight,
-                                                                end: Alignment.bottomLeft,
-                                                                stops: [ 0.1,0.3,0.7,0.9],
-                                                                colors: [
-Color(0xFF2196F3),
- Color(0xFF1E88E5),
-  Color(0xFF1976D2),
-                                                                  Color(0xFF1565C0),
-                                                                 
-                                                                 
-
-      
-
-
-                                                                ],),
+                          gradient: LinearGradient(
+                            begin: Alignment.topRight,
+                            end: Alignment.bottomLeft,
+                            stops: [ 0.1,0.3,0.7,0.9],
+                            colors: [
+                      Color(0xFF2196F3),
+                      Color(0xFF1E88E5),
+                        Color(0xFF1976D2),
+                        Color(0xFF1565C0),
+                      ],),
                                                             
                   boxShadow:<BoxShadow>[
                     BoxShadow(
