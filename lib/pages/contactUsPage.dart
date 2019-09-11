@@ -4,8 +4,11 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'dart:convert';
 import 'dart:async';
+import 'package:vit_hack/Presentation/util.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:snaplist/snaplist.dart';
+import 'package:vit_hack/Presentation/util.dart';
+import 'easterEgg.dart';
 
 class ContactUsPage extends StatefulWidget {
   ContactUsPage({Key key,this.restaurantID,this.workerID}) : super(key: key);
@@ -47,7 +50,7 @@ class _ContactUsPageState extends State<ContactUsPage> {
     list.add(new Details("Name", "Designation", "Email", 123456789));
     list.add(new Details("Name", "Designation", "Email", 123456789));
      });
-    //print(list[0].name.toString());
+    //print(list[0].name.toSColors.white,tring());
   }
 
   List<Details> list=[];
@@ -61,12 +64,25 @@ class _ContactUsPageState extends State<ContactUsPage> {
       appBar: AppBar(
         elevation: 0,
         //titleSpacing: 50.0,
-        title: Text('Contact Us',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, fontSize: 23.0),),
-        backgroundColor : Colors.white,
+        title: Text('',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, fontSize: 23.0),),
+        backgroundColor : background,
+         bottom: PreferredSize(
+child: 
+Container(
+child:Row(
+  // mainAxisAlignment: MainAxisAlignment.start,
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: <Widget>[
+  Container( margin: EdgeInsets.fromLTRB(32, 8, 16, 8),
+  child: Text("Contact Us" , style: TextStyle(fontSize:23.0, fontWeight: FontWeight.bold, color: Colors.black),textAlign: TextAlign.left,),),
+      
+],)),
+  preferredSize: const Size.fromHeight(50.0)),
         //shape: BeveledRectangleBorder( borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10.0) , bottomRight: Radius.circular(10.0)),),
       ),
-      backgroundColor: Colors.white,
+      backgroundColor:background,
       body: Container(
+        color: background,
         width: MediaQuery.of(context).size.width,
     // child : LayoutBuilder(
     // builder: (BuildContext context, BoxConstraints viewportConstraints) {
@@ -90,9 +106,15 @@ class _ContactUsPageState extends State<ContactUsPage> {
     children: <Widget>[
       FlipCard(
         direction: FlipDirection.HORIZONTAL,
-        front: Container(
+        front:GestureDetector(
+          onDoubleTap: (){
+            if(index==3){
+                Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) =>EasterEgg()));
+            }
+          },
+          child: Container(
           margin: EdgeInsets.all(12),
-          width: (MediaQuery.of(context).size.width-20),
+         width: (MediaQuery.of(context).size.width/4)*3,
           height: (MediaQuery.of(context).size.height/2),
           padding: EdgeInsets.only(top: 10.0),
           decoration: BoxDecoration(
@@ -107,16 +129,16 @@ class _ContactUsPageState extends State<ContactUsPage> {
             )
           ),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+           
             children: <Widget>[ 
-              Image.asset( image[index] , width: (MediaQuery.of(context).size.width), height: 3*MediaQuery.of(context).size.height/7,),
+              Image.asset( image[index], width: (MediaQuery.of(context).size.width), height: 3*MediaQuery.of(context).size.height/7 , ),
               ],
             )
-          ),
+          )),
           back: Container(
           margin: EdgeInsets.all(12),
-          width: (MediaQuery.of(context).size.width-20),
+          width: (MediaQuery.of(context).size.width/4)*3,
           height: (MediaQuery.of(context).size.height/2),
           padding: EdgeInsets.only(top: 10.0),
           decoration: BoxDecoration(
