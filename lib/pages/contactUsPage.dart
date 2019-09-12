@@ -26,14 +26,18 @@ class _ContactUsPageState extends State<ContactUsPage> {
   }
 
   List<String> name=["Druvang Wagh","Hardik Kataria","Ekaansh Arora","Ayush Priya","Samarth Nayyar","Kriti Kacker","Dhruvika Sharma","Pranav Sharma",
-"Rohan Kumar", "Vipul Kothari","Naynika Wason","Sameeran Bandishti","Shreyansh Ojha","Shaanvi Mehta","Bhavitha Kosaraju"];
+"Rohan Kumar", "Vipul Kothari","Naynika Wason","Sameeran Bandishti","Shreyansh Ojha","Shaanvi Mehta","Harshil Parekh"];
 
-  List<String> des=["Director","Co-Director","Co-Director","Organizer (Techical)","Organizer","Organizer","Organizer","Organizer",
-"Organizer", "Organizer","Organizer","Organizer","Organizer","Organizer","Organizer"];
+  List<String> des=["Director","Co-Director","Co-Director","Organizer Techical","Organizer Design","Organizer Participants","Organizer","Organizer Collaboration",
+"Organizer Finance", "Organizer","Organizer Content","Organizer Participants","Organizer Logistics","Organizer IR","Organizer Marketing"];
 
   List<String> image=["lib/Druvang_Wagh.jpg", "lib/Hardik_Kataria.jpg", "lib/Ekaansh_Arora.jpg", "lib/Ayush_Priya.jpg", "lib/Samarth_Nayyar.jpg", "lib/Kriti_Kacker.jpg",
   "lib/Dhruvika_Sharma.JPG", "lib/Pranav_Sharma.jpg", "lib/Rohan_Kumar.jpg", "lib/Vipul_Kothari.jpg","lib/Naynika_Wason.jpg", "lib/Sameeran_Bandishti.jpg", 
-  "lib/Shreyansh_Ojha.jpg", "lib/Shaanvi_mehta.jpg", "lib/Bhavitha_kosaraju.jpg"];
+  "lib/Shreyansh_Ojha.jpg", "lib/Shaanvi_mehta.jpg", "lib/Harshil_parekh.jpg"];
+
+  List<String> number=["8369091192",];
+
+  List<String> email =["dhruvang.wagh@gmail.com0,"];
 
 
   addList(){
