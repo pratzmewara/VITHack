@@ -3,8 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
-import 'dart:convert';
-import 'dart:async';
 import 'package:vit_hack/Presentation/util.dart';
 
 class PartnersPage extends StatefulWidget {
@@ -42,35 +40,7 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
 }
 
 class _PartnersPageState extends State<PartnersPage> {
-
-
   ScrollController scrollController;
-
-  Widget _buildActions() {
-//    Widget profile = new GestureDetector(
-//      onTap: () => showProfile(),
-//      child: new Container(
-//        height: 30.0,
-//        width: 45.0,
-//        decoration: new BoxDecoration(
-//          shape: BoxShape.circle,
-//          color: Colors.grey,
-//          image: new DecorationImage(
-//            image: new ExactAssetImage("assets/logo.png"),
-//            fit: BoxFit.cover,
-//          ),
-//          border: Border.all(color: Colors.black, width: 2.0),
-//        ),
-//      ),
-//    );
-
-
-//    return new Transform(
-//      transform: new Matrix4.identity()..scale(scale, scale),
-//      alignment: Alignment.center,
-//      child: profile,
-//    );
-  }
 
   @override
   void dispose() {
@@ -130,19 +100,12 @@ class _PartnersPageState extends State<PartnersPage> {
               fontSize: 18.0,
             )),
       ),
-      actions: <Widget>[
-        new Padding(
-          padding: EdgeInsets.all(0),
-          child: _buildActions(),
-        ),
-      ],
     );
 
     return Scaffold(
       backgroundColor: background,
       body: new DefaultTabController(
-
-        length: 4,
+        length: 3,
         child: NestedScrollView(
           controller: scrollController,
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
@@ -169,9 +132,6 @@ class _PartnersPageState extends State<PartnersPage> {
                       Tab(child:Container(
                           margin: EdgeInsets.only(left: 32,right: 32),
                           child: Text("Sponsors", style: TextStyle(fontSize: 26.0),))),
-                      Tab(child: Container(
-                          margin: EdgeInsets.only(left: 32,right: 32),
-                          child: Text("Speakers", style: TextStyle(fontSize: 26.0),)))
                     ],
                   ),
                 ),
@@ -185,10 +145,8 @@ class _PartnersPageState extends State<PartnersPage> {
 
                 children: <Widget>[
                   PromotionsPage(),
-
                   CollaboratorsPage(),
                   SponsorsPage(),
-                  CollaboratorsPage(),
                 ],
               )),
         ),

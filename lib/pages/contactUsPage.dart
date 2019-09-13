@@ -25,7 +25,6 @@ class _ContactUsPageState extends State<ContactUsPage> {
     addList();
   }
 
-<<<<<<< HEAD
   List<String> name=["Druvang Wagh","Hardik Kataria","Ekaansh Arora","Ayush Priya","Samarth Nayyar","Kriti Kacker","Naynika Wason","Dhruvika Sharma","Pranav Sharma",
 "Rohan Kumar", "Vipul Kothari","Sameeran Bandishti","Shreyansh Ojha","Shaanvi Mehta","Harshil Parekh"];
 
@@ -42,17 +41,6 @@ class _ContactUsPageState extends State<ContactUsPage> {
   List<String> email =["dhruvang.wagh@gmail.com","hardikkataria2699@gmail.com","ekaansh68@gmail.com","","samarthnayyar123@gmail.com","kritikacker12@gmail.com","nay9139@gmail.com","","pspranavsharma9@gmail.com",
   "rk61198@gmail.com","","sameeranbandishti@ieee.org","shreyansh.ojha98@gmail.com","shaanvimehta@gmail.com","harshilparekh15@gmail.com"];
 
-=======
-  List<String> name=["Druvang Wagh","Hardik Kataria","Ekaansh Arora","Ayush Priya","Samarth Nayyar","Kriti Kacker","Dhruvika Sharma","Pranav Sharma",
-    "Rohan Kumar", "Vipul Kothari","Naynika Wason","Sameeran Bandishti","Shreyansh Ojha","Shaanvi Mehta","Bhavitha Kosaraju"];
-
-  List<String> des=["Director","Co-Director","Co-Director","Organizer (Tech)","Organizer","Organizer","Organizer","Organizer",
-    "Organizer", "Organizer","Organizer","Organizer","Organizer","Organizer","Organizer"];
-
-  List<String> image=["lib/Druvang_Wagh.jpg", "lib/Hardik_Kataria.jpg", "lib/Ekaansh_Arora.jpg", "lib/Ayush_Priya.jpg", "lib/Samarth_Nayyar.jpg", "lib/Kriti_Kacker.jpg",
-    "lib/Dhruvika_Sharma.JPG", "lib/Pranav_Sharma.jpg", "lib/Rohan_Kumar.jpg", "lib/Vipul_Kothari.jpg","lib/Naynika_Wason.jpg", "lib/Sameeran_Bandishti.jpg",
-    "lib/Shreyansh_Ojha.jpg", "lib/Shaanvi_mehta.jpg", "lib/Bhavitha_kosaraju.jpg"];
->>>>>>> 5bb13b18fe6756e2c5ea8004b40efb22cae326b6
 
 
   addList(){
@@ -80,7 +68,6 @@ class _ContactUsPageState extends State<ContactUsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-<<<<<<< HEAD
       appBar: AppBar(
         elevation: 0,
         //titleSpacing: 50.0,
@@ -196,118 +183,6 @@ child:Row(
   )
    /* Column(
 
-=======
-        appBar: AppBar(
-          elevation: 0,
-          //titleSpacing: 50.0,
-          title: Text('',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, fontSize: 23.0),),
-          backgroundColor : background,
-          bottom: PreferredSize(
-              child:
-              Container(
-                  child:Row(
-                    // mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Container( margin: EdgeInsets.fromLTRB(60, 8, 16, 8),
-                        child: Text("Contact Us" , style: TextStyle(fontSize:26.0, fontWeight: FontWeight.w600, color: Colors.black),textAlign: TextAlign.left,),),
-
-                    ],)),
-              preferredSize: const Size.fromHeight(50.0)),
-          //shape: BeveledRectangleBorder( borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10.0) , bottomRight: Radius.circular(10.0)),),
-        ),
-        backgroundColor:background,
-        body: Container(
-            color: background,
-            width: MediaQuery.of(context).size.width,
-            // child : LayoutBuilder(
-            // builder: (BuildContext context, BoxConstraints viewportConstraints) {
-            // return SingleChildScrollView(
-            // padding: EdgeInsets.only(bottom:20.0),
-            // child: ConstrainedBox(
-            // constraints: BoxConstraints(
-            // minHeight: viewportConstraints.maxHeight,
-            // ),
-            child: SnapList(
-              axis: Axis.vertical,
-              sizeProvider : (index, data) => Size(MediaQuery.of(context).size.width, MediaQuery.of(context).size.height-20.0),
-              separatorProvider : (index, data) => Size(0.0, 0.0),
-              builder: (context, index, data) => Container(
-                //margin: EdgeInsets.only(bottom: 50.0),
-                // color: Colors.yellow,
-                  child : Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: <Widget>[
-                        FlipCard(
-                          direction: FlipDirection.HORIZONTAL,
-                          front:GestureDetector(
-                              onDoubleTap: (){
-                                if(index==3){
-                                  Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) =>EasterEgg()));
-                                }
-                              },
-                              child: Container(
-                                  margin: EdgeInsets.all(12),
-                                  width: (MediaQuery.of(context).size.width/4)*3,
-                                  height: (MediaQuery.of(context).size.height/2),
-                                  padding: EdgeInsets.only(top: 10.0),
-                                  decoration: BoxDecoration(
-                                      boxShadow:<BoxShadow>[
-                                        BoxShadow(blurRadius: 10.0,
-                                            color:Colors.grey[400] ,
-                                            offset: Offset(0.5,0.5))
-                                      ],
-                                      shape: BoxShape.rectangle,
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.all(Radius.circular(10)
-                                      )
-                                  ),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-
-                                    children: <Widget>[
-                                      Image.asset( image[index], width: (MediaQuery.of(context).size.width), height: 3*MediaQuery.of(context).size.height/7 , ),
-                                    ],
-                                  )
-                              )),
-                          back: Container(
-                              margin: EdgeInsets.all(12),
-                              width: (MediaQuery.of(context).size.width/4)*3,
-                              height: (MediaQuery.of(context).size.height/2),
-                              padding: EdgeInsets.only(top: 10.0),
-                              decoration: BoxDecoration(
-                                  boxShadow:<BoxShadow>[
-                                    BoxShadow(blurRadius: 10.0,
-                                        color:Colors.grey[400] ,
-                                        offset: Offset(0.5,0.5))
-                                  ],
-                                  shape: BoxShape.rectangle,
-                                  color: Colors.white ,
-                                  borderRadius: BorderRadius.all(Radius.circular(10)
-                                  )
-                              ),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  Text("Email : "),
-                                  Text("Phone Number : ")
-                                ],
-                              )
-                          ),
-                        ),
-                        Text("Name : "+name[index]),
-                        Text("Designation : "+des[index]),
-                        Container(
-                          height: 100.0,
-                        )
-                      ])),
-              count: 15,
-              snaplistController: snaplistController,
-            )
-          /* Column(
->>>>>>> 5bb13b18fe6756e2c5ea8004b40efb22cae326b6
     mainAxisSize: MainAxisSize.min,
     crossAxisAlignment: CrossAxisAlignment.center,
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
