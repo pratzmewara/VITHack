@@ -51,7 +51,7 @@ class _PartnersPageState extends State<PartnersPage> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 4,
+      length: 3,
       child: Scaffold(
       appBar: AppBar(
           //titleSpacing: 50.0,
@@ -86,9 +86,6 @@ child:Column(children: <Widget>[
               Tab(child:Container(
                 margin: EdgeInsets.only(left: 32,right: 32),
                 child: Text("Sponsors", style: TextStyle(fontSize: 21.0),))),
-              Tab(child: Container(
-                margin: EdgeInsets.only(left: 32,right: 32),
-                child: Text("Speakers", style: TextStyle(fontSize: 21.0),)))
             ],
           )
 ],)), preferredSize: const Size.fromHeight(100.0)),),
@@ -153,10 +150,8 @@ child:Column(children: <Widget>[
       body: TabBarView(
         children: <Widget>[
           PromotionsPage(),
-
           CollaboratorsPage(),
           SponsorsPage(),
-          CollaboratorsPage(),
         ],
       )
 
