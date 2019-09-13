@@ -189,7 +189,7 @@ Widget PromotionsPage(){
                   padding: EdgeInsets.only(top: 10.0),
                   decoration: BoxDecoration(
                       boxShadow:<BoxShadow>[
-                        BoxShadow(blurRadius: 10.0,
+                        BoxShadow(blurRadius: 2.0,
                             color:Colors.grey[400] ,
                             offset: Offset(0.5,0.5))
 
@@ -217,7 +217,7 @@ Widget PromotionsPage(){
                   padding: EdgeInsets.only(top: 10.0),
                   decoration: BoxDecoration(
                       boxShadow:<BoxShadow>[
-                        BoxShadow(blurRadius: 10.0,
+                        BoxShadow(blurRadius: 2.0,
                             color:Colors.grey[400] ,
                             offset: Offset(0.5,0.5))
 
@@ -246,7 +246,7 @@ Widget PromotionsPage(){
                   padding: EdgeInsets.only(top: 10.0),
                   decoration: BoxDecoration(
                       boxShadow:<BoxShadow>[
-                        BoxShadow(blurRadius: 10.0,
+                        BoxShadow(blurRadius: 2.0,
                             color:Colors.grey[400] ,
                             offset: Offset(0.5,0.5))
 
@@ -274,7 +274,7 @@ Widget PromotionsPage(){
           padding: EdgeInsets.only(top: 10.0),
           decoration: BoxDecoration(
             boxShadow:<BoxShadow>[
-              BoxShadow(blurRadius: 10.0,
+              BoxShadow(blurRadius: 2.0,
               color:Colors.grey[400] ,
               offset: Offset(0.5,0.5))
 
@@ -327,7 +327,7 @@ Widget PromotionsPage(){
                               padding: EdgeInsets.only(top: 10.0),
                               decoration: BoxDecoration(
                                   boxShadow:<BoxShadow>[
-                                    BoxShadow(blurRadius: 10.0,
+                                    BoxShadow(blurRadius: 2.0,
                                         color:Colors.grey[400] ,
                                         offset: Offset(0.5,0.5))
 
@@ -378,7 +378,7 @@ Widget CollaboratorsPage(){
                   padding: EdgeInsets.only(top: 10.0),
                   decoration: BoxDecoration(
                       boxShadow:<BoxShadow>[
-                        BoxShadow(blurRadius: 10.0,
+                        BoxShadow(blurRadius: 2.0,
                             color:Colors.grey[400] ,
                             offset: Offset(0.5,0.5))
 
@@ -405,7 +405,7 @@ Widget CollaboratorsPage(){
                   padding: EdgeInsets.only(top: 10.0),
                   decoration: BoxDecoration(
                       boxShadow:<BoxShadow>[
-                        BoxShadow(blurRadius: 10.0,
+                        BoxShadow(blurRadius:2.0,
                             color:Colors.grey[400] ,
                             offset: Offset(0.5,0.5))
 
@@ -432,7 +432,7 @@ Widget CollaboratorsPage(){
                   padding: EdgeInsets.only(top: 10.0),
                   decoration: BoxDecoration(
                       boxShadow:<BoxShadow>[
-                        BoxShadow(blurRadius: 10.0,
+                        BoxShadow(blurRadius: 2.0,
                             color:Colors.grey[400] ,
                             offset: Offset(0.5,0.5))
 
