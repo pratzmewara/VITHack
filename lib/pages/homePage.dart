@@ -333,6 +333,7 @@ indicator:BoxDecoration(color: background),
               color: background,
               child: new TabBarView(
 
+
             children: <Widget>[
 
               DayOne(),
@@ -674,7 +675,6 @@ indicator:BoxDecoration(color: background),
                         )
                       ),
                       Container(
-
                         margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left: 12),
                           child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
                       ),
@@ -697,7 +697,6 @@ indicator:BoxDecoration(color: background),
                       ),
                       Container(
                           margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left: 12),
-
                           child : Row(
                             children: <Widget>[
                               bullet(),
@@ -709,9 +708,7 @@ indicator:BoxDecoration(color: background),
                           )
                       ),
                       Container(
-
                         margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left: 12),
-
                         child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
                       ),
                   ]
