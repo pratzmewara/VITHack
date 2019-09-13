@@ -25,19 +25,21 @@ class _ContactUsPageState extends State<ContactUsPage> {
     addList();
   }
 
-  List<String> name=["Druvang Wagh","Hardik Kataria","Ekaansh Arora","Ayush Priya","Samarth Nayyar","Kriti Kacker","Dhruvika Sharma","Pranav Sharma",
-"Rohan Kumar", "Vipul Kothari","Naynika Wason","Sameeran Bandishti","Shreyansh Ojha","Shaanvi Mehta","Harshil Parekh"];
+  List<String> name=["Druvang Wagh","Hardik Kataria","Ekaansh Arora","Ayush Priya","Samarth Nayyar","Kriti Kacker","Naynika Wason","Dhruvika Sharma","Pranav Sharma",
+"Rohan Kumar", "Vipul Kothari","Sameeran Bandishti","Shreyansh Ojha","Shaanvi Mehta","Harshil Parekh"];
 
-  List<String> des=["Director","Co-Director","Co-Director","Organizer Techical","Organizer Design","Organizer Participants","Organizer","Organizer Collaboration",
-"Organizer Finance", "Organizer","Organizer Content","Organizer Participants","Organizer Logistics","Organizer IR","Organizer Marketing"];
+  List<String> des=["Director","Co-Director","Co-Director","Organizer Techical","Organizer Design","Organizer Participants","Organizer Content","Organizer","Organizer Collaboration",
+"Organizer Finance", "Organizer","Organizer Participants","Organizer Logistics","Organizer IR","Organizer Marketing"];
 
   List<String> image=["lib/Druvang_Wagh.jpg", "lib/Hardik_Kataria.jpg", "lib/Ekaansh_Arora.jpg", "lib/Ayush_Priya.jpg", "lib/Samarth_Nayyar.jpg", "lib/Kriti_Kacker.jpg",
-  "lib/Dhruvika_Sharma.JPG", "lib/Pranav_Sharma.jpg", "lib/Rohan_Kumar.jpg", "lib/Vipul_Kothari.jpg","lib/Naynika_Wason.jpg", "lib/Sameeran_Bandishti.jpg", 
+  "lib/Naynika_Wason.jpg","lib/Dhruvika_Sharma.JPG", "lib/Pranav_Sharma.jpg", "lib/Rohan_Kumar.jpg", "lib/Vipul_Kothari.jpg", "lib/Sameeran_Bandishti.jpg", 
   "lib/Shreyansh_Ojha.jpg", "lib/Shaanvi_mehta.jpg", "lib/Harshil_parekh.jpg"];
 
-  List<String> number=["8369091192",];
+  List<String> number=["8369091192","8860445756","8860092479","9431175490","9818288112","8004936388","8894721774","","9811069173",
+  "9629888511","","7350190101","7023398836","9818489663","9624099868"];
 
-  List<String> email =["dhruvang.wagh@gmail.com0,"];
+  List<String> email =["dhruvang.wagh@gmail.com","hardikkataria2699@gmail.com","ekaansh68@gmail.com","","samarthnayyar123@gmail.com","kritikacker12@gmail.com","nay9139@gmail.com","","pspranavsharma9@gmail.com",
+  "rk61198@gmail.com","","sameeranbandishti@ieee.org","shreyansh.ojha98@gmail.com","shaanvimehta@gmail.com","harshilparekh15@gmail.com"];
 
 
   addList(){
@@ -163,8 +165,8 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text("Email : "),
-              Text("Phone Number : ")
+              Text("Email : "+email[index]),
+              Text("Phone Number : "+number[index].toString())
             ],
             )
           ),

@@ -22,7 +22,22 @@ class EasterEggState extends State<EasterEgg>{
       title: Text("Tech Team",style: TextStyle(color: Colors.black),),backgroundColor: background,centerTitle: true,
     elevation: 0,),
     backgroundColor: background,
-    body:Container(child:Center(child:Text("Tech Team Bhagwan Hai"))) ,
+    body:Container(
+      child: Column(
+        children: <Widget>[
+          Image.asset("lib/group_picture.jpg"),
+          Container(
+            padding: EdgeInsets.all(10.0),
+            child: Text("From left to right:"),
+          ),
+          Text("Angad Sharma- Backend Developer"),
+          Text("Prateek Mewara- Andriod Developer"),
+          Text("Satkriti Singh- Android Developer"),
+          Text("Ayush Priya- Tech Lead"),
+          Text("Nikhil Singh- Frontend Developer")
+        ],
+      ),
+    ) ,
     ) ;
   }
 
