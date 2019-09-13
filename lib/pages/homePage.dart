@@ -248,14 +248,14 @@ child:Column(children: <Widget>[
   child: Text("Home" , style: TextStyle(fontSize:23.0, fontWeight: FontWeight.bold, color: Colors.black),textAlign: TextAlign.left,),),
       
 ],),
- TabBar(
+    TabBar(
             isScrollable: true,
             indicatorColor: Colors.white,
             labelColor: Colors.blue,
             unselectedLabelColor: Colors.grey,
             tabs: <Widget>[
               Tab(child:Container(
-                margin: EdgeInsets.only(left: 32,right: 32),
+                margin: EdgeInsets.only(left:  MediaQuery.of(context).size.width/20,right: 32),
                 child: Text("Day 1", style: TextStyle(fontSize: 21.0),)),),
               Tab(child:Container(
                 margin: EdgeInsets.only(left: 32,right: 32),
@@ -267,9 +267,6 @@ child:Column(children: <Widget>[
             ],
           )
 ],)), preferredSize: const Size.fromHeight(100.0)),),
-
-
-     
       backgroundColor: Colors.white,
       body: TabBarView(
         children: <Widget>[
@@ -285,10 +282,10 @@ child:Column(children: <Widget>[
   }
    Widget DayThree(){
     return  Container(
-            padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
+           // padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
             margin: EdgeInsets.only(top: 10.0, left: 15.0),
             alignment: Alignment.centerLeft,
-          child : Column(
+            child : Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -300,10 +297,12 @@ child:Column(children: <Widget>[
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Container(
+                      padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/20,right: MediaQuery.of(context).size.width/20),
                       margin: EdgeInsets.only(top: 10.0, bottom: 20.0),
                         child : Text('Bootcamp'  , style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold,)),
                       ),
                       Container(
+                        padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
                         margin: EdgeInsets.only(top: 10.0, bottom: 2.0),
                         child : Row(
                           children: <Widget>[
@@ -316,10 +315,12 @@ child:Column(children: <Widget>[
                         )
                       ),
                       Container(
+                        padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
                           margin: EdgeInsets.only(top: 5.0, bottom: 20.0),
                           child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
                       ),
                       Container(
+                        padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
                           margin: EdgeInsets.only(top: 10.0, bottom: 2.0),
                           child : Row(
                             children: <Widget>[
@@ -332,10 +333,12 @@ child:Column(children: <Widget>[
                           )
                       ),
                       Container(
+                        padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
                         margin: EdgeInsets.only(top: 5.0, bottom: 20.0),
                         child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
                       ),
                       Container(
+                        padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
                           margin: EdgeInsets.only(top: 10.0, bottom: 2.0),
                           child : Row(
                             children: <Widget>[
@@ -348,6 +351,7 @@ child:Column(children: <Widget>[
                           )
                       ),
                       Container(
+                        padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
                         margin: EdgeInsets.only(top: 5.0, bottom: 20.0),
                         child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
                       ),
@@ -358,14 +362,13 @@ child:Column(children: <Widget>[
   }
  Widget DayTwo(){
     return  Container(
-            padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
+            //padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
             margin: EdgeInsets.only(top: 10.0, left: 15.0),
             alignment: Alignment.centerLeft,
           child : Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-         
               Container(
                 margin: EdgeInsets.only(top: 10.0, bottom: 20.0),
                 child : Column(
@@ -373,10 +376,12 @@ child:Column(children: <Widget>[
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Container(
+                      padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/20,right: MediaQuery.of(context).size.width/20),
                       margin: EdgeInsets.only(top: 10.0, bottom: 20.0),
                         child : Text('Bootcamp'  , style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold,)),
                       ),
                       Container(
+                        padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
                         margin: EdgeInsets.only(top: 10.0, bottom: 2.0),
                         child : Row(
                           children: <Widget>[
@@ -389,10 +394,12 @@ child:Column(children: <Widget>[
                         )
                       ),
                       Container(
+                        padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
                           margin: EdgeInsets.only(top: 5.0, bottom: 20.0),
                           child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
                       ),
                       Container(
+                        padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
                           margin: EdgeInsets.only(top: 10.0, bottom: 2.0),
                           child : Row(
                             children: <Widget>[
@@ -405,10 +412,12 @@ child:Column(children: <Widget>[
                           )
                       ),
                       Container(
+                        padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
                         margin: EdgeInsets.only(top: 5.0, bottom: 20.0),
                         child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
                       ),
                       Container(
+                        padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
                           margin: EdgeInsets.only(top: 10.0, bottom: 2.0),
                           child : Row(
                             children: <Widget>[
@@ -421,6 +430,7 @@ child:Column(children: <Widget>[
                           )
                       ),
                       Container(
+                        padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
                         margin: EdgeInsets.only(top: 5.0, bottom: 20.0),
                         child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
                       ),
@@ -431,7 +441,7 @@ child:Column(children: <Widget>[
   }
   Widget DayOne(){
     return  Container(
-            padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
+            //padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
             margin: EdgeInsets.only(top: 10.0, left: 15.0),
             alignment: Alignment.centerLeft,
           child : Column(
@@ -446,10 +456,12 @@ child:Column(children: <Widget>[
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Container(
+                        padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/20,right: MediaQuery.of(context).size.width/20),
                       margin: EdgeInsets.only(top: 10.0, bottom: 20.0),
                         child : Text('Bootcamp'  , style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold,)),
                       ),
                       Container(
+                        padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
                         margin: EdgeInsets.only(top: 10.0, bottom: 2.0),
                         child : Row(
                           children: <Widget>[
@@ -462,10 +474,12 @@ child:Column(children: <Widget>[
                         )
                       ),
                       Container(
+                        padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
                           margin: EdgeInsets.only(top: 5.0, bottom: 20.0),
                           child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
                       ),
                       Container(
+                        padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
                           margin: EdgeInsets.only(top: 10.0, bottom: 2.0),
                           child : Row(
                             children: <Widget>[
@@ -478,10 +492,12 @@ child:Column(children: <Widget>[
                           )
                       ),
                       Container(
+                        padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
                         margin: EdgeInsets.only(top: 5.0, bottom: 20.0),
                         child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
                       ),
                       Container(
+                        padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
                           margin: EdgeInsets.only(top: 10.0, bottom: 2.0),
                           child : Row(
                             children: <Widget>[
@@ -494,6 +510,7 @@ child:Column(children: <Widget>[
                           )
                       ),
                       Container(
+                        padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
                         margin: EdgeInsets.only(top: 5.0, bottom: 20.0),
                         child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
                       ),
