@@ -18,7 +18,6 @@ class HomePage extends StatefulWidget {
  
 class CustomPopupMenu {
   CustomPopupMenu({this.title, this.icon});
- 
   String title;
   IconData icon;
 }
@@ -36,7 +35,7 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
 
   @override
   Widget build(
-      BuildContext context, double shrinkOffset, bool overlapsContent) {
+  BuildContext context, double shrinkOffset, bool overlapsContent) {
     return new Container(
       color: background,
       child: _tabBar,
@@ -51,35 +50,7 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
 
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
-
-
   ScrollController scrollController;
-
-  Widget _buildActions() {
-//    Widget profile = new GestureDetector(
-//      onTap: () => showProfile(),
-//      child: new Container(
-//        height: 30.0,
-//        width: 45.0,
-//        decoration: new BoxDecoration(
-//          shape: BoxShape.circle,
-//          color: Colors.grey,
-//          image: new DecorationImage(
-//            image: new ExactAssetImage("assets/logo.png"),
-//            fit: BoxFit.cover,
-//          ),
-//          border: Border.all(color: Colors.black, width: 2.0),
-//        ),
-//      ),
-//    );
-
-
-//    return new Transform(
-//      transform: new Matrix4.identity()..scale(scale, scale),
-//      alignment: Alignment.center,
-//      child: profile,
-//    );
-  }
 
   @override
   void dispose() {
@@ -147,8 +118,6 @@ Widget bullet(){
 List<CustomPopupMenu> choices = <CustomPopupMenu>[
   CustomPopupMenu(title: 'Logout'),
 ];
-
-
 
 
  void _select(CustomPopupMenu choice) {
@@ -240,21 +209,23 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
       backgroundColor: background,
       expandedHeight: 120.0,
       elevation: 0,
-//      centerTitle: true,
       pinned: true,
       flexibleSpace: FlexibleSpaceBar(
-//centerTitle: true,
-          title: Text("Home",
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 18.0,
-              )),
-        ),
-      actions: <Widget>[
-        new Padding(
+        title: Container(
+          margin: EdgeInsets.all(0),
           padding: EdgeInsets.all(0),
-          child: _buildActions(),
-        ),
+          child : Text("Home",
+            style: TextStyle(
+            color: Colors.black,
+            fontSize: 18.0,
+            )
+      ),),
+    ),
+    actions: <Widget>[
+        new IconButton(
+          icon: Icon(Icons.power_settings_new, color: Colors.black, ),
+          onPressed: logOut,
+        )
       ],
     );
 
@@ -290,8 +261,9 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
 
     return  Scaffold(
       backgroundColor: background,
-      body: new DefaultTabController(
-
+      body: Stack(
+        children: <Widget>[
+        new DefaultTabController(
         length: 3,
         child: NestedScrollView(
           controller: scrollController,
@@ -299,12 +271,9 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
             return <Widget>[
               flexibleSpaceWidget,
               SliverPersistentHeader(
-
                 delegate: _SliverAppBarDelegate(
-
                   TabBar(
-
-indicator:BoxDecoration(color: background),
+                    indicator:BoxDecoration(color: background),
                     isScrollable: true,
                     indicatorColor: background,
                     labelColor: Colors.blue,
@@ -312,7 +281,7 @@ indicator:BoxDecoration(color: background),
                     tabs: [
                       Tab(child:Container(
                         color:background,
-                          padding: EdgeInsets.only(left: 64,right: 32),
+                          padding: EdgeInsets.only(left: 32,right: 32),
                           child: Text("Day 1", style: TextStyle(fontSize: 26.0,fontWeight: FontWeight.w500),)),),
                       Tab(child:Container(
                         color:background,
@@ -332,174 +301,28 @@ indicator:BoxDecoration(color: background),
           body:Container(
               color: background,
               child: new TabBarView(
-
-
-            children: <Widget>[
-
-              DayOne(),
-              DayTwo(),
-              DayThree()
+              children: <Widget>[
+                DayOne(),
+                DayTwo(),
+                DayThree()
             ],
           )),
         ),
       ),
+      loadingIndicator
+      ]
+      )
     );
-//      DefaultTabController(
-//      length: 3,
-//      child: Stack(children: <Widget>[
-//
-//      NestedScrollView(
-//      headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-//    return <Widget>[
-//    SliverAppBar(
-//      backgroundColor : Colors.white,
-//    expandedHeight: 200.0,
-//    pinned: true,
-//    elevation: 0,
-////    floating: false,
-//
-//    flexibleSpace: FlexibleSpaceBar(
-//
-//    title:LayoutBuilder(
-//        builder: (BuildContext context, BoxConstraints constraints) {
-//
-//
-//          return FlexibleSpaceBar(
-//               centerTitle: true,
-//            title: AnimatedOpacity(
-//                duration: Duration(milliseconds: 300),
-//                //opacity: top == 80.0 ? 1.0 : 0.0,
-//                opacity: 1.0,
-//                child:Container(child: Text(
-//                 "Home",
-//                  style: TextStyle(fontSize: 21.0,color: Colors.black)),
-//
-//                )),
-//          );
-//        })),
-//
-//
-//        bottom: TabBar(
-//      isScrollable: true,
-//      indicatorColor: Colors.white,
-//      labelColor: Colors.blue,
-//      unselectedLabelColor: Colors.grey,
-//    tabs: [
-//      Tab(child:Container(
-//          margin: EdgeInsets.only(left: 32,right: 32),
-//          child: Text("Day 1", style: TextStyle(fontSize: 21.0),)),),
-//      Tab(child:Container(
-//        margin: EdgeInsets.only(left: 32,right: 32),
-//        child:  Text("Day 2", style: TextStyle(fontSize: 21.0)),)),
-//      Tab(child:Container(
-//          margin: EdgeInsets.only(left: 32,right: 32),
-//          child: Text("Day 3", style: TextStyle(fontSize: 21.0),))),
-//    ],
-//    ),
-//    ),
-//
-//    ];
-//    },
-//          body: TabBarView(
-//            children: <Widget>[
-//              DayOne(),
-//              DayTwo(),
-//              DayThree()
-//            ],
-//          )
-//
-//    ),
-//
-////
-////        Scaffold(
-////      appBar: AppBar(
-////          //titleSpacing: 50.0,
-////          elevation: 0,
-////           actions: <Widget>[
-////              Theme(
-////                data: Theme.of(context).copyWith(
-////                  cardColor: Colors.white,
-////                  iconTheme: IconThemeData(color: Colors.black),
-////                ),
-////                child: ListTileTheme(
-////                  iconColor: Colors.black,
-////                  child: PopupMenuButton<CustomPopupMenu>(
-////                    elevation: 3.2,
-////                    initialValue: choices[0],
-////                    onCanceled: () {
-////                      print('You have not choosed anything');
-////                    },
-////                    tooltip: 'This is tooltip',
-////                    onSelected: _select,
-////                    itemBuilder: (BuildContext context) {
-////                      return choices.map((CustomPopupMenu choice) {
-////                        return PopupMenuItem<CustomPopupMenu>(
-////                          value: choice,
-////                          child: Text(choice.title),
-////                        );
-////                      }).toList();
-////                    },
-////              )))],
-////          title: Text('',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, fontSize: 23.0),),
-////          backgroundColor : Colors.white,
-////          //shape: BeveledRectangleBorder( borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10.0) , bottomRight: Radius.circular(10.0)),),
-////          bottom: PreferredSize(
-////child:
-////Container(
-////child:Column(children: <Widget>[
-////  Row(
-////  // mainAxisAlignment: MainAxisAlignment.start,
-////  crossAxisAlignment: CrossAxisAlignment.start,
-////  children: <Widget>[
-////  Container( margin: EdgeInsets.fromLTRB(32, 8, 16, 8),
-////  child: Text("Home" , style: TextStyle(fontSize:23.0, fontWeight: FontWeight.bold, color: Colors.black),textAlign: TextAlign.left,),),
-//
-////],),
-//// TabBar(
-////            isScrollable: true,
-////            indicatorColor: Colors.white,
-////            labelColor: Colors.blue,
-////            unselectedLabelColor: Colors.grey,
-////            tabs: <Widget>[
-////              Tab(child:Container(
-////                margin: EdgeInsets.only(left: 32,right: 32),
-////                child: Text("Day 1", style: TextStyle(fontSize: 21.0),)),),
-////              Tab(child:Container(
-////                margin: EdgeInsets.only(left: 32,right: 32),
-////                child:  Text("Day 2", style: TextStyle(fontSize: 21.0)),)),
-////              Tab(child:Container(
-////                margin: EdgeInsets.only(left: 32,right: 32),
-////                child: Text("Day 3", style: TextStyle(fontSize: 21.0),))),
-////
-////            ],
-////          )
-////],)), preferredSize: const Size.fromHeight(100.0)),),
-////
-////
-////
-////      backgroundColor: Colors.white,
-////      body: TabBarView(
-////        children: <Widget>[
-////          DayOne(),
-////          DayTwo(),
-////          DayThree()
-////        ],
-////      )
-////
-////        ),
-//         new Align(child: loadingIndicator,alignment: FractionalOffset.center,), ],));
-     
   }
    Widget DayThree(){
     return Container(
-        padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
-        margin: EdgeInsets.only(top: 10.0, left: 32.0),
+        //padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
+        margin: EdgeInsets.only(top: 10.0, left:  MediaQuery.of(context).size.width/20),
         alignment: Alignment.centerLeft,
         child : Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-
             Container(
               margin: EdgeInsets.only(top: 10.0, bottom: 20.0),
               child : Column(
@@ -511,7 +334,7 @@ indicator:BoxDecoration(color: background),
                       child : Text('Bootcamp'  , style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold,)),
                     ),
                     Container(
-                        margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left: 12),
+                        margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left:  MediaQuery.of(context).size.width/20),
                         child : Row(
                           children: <Widget>[
                             bullet(),
@@ -521,44 +344,44 @@ indicator:BoxDecoration(color: background),
                             Text('10:00 am - 3:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
                           ],
                         )
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left:  MediaQuery.of(context).size.width/20),
+                      child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
+                    ),
+                    Container(
+                        margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left:  MediaQuery.of(context).size.width/20),
+                        child : Row(
+                          children: <Widget>[
+                            bullet(),
+                            Padding(
+                              padding: EdgeInsets.only(left: 10.0),
+                            ),
+                            Text('10:00 am - 3:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
+                          ],
+                        )
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left:  MediaQuery.of(context).size.width/20),
+                      child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
+                    ),
+                    Container(
+                        margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left:  MediaQuery.of(context).size.width/20),
+                        child : Row(
+                          children: <Widget>[
+                            bullet(),
+                            Padding(
+                              padding: EdgeInsets.only(left: 10.0),
+                            ),
+                            Text('10:00 am - 3:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
+                          ],
+                        )
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left:  MediaQuery.of(context).size.width/20),
+                      child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
+                    ),
 
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left: 12),
-                      child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
-                    ),
-                    Container(
-                        margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left: 12),
-                        child : Row(
-                          children: <Widget>[
-                            bullet(),
-                            Padding(
-                              padding: EdgeInsets.only(left: 10.0),
-                            ),
-                            Text('10:00 am - 3:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
-                          ],
-                        )
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left: 12),
-                      child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
-                    ),
-                    Container(
-                        margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left: 12),
-                        child : Row(
-                          children: <Widget>[
-                            bullet(),
-                            Padding(
-                              padding: EdgeInsets.only(left: 10.0),
-                            ),
-                            Text('10:00 am - 3:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
-                          ],
-                        )
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left: 12),
-                      child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
-                    ),
                   ]
               ),),
           ],
@@ -566,14 +389,13 @@ indicator:BoxDecoration(color: background),
   }
  Widget DayTwo(){
     return Container(
-        padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
-        margin: EdgeInsets.only(top: 10.0, left: 32.0),
+        //padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
+        margin: EdgeInsets.only(top: 10.0, left:  MediaQuery.of(context).size.width/20),
         alignment: Alignment.centerLeft,
         child : Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-
             Container(
               margin: EdgeInsets.only(top: 10.0, bottom: 20.0),
               child : Column(
@@ -585,7 +407,7 @@ indicator:BoxDecoration(color: background),
                       child : Text('Bootcamp'  , style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold,)),
                     ),
                     Container(
-                        margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left: 12),
+                        margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left: MediaQuery.of(context).size.width/20),
                         child : Row(
                           children: <Widget>[
                             bullet(),
@@ -597,11 +419,11 @@ indicator:BoxDecoration(color: background),
                         )
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left: 12),
+                      margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left:  MediaQuery.of(context).size.width/20),
                       child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
                     ),
                     Container(
-                        margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left: 12),
+                        margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left:  MediaQuery.of(context).size.width/20),
                         child : Row(
                           children: <Widget>[
                             bullet(),
@@ -613,11 +435,11 @@ indicator:BoxDecoration(color: background),
                         )
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left: 12),
+                      margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left:  MediaQuery.of(context).size.width/20),
                       child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
                     ),
                     Container(
-                        margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left: 12),
+                        margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left:  MediaQuery.of(context).size.width/20),
                         child : Row(
                           children: <Widget>[
                             bullet(),
@@ -629,7 +451,7 @@ indicator:BoxDecoration(color: background),
                         )
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left: 12),
+                      margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left:  MediaQuery.of(context).size.width/20),
                       child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
                     ),
 
@@ -639,31 +461,26 @@ indicator:BoxDecoration(color: background),
         ));
   }
   Widget DayOne(){
-    return  Container(
-
-            padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
-            margin: EdgeInsets.only(top: 10.0, left: 32.0),
-
-            alignment: Alignment.centerLeft,
-          child : Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-       
-              Container(
-                margin: EdgeInsets.only(top: 10.0, bottom: 20.0),
-                child : Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Container(
-                        padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/20,right: MediaQuery.of(context).size.width/20),
+    return Container(
+        //padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
+        margin: EdgeInsets.only(top: 10.0, left:  MediaQuery.of(context).size.width/20),
+        alignment: Alignment.centerLeft,
+        child : Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Container(
+              margin: EdgeInsets.only(top: 10.0, bottom: 20.0),
+              child : Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Container(
                       margin: EdgeInsets.only(top: 10.0, bottom: 20.0),
-                        child : Text('Bootcamp'  , style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold,)),
-                      ),
-                      Container(
-
-                        margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left: 12),
+                      child : Text('Bootcamp'  , style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold,)),
+                    ),
+                    Container(
+                        margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left:  MediaQuery.of(context).size.width/20),
                         child : Row(
                           children: <Widget>[
                             bullet(),
@@ -673,47 +490,47 @@ indicator:BoxDecoration(color: background),
                             Text('10:00 am - 3:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
                           ],
                         )
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left: 12),
-                          child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
-                      ),
-                      Container(
-                          margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left: 12),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left:  MediaQuery.of(context).size.width/20),
+                      child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
+                    ),
+                    Container(
+                        margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left:  MediaQuery.of(context).size.width/20),
+                        child : Row(
+                          children: <Widget>[
+                            bullet(),
+                            Padding(
+                              padding: EdgeInsets.only(left: 10.0),
+                            ),
+                            Text('10:00 am - 3:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
+                          ],
+                        )
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left:  MediaQuery.of(context).size.width/20),
+                      child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
+                    ),
+                    Container(
+                        margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left:  MediaQuery.of(context).size.width/20),
+                        child : Row(
+                          children: <Widget>[
+                            bullet(),
+                            Padding(
+                              padding: EdgeInsets.only(left: 10.0),
+                            ),
+                            Text('10:00 am - 3:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
+                          ],
+                        )
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left:  MediaQuery.of(context).size.width/20),
+                      child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
+                    ),
 
-                          child : Row(
-                            children: <Widget>[
-                              bullet(),
-                              Padding(
-                                padding: EdgeInsets.only(left: 10.0),
-                              ),
-                              Text('10:00 am - 3:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
-                            ],
-                          )
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left: 12),
-                        child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
-                      ),
-                      Container(
-                          margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left: 12),
-                          child : Row(
-                            children: <Widget>[
-                              bullet(),
-                              Padding(
-                                padding: EdgeInsets.only(left: 10.0),
-                              ),
-                              Text('10:00 am - 3:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
-                            ],
-                          )
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left: 12),
-                        child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
-                      ),
                   ]
               ),),
-            ],
-          ));
+          ],
+        ));
   }
 }

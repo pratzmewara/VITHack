@@ -143,7 +143,7 @@ child:Row(
                 width: 20.0,
               ),
               Text(name[index], style: TextStyle(fontSize: 17.0, fontWeight: FontWeight.bold),),
-              Text(des[index], style: TextStyle(fontSize: 17.0)),
+              Text("("+des[index]+")", style: TextStyle(fontSize: 17.0)),
               ],
             )
           )),
