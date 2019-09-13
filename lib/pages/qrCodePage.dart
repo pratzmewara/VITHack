@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
+import 'package:vit_hack/Presentation/util.dart';
 import 'dart:convert';
 import 'dart:async';
 import 'package:vit_hack/pages/loginScreen.dart';
@@ -64,7 +65,7 @@ class _QRCodePageState extends State<QRCodePage> {
         elevation: 0,
         //titleSpacing: 50.0,
         title: Text('',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, fontSize: 23.0),),
-        backgroundColor : Colors.white,
+        backgroundColor :background,
 
          bottom: PreferredSize(
 child: 
@@ -73,15 +74,15 @@ child:Row(
   // mainAxisAlignment: MainAxisAlignment.start,
   crossAxisAlignment: CrossAxisAlignment.start,
   children: <Widget>[
-  Container( margin: EdgeInsets.fromLTRB(32, 8, 16, 8),
-  child: Text("Qr Code" , style: TextStyle(fontSize:23.0, fontWeight: FontWeight.bold, color: Colors.black),textAlign: TextAlign.left,),),
+  Container( margin: EdgeInsets.fromLTRB(60, 8, 16, 8),
+  child: Text("QR Code" , style: TextStyle(fontSize:26.0, fontWeight: FontWeight.w600, color: Colors.black),textAlign: TextAlign.left,),),
       
 ],)),
   preferredSize: const Size.fromHeight(50.0)),
         //shape: BeveledRectangleBorder( borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10.0) , bottomRight: Radius.circular(10.0)),),
      
      ),
-      backgroundColor: Colors.white,
+      backgroundColor: background,
       body: Center(
         child : currentIndex==0 ? noQrPage() : qrPage()
       )

@@ -21,162 +21,162 @@ class _ContactUsPageState extends State<ContactUsPage> {
 
   @override
   void initState() {
-    super.initState(); 
+    super.initState();
     addList();
   }
 
   List<String> name=["Druvang Wagh","Hardik Kataria","Ekaansh Arora","Ayush Priya","Samarth Nayyar","Kriti Kacker","Dhruvika Sharma","Pranav Sharma",
-"Rohan Kumar", "Vipul Kothari","Naynika Wason","Sameeran Bandishti","Shreyansh Ojha","Shaanvi Mehta","Bhavitha Kosaraju"];
+    "Rohan Kumar", "Vipul Kothari","Naynika Wason","Sameeran Bandishti","Shreyansh Ojha","Shaanvi Mehta","Bhavitha Kosaraju"];
 
   List<String> des=["Director","Co-Director","Co-Director","Organizer (Tech)","Organizer","Organizer","Organizer","Organizer",
-"Organizer", "Organizer","Organizer","Organizer","Organizer","Organizer","Organizer"];
+    "Organizer", "Organizer","Organizer","Organizer","Organizer","Organizer","Organizer"];
 
   List<String> image=["lib/Druvang_Wagh.jpg", "lib/Hardik_Kataria.jpg", "lib/Ekaansh_Arora.jpg", "lib/Ayush_Priya.jpg", "lib/Samarth_Nayyar.jpg", "lib/Kriti_Kacker.jpg",
-  "lib/Dhruvika_Sharma.JPG", "lib/Pranav_Sharma.jpg", "lib/Rohan_Kumar.jpg", "lib/Vipul_Kothari.jpg","lib/Naynika_Wason.jpg", "lib/Sameeran_Bandishti.jpg", 
-  "lib/Shreyansh_Ojha.jpg", "lib/Shaanvi_mehta.jpg", "lib/Bhavitha_kosaraju.jpg"];
+    "lib/Dhruvika_Sharma.JPG", "lib/Pranav_Sharma.jpg", "lib/Rohan_Kumar.jpg", "lib/Vipul_Kothari.jpg","lib/Naynika_Wason.jpg", "lib/Sameeran_Bandishti.jpg",
+    "lib/Shreyansh_Ojha.jpg", "lib/Shaanvi_mehta.jpg", "lib/Bhavitha_kosaraju.jpg"];
 
 
   addList(){
     setState(() {
-    list.add(new Details("Name", "Designation", "Email", 123456789));
-    list.add(new Details("Name", "Designation", "Email", 123456789));
-    list.add(new Details("Name", "Designation", "Email", 123456789));
-    list.add(new Details("Name", "Designation", "Email", 123456789));
-    list.add(new Details("Name", "Designation", "Email", 123456789));
-    list.add(new Details("Name", "Designation", "Email", 123456789));
-    list.add(new Details("Name", "Designation", "Email", 123456789));
-    list.add(new Details("Name", "Designation", "Email", 123456789));
-    list.add(new Details("Name", "Designation", "Email", 123456789));
-    list.add(new Details("Name", "Designation", "Email", 123456789));
-    list.add(new Details("Name", "Designation", "Email", 123456789));
-     });
+      list.add(new Details("Name", "Designation", "Email", 123456789));
+      list.add(new Details("Name", "Designation", "Email", 123456789));
+      list.add(new Details("Name", "Designation", "Email", 123456789));
+      list.add(new Details("Name", "Designation", "Email", 123456789));
+      list.add(new Details("Name", "Designation", "Email", 123456789));
+      list.add(new Details("Name", "Designation", "Email", 123456789));
+      list.add(new Details("Name", "Designation", "Email", 123456789));
+      list.add(new Details("Name", "Designation", "Email", 123456789));
+      list.add(new Details("Name", "Designation", "Email", 123456789));
+      list.add(new Details("Name", "Designation", "Email", 123456789));
+      list.add(new Details("Name", "Designation", "Email", 123456789));
+    });
     //print(list[0].name.toSColors.white,tring());
   }
 
   List<Details> list=[];
   SnaplistController snaplistController = new SnaplistController(
-    initialPosition: 3
+      initialPosition: 3
   );
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        //titleSpacing: 50.0,
-        title: Text('',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, fontSize: 23.0),),
-        backgroundColor : background,
-         bottom: PreferredSize(
-child: 
-Container(
-child:Row(
-  // mainAxisAlignment: MainAxisAlignment.start,
-  crossAxisAlignment: CrossAxisAlignment.start,
-  children: <Widget>[
-  Container( margin: EdgeInsets.fromLTRB(32, 8, 16, 8),
-  child: Text("Contact Us" , style: TextStyle(fontSize:23.0, fontWeight: FontWeight.bold, color: Colors.black),textAlign: TextAlign.left,),),
-      
-],)),
-  preferredSize: const Size.fromHeight(50.0)),
-        //shape: BeveledRectangleBorder( borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10.0) , bottomRight: Radius.circular(10.0)),),
-      ),
-      backgroundColor:background,
-      body: Container(
-        color: background,
-        width: MediaQuery.of(context).size.width,
-    // child : LayoutBuilder(
-    // builder: (BuildContext context, BoxConstraints viewportConstraints) {
-    // return SingleChildScrollView(
-    // padding: EdgeInsets.only(bottom:20.0),
-    // child: ConstrainedBox(
-    // constraints: BoxConstraints(
-    // minHeight: viewportConstraints.maxHeight,
-    // ),
-    child: SnapList(
-    axis: Axis.vertical,
-    sizeProvider : (index, data) => Size(MediaQuery.of(context).size.width, MediaQuery.of(context).size.height-20.0),
-    separatorProvider : (index, data) => Size(0.0, 0.0),
-    builder: (context, index, data) => Container(
-      //margin: EdgeInsets.only(bottom: 50.0),
-     // color: Colors.yellow,
-      child : Column(
+        appBar: AppBar(
+          elevation: 0,
+          //titleSpacing: 50.0,
+          title: Text('',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, fontSize: 23.0),),
+          backgroundColor : background,
+          bottom: PreferredSize(
+              child:
+              Container(
+                  child:Row(
+                    // mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Container( margin: EdgeInsets.fromLTRB(60, 8, 16, 8),
+                        child: Text("Contact Us" , style: TextStyle(fontSize:26.0, fontWeight: FontWeight.w600, color: Colors.black),textAlign: TextAlign.left,),),
+
+                    ],)),
+              preferredSize: const Size.fromHeight(50.0)),
+          //shape: BeveledRectangleBorder( borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10.0) , bottomRight: Radius.circular(10.0)),),
+        ),
+        backgroundColor:background,
+        body: Container(
+            color: background,
+            width: MediaQuery.of(context).size.width,
+            // child : LayoutBuilder(
+            // builder: (BuildContext context, BoxConstraints viewportConstraints) {
+            // return SingleChildScrollView(
+            // padding: EdgeInsets.only(bottom:20.0),
+            // child: ConstrainedBox(
+            // constraints: BoxConstraints(
+            // minHeight: viewportConstraints.maxHeight,
+            // ),
+            child: SnapList(
+              axis: Axis.vertical,
+              sizeProvider : (index, data) => Size(MediaQuery.of(context).size.width, MediaQuery.of(context).size.height-20.0),
+              separatorProvider : (index, data) => Size(0.0, 0.0),
+              builder: (context, index, data) => Container(
+                //margin: EdgeInsets.only(bottom: 50.0),
+                // color: Colors.yellow,
+                  child : Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        FlipCard(
+                          direction: FlipDirection.HORIZONTAL,
+                          front:GestureDetector(
+                              onDoubleTap: (){
+                                if(index==3){
+                                  Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) =>EasterEgg()));
+                                }
+                              },
+                              child: Container(
+                                  margin: EdgeInsets.all(12),
+                                  width: (MediaQuery.of(context).size.width/4)*3,
+                                  height: (MediaQuery.of(context).size.height/2),
+                                  padding: EdgeInsets.only(top: 10.0),
+                                  decoration: BoxDecoration(
+                                      boxShadow:<BoxShadow>[
+                                        BoxShadow(blurRadius: 10.0,
+                                            color:Colors.grey[400] ,
+                                            offset: Offset(0.5,0.5))
+                                      ],
+                                      shape: BoxShape.rectangle,
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.all(Radius.circular(10)
+                                      )
+                                  ),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+
+                                    children: <Widget>[
+                                      Image.asset( image[index], width: (MediaQuery.of(context).size.width), height: 3*MediaQuery.of(context).size.height/7 , ),
+                                    ],
+                                  )
+                              )),
+                          back: Container(
+                              margin: EdgeInsets.all(12),
+                              width: (MediaQuery.of(context).size.width/4)*3,
+                              height: (MediaQuery.of(context).size.height/2),
+                              padding: EdgeInsets.only(top: 10.0),
+                              decoration: BoxDecoration(
+                                  boxShadow:<BoxShadow>[
+                                    BoxShadow(blurRadius: 10.0,
+                                        color:Colors.grey[400] ,
+                                        offset: Offset(0.5,0.5))
+                                  ],
+                                  shape: BoxShape.rectangle,
+                                  color: Colors.white ,
+                                  borderRadius: BorderRadius.all(Radius.circular(10)
+                                  )
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Text("Email : "),
+                                  Text("Phone Number : ")
+                                ],
+                              )
+                          ),
+                        ),
+                        Text("Name : "+name[index]),
+                        Text("Designation : "+des[index]),
+                        Container(
+                          height: 100.0,
+                        )
+                      ])),
+              count: 15,
+              snaplistController: snaplistController,
+            )
+          /* Column(
     mainAxisSize: MainAxisSize.min,
     crossAxisAlignment: CrossAxisAlignment.center,
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: <Widget>[
       FlipCard(
         direction: FlipDirection.HORIZONTAL,
-        front:GestureDetector(
-          onDoubleTap: (){
-            if(index==3){
-                Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) =>EasterEgg()));
-            }
-          },
-          child: Container(
-          margin: EdgeInsets.all(12),
-         width: (MediaQuery.of(context).size.width/4)*3,
-          height: (MediaQuery.of(context).size.height/2),
-          padding: EdgeInsets.only(top: 10.0),
-          decoration: BoxDecoration(
-            boxShadow:<BoxShadow>[
-              BoxShadow(blurRadius: 10.0,
-              color:Colors.grey[400] ,
-              offset: Offset(0.5,0.5))
-            ],
-            shape: BoxShape.rectangle,
-            color: Colors.white,
-            borderRadius: BorderRadius.all(Radius.circular(10)
-            )
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-           
-            children: <Widget>[ 
-              Image.asset( image[index], width: (MediaQuery.of(context).size.width), height: 3*MediaQuery.of(context).size.height/7 , ),
-              ],
-            )
-          )),
-          back: Container(
-          margin: EdgeInsets.all(12),
-          width: (MediaQuery.of(context).size.width/4)*3,
-          height: (MediaQuery.of(context).size.height/2),
-          padding: EdgeInsets.only(top: 10.0),
-          decoration: BoxDecoration(
-            boxShadow:<BoxShadow>[
-              BoxShadow(blurRadius: 10.0,
-              color:Colors.grey[400] ,
-              offset: Offset(0.5,0.5))
-            ],
-            shape: BoxShape.rectangle,
-            color: Colors.white ,
-            borderRadius: BorderRadius.all(Radius.circular(10)
-            )
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text("Email : "),
-              Text("Phone Number : ")
-            ],
-            )
-          ),
-      ),
-      Text("Name : "+name[index]),
-      Text("Designation : "+des[index]),
-      Container(
-        height: 100.0,
-      )
-      ])),
-      count: 15,
-      snaplistController: snaplistController,
-  )
-   /* Column(
-    mainAxisSize: MainAxisSize.min,
-    crossAxisAlignment: CrossAxisAlignment.center,
-    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-    children: <Widget>[
-      FlipCard(
-        direction: FlipDirection.HORIZONTAL,
         front: Container(
           margin: EdgeInsets.all(12),
           width: (MediaQuery.of(context).size.width/2),
@@ -196,7 +196,7 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               Text("Name"),
               Text("Designation")
@@ -249,7 +249,7 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               Text("Name"),
               Text("Designation")
@@ -302,7 +302,7 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               Text("Name"),
               Text("Designation")
@@ -355,7 +355,7 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               Text("Name"),
               Text("Designation")
@@ -408,7 +408,7 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               Text("Name"),
               Text("Designation")
@@ -461,7 +461,7 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               Text("Name"),
               Text("Designation")
@@ -514,7 +514,7 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               Text("Name"),
               Text("Designation")
@@ -567,7 +567,7 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               Text("Name"),
               Text("Designation")
@@ -620,7 +620,7 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               Text("Name"),
               Text("Designation")
@@ -673,7 +673,7 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               Text("Name"),
               Text("Designation")
@@ -726,7 +726,7 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               Text("Name"),
               Text("Designation")
@@ -779,7 +779,7 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               Text("Name"),
               Text("Designation")
@@ -832,7 +832,7 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               Text("Name"),
               Text("Designation")
@@ -885,7 +885,7 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               Text("Name"),
               Text("Designation")
@@ -938,7 +938,7 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               Text("Name"),
               Text("Designation")
@@ -991,7 +991,7 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               Text("Name"),
               Text("Designation")
@@ -1044,7 +1044,7 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               Text("Name"),
               Text("Designation")
@@ -1077,22 +1077,22 @@ child:Row(
           ),
       ),
     ],),*/
-    //)
-    //);
-    //}
-    //)
-    ));
-}
+          //)
+          //);
+          //}
+          //)
+        ));
+  }
 }
 
 class  Details{
   String name, designation,email;
   int phone;
   Details(String name, String designation,String email, int phone){
-   name = this.name;
-   designation = this.designation;
-   email = this.email;
-   phone = this.phone; 
+    name = this.name;
+    designation = this.designation;
+    email = this.email;
+    phone = this.phone;
   }
 }
 
@@ -1106,22 +1106,18 @@ import 'dart:async';
 import 'package:flip_card/flip_card.dart';
 import 'package:snaplist/snaplist.dart';
 import 'package:indexed_list_view/indexed_list_view.dart';
-
 class ContactUsPage extends StatefulWidget {
   ContactUsPage({Key key,this.restaurantID,this.workerID}) : super(key: key);
   final String restaurantID, workerID;
-
   @override
   _ContactUsPageState createState() => _ContactUsPageState();
 }
 class _ContactUsPageState extends State<ContactUsPage> {
-
   @override
   void initState() {
-    super.initState(); 
+    super.initState();
     addList();
   }
-
   addList(){
     setState(() {
     list.add(new Details("Name", "Designation", "Email", 123456789));
@@ -1138,10 +1134,8 @@ class _ContactUsPageState extends State<ContactUsPage> {
      });
     //print(list[0].name.toString());
   }
-
   List<Details> list=[];
   static IndexedScrollController controller = IndexedScrollController(initialIndex: 5);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -1183,7 +1177,7 @@ class _ContactUsPageState extends State<ContactUsPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               ],
             )
@@ -1220,7 +1214,6 @@ class _ContactUsPageState extends State<ContactUsPage> {
       );
 }
 }
-
 class  Details{
   String name, designation,email;
   int phone;
@@ -1228,8 +1221,6 @@ class  Details{
    name = this.name;
    designation = this.designation;
    email = this.email;
-   phone = this.phone; 
+   phone = this.phone;
   }
 }*/
-
-

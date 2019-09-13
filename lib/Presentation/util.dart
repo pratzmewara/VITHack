@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Color background=Colors.white;
+Color background=Colors.grey[50];
 Color white=Colors.white;
 
 TextStyle intoTitleStyle=TextStyle(
