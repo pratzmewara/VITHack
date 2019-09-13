@@ -21,7 +21,7 @@ class _ContactUsPageState extends State<ContactUsPage> {
 
   @override
   void initState() {
-    super.initState(); 
+    super.initState();
     addList();
   }
 
@@ -42,26 +42,27 @@ class _ContactUsPageState extends State<ContactUsPage> {
   "rk61198@gmail.com","","sameeranbandishti@ieee.org","shreyansh.ojha98@gmail.com","shaanvimehta@gmail.com","harshilparekh15@gmail.com"];
 
 
+
   addList(){
     setState(() {
-    list.add(new Details("Name", "Designation", "Email", 123456789));
-    list.add(new Details("Name", "Designation", "Email", 123456789));
-    list.add(new Details("Name", "Designation", "Email", 123456789));
-    list.add(new Details("Name", "Designation", "Email", 123456789));
-    list.add(new Details("Name", "Designation", "Email", 123456789));
-    list.add(new Details("Name", "Designation", "Email", 123456789));
-    list.add(new Details("Name", "Designation", "Email", 123456789));
-    list.add(new Details("Name", "Designation", "Email", 123456789));
-    list.add(new Details("Name", "Designation", "Email", 123456789));
-    list.add(new Details("Name", "Designation", "Email", 123456789));
-    list.add(new Details("Name", "Designation", "Email", 123456789));
-     });
+      list.add(new Details("Name", "Designation", "Email", 123456789));
+      list.add(new Details("Name", "Designation", "Email", 123456789));
+      list.add(new Details("Name", "Designation", "Email", 123456789));
+      list.add(new Details("Name", "Designation", "Email", 123456789));
+      list.add(new Details("Name", "Designation", "Email", 123456789));
+      list.add(new Details("Name", "Designation", "Email", 123456789));
+      list.add(new Details("Name", "Designation", "Email", 123456789));
+      list.add(new Details("Name", "Designation", "Email", 123456789));
+      list.add(new Details("Name", "Designation", "Email", 123456789));
+      list.add(new Details("Name", "Designation", "Email", 123456789));
+      list.add(new Details("Name", "Designation", "Email", 123456789));
+    });
     //print(list[0].name.toSColors.white,tring());
   }
 
   List<Details> list=[];
   SnaplistController snaplistController = new SnaplistController(
-    initialPosition: 3
+      initialPosition: 3
   );
 
   @override
@@ -181,6 +182,7 @@ child:Row(
       snaplistController: snaplistController,
   )
    /* Column(
+
     mainAxisSize: MainAxisSize.min,
     crossAxisAlignment: CrossAxisAlignment.center,
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -206,7 +208,7 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               Text("Name"),
               Text("Designation")
@@ -259,7 +261,7 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               Text("Name"),
               Text("Designation")
@@ -312,7 +314,7 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               Text("Name"),
               Text("Designation")
@@ -365,7 +367,7 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               Text("Name"),
               Text("Designation")
@@ -418,7 +420,7 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               Text("Name"),
               Text("Designation")
@@ -471,7 +473,7 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               Text("Name"),
               Text("Designation")
@@ -524,7 +526,7 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               Text("Name"),
               Text("Designation")
@@ -577,7 +579,7 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               Text("Name"),
               Text("Designation")
@@ -630,7 +632,7 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               Text("Name"),
               Text("Designation")
@@ -683,7 +685,7 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               Text("Name"),
               Text("Designation")
@@ -736,7 +738,7 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               Text("Name"),
               Text("Designation")
@@ -789,7 +791,7 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               Text("Name"),
               Text("Designation")
@@ -842,7 +844,7 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               Text("Name"),
               Text("Designation")
@@ -895,7 +897,7 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               Text("Name"),
               Text("Designation")
@@ -948,7 +950,7 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               Text("Name"),
               Text("Designation")
@@ -1001,7 +1003,7 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               Text("Name"),
               Text("Designation")
@@ -1054,7 +1056,7 @@ child:Row(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               Text("Name"),
               Text("Designation")
@@ -1087,22 +1089,22 @@ child:Row(
           ),
       ),
     ],),*/
-    //)
-    //);
-    //}
-    //)
-    ));
-}
+          //)
+          //);
+          //}
+          //)
+        ));
+  }
 }
 
 class  Details{
   String name, designation,email;
   int phone;
   Details(String name, String designation,String email, int phone){
-   name = this.name;
-   designation = this.designation;
-   email = this.email;
-   phone = this.phone; 
+    name = this.name;
+    designation = this.designation;
+    email = this.email;
+    phone = this.phone;
   }
 }
 
@@ -1116,22 +1118,18 @@ import 'dart:async';
 import 'package:flip_card/flip_card.dart';
 import 'package:snaplist/snaplist.dart';
 import 'package:indexed_list_view/indexed_list_view.dart';
-
 class ContactUsPage extends StatefulWidget {
   ContactUsPage({Key key,this.restaurantID,this.workerID}) : super(key: key);
   final String restaurantID, workerID;
-
   @override
   _ContactUsPageState createState() => _ContactUsPageState();
 }
 class _ContactUsPageState extends State<ContactUsPage> {
-
   @override
   void initState() {
-    super.initState(); 
+    super.initState();
     addList();
   }
-
   addList(){
     setState(() {
     list.add(new Details("Name", "Designation", "Email", 123456789));
@@ -1148,10 +1146,8 @@ class _ContactUsPageState extends State<ContactUsPage> {
      });
     //print(list[0].name.toString());
   }
-
   List<Details> list=[];
   static IndexedScrollController controller = IndexedScrollController(initialIndex: 5);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -1193,7 +1189,7 @@ class _ContactUsPageState extends State<ContactUsPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[ 
+            children: <Widget>[
               Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
               ],
             )
@@ -1230,7 +1226,6 @@ class _ContactUsPageState extends State<ContactUsPage> {
       );
 }
 }
-
 class  Details{
   String name, designation,email;
   int phone;
@@ -1238,8 +1233,6 @@ class  Details{
    name = this.name;
    designation = this.designation;
    email = this.email;
-   phone = this.phone; 
+   phone = this.phone;
   }
 }*/
-
-
