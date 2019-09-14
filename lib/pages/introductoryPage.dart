@@ -270,8 +270,8 @@ Color(0xFF2196F3),
                       ),
                       onTap: (){
                         // sendToServer();
-                        Navigator.of(context).popUntil((route) => route.isFirst);
-                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => LoginScreen()));
+
+                        Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => LoginScreen()));
                         }, 
                     ),
                       GestureDetector(

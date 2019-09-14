@@ -83,8 +83,8 @@ Container(
 child:Row(
   crossAxisAlignment: CrossAxisAlignment.start,
   children: <Widget>[
-  Container( margin: EdgeInsets.fromLTRB(32, 8, 16, 8),
-  child: Text("Contact Us" , style: TextStyle(fontSize:23.0, fontWeight: FontWeight.bold, color: Colors.black),textAlign: TextAlign.left,),),
+  Container( margin: EdgeInsets.fromLTRB(20, 8, 16, 8),
+  child: Text("Contact Us" , style: TextStyle(fontSize:26.0, fontWeight: FontWeight.bold, color: Colors.black),textAlign: TextAlign.left,),),
       
 ],)),
   preferredSize: const Size.fromHeight(50.0)),

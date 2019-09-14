@@ -94,6 +94,7 @@ class _PartnersPageState extends State<PartnersPage> {
 //      centerTitle: true,
       pinned: true,
       flexibleSpace: FlexibleSpaceBar(
+        titlePadding: EdgeInsets.only(left: 20),
 //        centerTitle: true,
         title: Text("About",
             style: TextStyle(
@@ -125,7 +126,7 @@ class _PartnersPageState extends State<PartnersPage> {
                     unselectedLabelColor: Colors.grey,
                     tabs: [
                       Tab(child:Container(
-                          margin: EdgeInsets.only(left: 64,right: 32),
+                          margin: EdgeInsets.only(left: 4,right: 32),
                           child: Text("Partners", style: TextStyle(fontSize: 26.0),)),),
                       Tab(child:Container(
                         margin: EdgeInsets.only(left: 32,right: 32),
