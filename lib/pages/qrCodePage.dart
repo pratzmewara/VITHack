@@ -22,6 +22,16 @@ class _QRCodePageState extends State<QRCodePage> {
   void initState() {
     super.initState(); 
     getEmail();
+    scrollController = new ScrollController();
+    scrollController.addListener(() => setState(() {}));
+  }
+
+  ScrollController scrollController;
+
+  @override
+  void dispose() {
+    scrollController.dispose();
+    super.dispose();
   }
 
   int currentIndex=0;
@@ -64,9 +74,33 @@ class _QRCodePageState extends State<QRCodePage> {
 
   @override
   Widget build(BuildContext context) {
+
+    var flexibleSpaceWidget = new SliverAppBar(
+      backgroundColor: background,
+      expandedHeight: 120.0,
+      elevation: 0,
+      pinned: true,
+
+      flexibleSpace: FlexibleSpaceBar(
+
+        titlePadding: EdgeInsets.only(left: 20,bottom: 30),
+        title: Container(
+          margin: EdgeInsets.all(0),
+          padding: EdgeInsets.all(0),
+          child : Text("QR Code",
+            style: TextStyle(
+            color: Colors.black,
+            fontSize: 18.0,
+            ),
+
+      ),),
+    ),
+
+    );
+
     print("Email is "+email+currentIndex.toString());
     return Scaffold(
-      appBar: AppBar(
+    /*  appBar: AppBar(
         elevation: 0,
         title: Text('',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, fontSize: 23.0),),
         backgroundColor :background,
@@ -74,21 +108,29 @@ class _QRCodePageState extends State<QRCodePage> {
          bottom: PreferredSize(
 child: 
 Container(
+   padding: EdgeInsets.only(left: MediaQuery.of(context).size.width*0.05, right: MediaQuery.of(context).size.width*0.05),
 child:Row(
   crossAxisAlignment: CrossAxisAlignment.start,
   children: <Widget>[
-
-  Container( margin: EdgeInsets.fromLTRB(20, 8, 16, 8),
-  child: Text("QR Code" , style: TextStyle(fontSize:26.0, fontWeight: FontWeight.w600, color: Colors.black),textAlign: TextAlign.left,),),
+  Container( 
+    //margin: EdgeInsets.fromLTRB(20, 8, 16, 8),
+  child: Text("QR Code" , style: TextStyle(fontSize:24.0, fontWeight: FontWeight.w600, color: Colors.black),textAlign: TextAlign.left,),),
       
 ],)),
   preferredSize: const Size.fromHeight(50.0)),
      
-     ),
+     ),*/
       backgroundColor: background,
-      body: Center(
+      body: NestedScrollView(
+          controller: scrollController,
+          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+            return <Widget>[
+              flexibleSpaceWidget,
+            ];
+          },
+          body:Center(
         child : currentIndex==0 ? noQrPage() : qrPage()
-      )
+      ))
     );
 }
 

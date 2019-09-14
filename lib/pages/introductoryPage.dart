@@ -28,7 +28,7 @@ class IntroScreenState extends State<IntroScreen> {
     slides.add(
       new Slide(
         widgetTitle: Container(
-          margin: EdgeInsets.all(16),
+          // margin: EdgeInsets.only(left: 16, right: 16.0),
           child: 
         
         Column(
@@ -39,21 +39,19 @@ class IntroScreenState extends State<IntroScreen> {
             Text("VIT Hack",style:intoTitleBlueStyle,textAlign: TextAlign.start,)
           ],
         ),),
-        
-        
         description:
             "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.",
         styleDescription: TextStyle(
             color: Colors.black,
             fontSize: 16.0,
             fontFamily: 'Raleway'),
-        pathImage: 'lib/assests/logo.png',
+        pathImage: 'lib/assests/aboutus.png',
       ),
     );
     slides.add(
       new Slide(
         widgetTitle: Container(
-          margin: EdgeInsets.all(16),
+         // margin: EdgeInsets.only(left: 16, right: 16.0),
           child: 
         
         Column(
@@ -75,13 +73,13 @@ class IntroScreenState extends State<IntroScreen> {
             color: Colors.black,
             fontSize: 16.0,
             fontFamily: 'Raleway'),
-        pathImage: 'lib/assests/logo.png',
+        pathImage: 'lib/assests/aboutus.png',
       ),
     );
     slides.add(
       new Slide(
          widgetTitle: Container(
-          margin: EdgeInsets.all(16),
+          //margin: EdgeInsets.only(left: 16, right: 16.0),
           child: 
         
         Column(
@@ -103,7 +101,7 @@ class IntroScreenState extends State<IntroScreen> {
             color: Colors.black,
             fontSize: 16.0,
             fontFamily: 'Raleway'),
-        pathImage: 'lib/assests/logo.png',
+        pathImage: 'lib/assests/aboutus.png',
       ),
     );
   }
@@ -137,10 +135,11 @@ class IntroScreenState extends State<IntroScreen> {
         width: double.infinity,
         height: double.infinity,
         child: Container(
-          margin: EdgeInsets.only(bottom: 60.0, top: 60.0),
+         // margin: EdgeInsets.only(bottom: 60.0, top: 60.0),
           child: ListView(
             children: <Widget>[
               Container(
+                alignment: Alignment(-1, 0),
                 child: currentSlide.widgetTitle,
                 // child: Text(
                   
@@ -158,7 +157,7 @@ class IntroScreenState extends State<IntroScreen> {
               )),
               
               Container(
-                padding: EdgeInsets.only(left: 16,right: 16),
+                //padding: EdgeInsets.only(left: 16,right: 16),
                 child: Text(
                   currentSlide.description,
                   style: currentSlide.styleDescription,
@@ -178,8 +177,10 @@ class IntroScreenState extends State<IntroScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(body:Container(
+    return new Scaffold(
+      body:Container(
       color:Colors.white,
+      padding: EdgeInsets.only(left: MediaQuery.of(context).size.width*0.05, right: MediaQuery.of(context).size.width*0.05),
       height: MediaQuery.of(context).size.height,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,

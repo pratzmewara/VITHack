@@ -91,6 +91,7 @@ class _SplashScreenState extends State<SplashScreen> {
               child: Text(
                         "VIT Hack",
                         style: TextStyle(
+                          fontFamily: 'Campton',
                           color: Colors.blue,
                             fontWeight: FontWeight.w900,
                             fontSize: 32.0),

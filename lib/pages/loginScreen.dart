@@ -56,25 +56,16 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget FormUI() {
 
     Widget loadingIndicator =_load? new Container(
-        color: Colors.transparent,
+        color: Colors.white,
         height: MediaQuery.of(context).size.height,
         width:  MediaQuery.of(context).size.width,
-        child:Center( child:
+        child: Center( child:
         Container(
-          height: 200,
-          width: 250,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10.0),
-           gradient:RadialGradient(
-             stops: [ 0.1,10],
-             colors: [
-               Colors.grey[200],
-               Colors.grey[400],
-             ],),
-          ),
+          height: MediaQuery.of(context).size.height/4,
+          width: MediaQuery.of(context).size.width,
           child: new Padding(padding: const EdgeInsets.all(16.0),child: new Center(child:Container(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
                   new CircularProgressIndicator(),
                   Padding(padding: EdgeInsets.all(5),),
@@ -85,7 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
         ))):new Container();
 
     return  Scaffold(
-      appBar: AppBar(title:Text("Login",style: TextStyle(color: Colors.black),),
+      appBar: _load ? AppBar(backgroundColor: Colors.white, elevation: 0,): AppBar(title:Text("Login",style: TextStyle(color: Colors.black),),
       centerTitle: true,
         iconTheme: IconThemeData(
           color: Colors.black, //change your color here
@@ -99,7 +90,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
       SingleChildScrollView(
       child : Container(
-        height: MediaQuery.of(context).size.height-100,
+        height: MediaQuery.of(context).size.height-60,
         width: MediaQuery.of(context).size.width,
         padding: const EdgeInsets.all(16.0),
         color:white,
@@ -130,6 +121,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Container(
                         margin: EdgeInsets.only(top: MediaQuery.of(context).size.height/20),
                         width: MediaQuery.of(context).size.width/2,
+                        height: 55.0,
                         alignment: Alignment.center,
                          decoration: BoxDecoration(
 
@@ -152,7 +144,7 @@ Color(0xFF2196F3),
                                                             
                   boxShadow:<BoxShadow>[
                     BoxShadow(
-                      blurRadius: 10.0,
+                      blurRadius: 5.0,
                       color:Colors.grey[400] ,
                       offset: Offset(0.5,0.5)
                     )
@@ -173,11 +165,12 @@ Color(0xFF2196F3),
                       child: Container(
                         margin: EdgeInsets.only(top: MediaQuery.of(context).size.height/20),
                         alignment: Alignment.center,
+                        height: 55.0,
                         width: MediaQuery.of(context).size.width/2,
                          decoration: BoxDecoration(
                   boxShadow:<BoxShadow>[
                     BoxShadow(
-                      blurRadius: 10.0,
+                      blurRadius: 5.0,
                       color:Colors.grey[400] ,
                       offset: Offset(0.5,0.5)
                     )
@@ -409,9 +402,6 @@ Color(0xFF2196F3),
 
             }
           });
-
-
-
 
     }
 

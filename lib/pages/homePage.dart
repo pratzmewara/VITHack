@@ -309,6 +309,7 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
             ];
           },
           body:Container(
+            //padding: EdgeInsets.only(left: MediaQuery.of(context).size.width*0.05, right: MediaQuery.of(context).size.width*0.05),
               color: background,
               child: new TabBarView(
               children: <Widget>[

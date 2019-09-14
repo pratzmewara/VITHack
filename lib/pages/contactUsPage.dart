@@ -26,20 +26,20 @@ class _ContactUsPageState extends State<ContactUsPage> {
   }
 
 
-  List<String> name=["Druvang Wagh","Hardik Kataria","Ekaansh Arora","Ayush Priya","Samarth Nayyar","Kriti Kacker","Naynika Wason","Dhruvika Sharma","Shaanvi Mehta","Pranav Sharma",
+  List<String> name=["Druvang Wagh","Hardik Kataria","Ekaansh Arora","Ayush Priya","Samarth Nayyar","Kriti Kacker","Naynika Wason","Meherdeep Thakur","Dhruvika Sharma","Shaanvi Mehta","Pranav Sharma",
 "Rohan Kumar", "Vipul Kothari","Sameeran Bandishti","Shreyansh Ojha","Harshil Parekh"];
 
-  List<String> des=["(Director","(Co-Director","(Co-Director","Organizer (Technical","Organizer (Design","Organizer (Participants","Organizer (Content","Organizer (Collaboration","Organizer (IR","Organizer (Collaboration",
+  List<String> des=["(Director","(Co-Director","(Co-Director","Organizer (Technical","Organizer (Design","Organizer (Participants","Organizer (Content","Organizer (Collaboration","Organizer (Sponsorship","Organizer (IR","Organizer (Collaboration",
 "Organizer (Finance", "Organizer (Logistics","Organizer (Participants","Organizer (Logistics","Organizer (Marketing"];
 
   List<String> image=["lib/assests/Druvang_Wagh.jpg", "lib/assests/Hardik_Kataria.jpg", "lib/assests/Ekaansh_Arora.jpg", "lib/assests/Ayush_Priya.jpg", "lib/assests/Samarth_Nayyar.jpg", "lib/assests/Kriti_Kacker.jpg",
-  "lib/assests/Naynika_Wason.jpg","lib/assests/Dhruvika_Sharma.JPG",  "lib/assests/Shaanvi_mehta.jpg","lib/assests/Pranav_Sharma.jpg", "lib/assests/Rohan_Kumar.jpg", "lib/assests/Vipul_Kothari.jpg", "lib/assests/Sameeran_Bandishti.jpg", 
+  "lib/assests/Naynika_Wason.jpg","lib/assests/Meherdeep_Thakur.jpg" , "lib/assests/Dhruvika_Sharma.JPG",  "lib/assests/Shaanvi_mehta.jpg","lib/assests/Pranav_Sharma.jpg", "lib/assests/Rohan_Kumar.jpg", "lib/assests/Vipul_Kothari.jpg", "lib/assests/Sameeran_Bandishti.jpg", 
   "lib/assests/Shreyansh_Ojha.jpg", "lib/assests/Harshil_parekh.jpg"];
 
-  List<String> number=["8369091192","8860445756","8860092479","7530000626","9818288112","8004936388","8894721774","8270796086","9818489663","9811069173",
+  List<String> number=["8369091192","8860445756","8860092479","7530000626","9818288112","8004936388","8894721774","8700865402","8270796086","9818489663","9811069173",
   "9629888511","9460284864","7350190101","7023398836","9624099868"];
 
-  List<String> email =["dhruvang.wagh@gmail.com","hardikkataria2699@gmail.com","ekaansh68@gmail.com","ayushpriya10@gmail.com","samarthnayyar123@gmail.com","kritikacker12@gmail.com","nay9139@gmail.com","dhruvika.s20@gmail.com","shaanvimehta@gmail.com","pspranavsharma9@gmail.com",
+  List<String> email =["dhruvang.wagh@gmail.com","hardikkataria2699@gmail.com","ekaansh68@gmail.com","ayushpriya10@gmail.com","samarthnayyar123@gmail.com","kritikacker12@gmail.com","nay9139@gmail.com","meherdeept@gmail.com","dhruvika.s20@gmail.com","shaanvimehta@gmail.com","pspranavsharma9@gmail.com",
   "rk61198@gmail.com","vipul16kothari@gmail.com","sameeranbandishti@ieee.org","shreyansh.ojha98@gmail.com","harshilparekh15@gmail.com"];
 
 
@@ -81,18 +81,21 @@ class _ContactUsPageState extends State<ContactUsPage> {
          bottom: PreferredSize(
 child: 
 Container(
+   padding: EdgeInsets.only(left: MediaQuery.of(context).size.width*0.05, right: MediaQuery.of(context).size.width*0.05),
 child:Row(
   crossAxisAlignment: CrossAxisAlignment.start,
   children: <Widget>[
-  Container( margin: EdgeInsets.fromLTRB(20, 8, 16, 8),
-  child: Text("Contact Us" , style: TextStyle(fontSize:26.0, fontWeight: FontWeight.bold, color: Colors.black),textAlign: TextAlign.left,),),
+  Container( 
+    //margin: EdgeInsets.fromLTRB(20, 8, 16, 8),
+  child: Text("Contact Us" , style: TextStyle(fontSize:26.0, fontWeight: FontWeight.w500, color: Colors.black),textAlign: TextAlign.left,),),
       
 ],)),
-  preferredSize: const Size.fromHeight(50.0)),
+  preferredSize: const Size.fromHeight(35.0)),
       ),
       backgroundColor:background,
       body: Container(
         color: background,
+        padding: EdgeInsets.only(left: MediaQuery.of(context).size.width*0.05, right: MediaQuery.of(context).size.width*0.05),
         width: MediaQuery.of(context).size.width,
     child: SnapList(
     axis: Axis.vertical,

@@ -23,7 +23,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
-  url_launcher: ^5.1.3
+  url_launcher:
 
   shared_preferences:
   fluttertoast: ^3.0.4
@@ -98,6 +98,8 @@ flutter:
     - lib/assests/yourstory.png
     - lib/assests/zeit.svg
     - lib/assests/vicara.jpg
+    - lib/assests/aboutus.png
+    - lib/assests/Meherdeep_Thakur.jpg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -112,9 +114,13 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-     - family: MyFlutterApp
-       fonts:
-         - asset: lib/fonts/MyFlutterApp.ttf
+    - family: MyFlutterApp
+      fonts:
+        - asset: lib/fonts/MyFlutterApp.ttf
+
+    - family: Campton
+      fonts:
+        - asset: lib/fonts/CamptonExtraBold.ttf
 #         - asset: fonts/Schyler-Italic.ttf
 #           style: italic
   #   - family: Trajan Pro

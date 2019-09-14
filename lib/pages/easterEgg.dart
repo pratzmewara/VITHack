@@ -74,6 +74,7 @@ class EasterEggState extends State<EasterEgg>{
     backgroundColor: background,
     body: SingleChildScrollView(
       child: Container(
+         padding: EdgeInsets.only(left: MediaQuery.of(context).size.width*0.05, right: MediaQuery.of(context).size.width*0.05),
       height: MediaQuery.of(context).size.height,
       child: Column(
         children: <Widget>[
