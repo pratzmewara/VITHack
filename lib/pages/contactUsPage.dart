@@ -46,6 +46,7 @@ class _ContactUsPageState extends State<ContactUsPage> {
 
 
 
+
   addList(){
     setState(() {
       list.add(new Details("Name", "Designation", "Email", 123456789));
@@ -195,13 +196,22 @@ child:Row(
    /* Column(
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> da1d98dab4202ea0f0e424e669f8049eebf88750
 <<<<<<< HEAD
 =======
 
 >>>>>>> Minnor changes
+<<<<<<< HEAD
 >>>>>>> Minnor changes
+=======
+=======
+
+>>>>>>> ec40ccba50a33d873fa3d138bebf9ea82f48eea1
+>>>>>>> da1d98dab4202ea0f0e424e669f8049eebf88750
     mainAxisSize: MainAxisSize.min,
     crossAxisAlignment: CrossAxisAlignment.center,
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
