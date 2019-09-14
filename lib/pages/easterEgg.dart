@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vit_hack/Presentation/util.dart';
+import 'package:vit_hack/Presentation/my_flutter_app_icons.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class EasterEgg extends StatefulWidget{
   @override
@@ -11,6 +13,52 @@ class EasterEgg extends StatefulWidget{
 }
 
 class EasterEggState extends State<EasterEgg>{
+
+
+  _launchURLangad() async {
+    const url = 'https://www.linkedin.com/in/angad-sharma-07bb38122/';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+  _launchURLprateek() async {
+    const url = 'https://www.linkedin.com/in/prateek-mewara-0783b013b/';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  _launchURLayush() async {
+    const url = 'https://www.linkedin.com/in/ayushpriya10/';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  _launchURLsatkriti() async {
+    const url = 'https://www.linkedin.com/in/satkriti-singh-a82712155/';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  _launchURLnikhil() async {
+    const url = 'https://www.linkedin.com/in/nikhil-singh-955995148/';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
   
@@ -31,7 +79,19 @@ class EasterEggState extends State<EasterEgg>{
         children: <Widget>[
            Container(
             padding: EdgeInsets.all(10.0),
-            child: Text("Some text"),
+            child:Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text("Made with"),
+Padding(padding: EdgeInsets.all(2),),
+Icon(MyFlutterApp.heart_1,size: 16,color: Colors.blue,),
+                Padding(padding: EdgeInsets.all(2),),
+                Text(" from "),
+                Image.asset("lib/assests/dsclogo.png",height: 16,),
+                Text(" DSC-VIT")
+
+              ],
+            )
           ),
           Image.asset("lib/assests/group_picture.jpg"),
           Container(
@@ -40,42 +100,63 @@ class EasterEggState extends State<EasterEgg>{
           ),
 
 
-          Container(
-            padding: EdgeInsets.only(top: 10.0, bottom: 5.0),
+        GestureDetector(
+            onTap: (){
+              _launchURLangad();
+            },
+            child:  Container(
+            padding: EdgeInsets.only(top: 16.0, bottom: 5.0),
             child: Text("Angad Sharma", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue, fontSize: 17.0),),
-          ),
+          )),
           Container(
             child: Text("(Backend Developer)"),
           ),
-          Container(
-            padding: EdgeInsets.only(top: 10.0, bottom: 5.0),
+      GestureDetector(
+        onTap: (){
+          _launchURLprateek();
+        },
+         child: Container(
+            padding: EdgeInsets.only(top: 16.0, bottom: 5.0),
             child: Text("Prateek Mewara", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue, fontSize: 17.0),),
-          ),
+          )),
+
           Container(
-            child: Text("(Andriod Developer)"),
+            child: Text("(Android Developer)"),
           ),
+      GestureDetector(
+        onTap: (){
+          _launchURLayush();
+        },child:
           Container(
-            padding: EdgeInsets.only(top: 10.0, bottom: 5.0),
+            padding: EdgeInsets.only(top: 16.0, bottom: 5.0),
             child: Text("Ayush Priya", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue, fontSize: 17.0),),
-          ),
+          )),
           Container(
-            child: Text("(Tech Lead)"),
+            child: Text("(Team Lead)"),
           ),
+      GestureDetector(
+        onTap: (){
+          _launchURLsatkriti();
+        },child:
           Container(
-            padding: EdgeInsets.only(top: 10.0, bottom: 5.0),
+            padding: EdgeInsets.only(top: 16.0, bottom: 5.0),
             child: Text("Satkriti Singh", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue, fontSize: 17.0),),
-          ),
+          )),
           Container(
-            child: Text("(Andriod Developer)"),
+            child: Text("(Android Developer)"),
           ),
+      GestureDetector(
+        onTap: (){
+          _launchURLnikhil();
+        },child:
           Container(
-            padding: EdgeInsets.only(top: 10.0, bottom: 5.0),
+            padding: EdgeInsets.only(top: 16.0, bottom: 5.0),
             child: Text("Nikhil Singh", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue, fontSize: 17.0),),
-          ),
+          )),
           Container(
             child: Text("(Frontend Developer)"),
           ),
-          
+
         ],
       ),
     ) ),

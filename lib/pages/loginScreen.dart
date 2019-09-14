@@ -363,6 +363,7 @@ Color(0xFF2196F3),
           }
           else{
             s.setEmail(data["email"]);
+            s.setPersonID(code);
             s.setToken(data["token"]);
             setState(() {
               _load=false;
@@ -448,6 +449,7 @@ Color(0xFF2196F3),
           final data = json.decode(response.body);
           s.setEmail(data["email"]);
           s.setToken(data["token"]);
+          s.setPersonID(val);
           setState(() { 
             _load=false;
           });

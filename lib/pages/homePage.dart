@@ -217,7 +217,7 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
 
       flexibleSpace: FlexibleSpaceBar(
 
-        titlePadding: EdgeInsets.only(left: 20),
+        titlePadding: EdgeInsets.only(left: 20,bottom: 30),
         title: Container(
           margin: EdgeInsets.all(0),
           padding: EdgeInsets.all(0),
@@ -225,15 +225,17 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
             style: TextStyle(
             color: Colors.black,
             fontSize: 18.0,
-            )
+            ),
+
       ),),
     ),
-    actions: <Widget>[
+      actions: <Widget>[
         new IconButton(
-          icon: Icon(Icons.power_settings_new, color: Colors.black, ),
+          icon: Icon(Icons.power_settings_new, color: Colors.black, size: 30,),
           onPressed: logOut,
         )
       ],
+
     );
 
 
@@ -267,6 +269,7 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
         ))):new Container();
 
     return  Scaffold(
+
       backgroundColor: background,
       body: Stack(
         children: <Widget>[

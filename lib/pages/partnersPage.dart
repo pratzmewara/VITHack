@@ -94,7 +94,7 @@ class _PartnersPageState extends State<PartnersPage> {
 //      centerTitle: true,
       pinned: true,
       flexibleSpace: FlexibleSpaceBar(
-        titlePadding: EdgeInsets.only(left: 20),
+        titlePadding: EdgeInsets.only(left: 20,bottom: 30),
 //        centerTitle: true,
         title: Text("About",
             style: TextStyle(
