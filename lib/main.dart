@@ -15,7 +15,7 @@ import 'dart:io';
 import 'package:vit_hack/pages/splashScreen.dart';
 
 void main() {
-  debugPaintSizeEnabled = false;  
+  debugPaintSizeEnabled = false;
   runApp(new MyApp());
   }
 

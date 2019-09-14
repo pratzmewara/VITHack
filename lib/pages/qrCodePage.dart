@@ -26,10 +26,12 @@ class _QRCodePageState extends State<QRCodePage> {
 
   int currentIndex=0;
   String email="";
-
+  String id="";
   SharedPreferencesTest s = new SharedPreferencesTest();
   Future<String> futureEmail;
+  Future<String> futureID;
   getEmail() async{
+
     futureEmail=s.getEmail();
     futureEmail.then((res){
 
@@ -43,9 +45,21 @@ class _QRCodePageState extends State<QRCodePage> {
           setState(() {
           email=res; 
           currentIndex=1;
+
     });
        }
     });
+    futureEmail=s.getPersonID();
+    futureEmail.then((res){
+
+        setState(() {
+          id=res;
+
+
+        });
+
+    });
+
   }
 
   @override
@@ -64,7 +78,7 @@ child:Row(
   crossAxisAlignment: CrossAxisAlignment.start,
   children: <Widget>[
 
-  Container( margin: EdgeInsets.fromLTRB(60, 8, 16, 8),
+  Container( margin: EdgeInsets.fromLTRB(20, 8, 16, 8),
   child: Text("QR Code" , style: TextStyle(fontSize:26.0, fontWeight: FontWeight.w600, color: Colors.black),textAlign: TextAlign.left,),),
       
 ],)),
@@ -100,15 +114,38 @@ Widget qrPage(){
         size: 200.0,
       ),
       Container(
-        width: MediaQuery.of(context).size.width,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Column(
           children: <Widget>[
-            Text("Email : ", style: TextStyle(fontWeight: FontWeight.bold),),
-            Text(email)
+            Container(
+                width: MediaQuery.of(context).size.width,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text("Email : ", style: TextStyle(fontWeight: FontWeight.bold,fontSize: MediaQuery.of(context).size.width/25),),
+                    Text(email,style: TextStyle(fontSize: MediaQuery.of(context).size.width/25),),
+
+
+                  ],
+                )
+            ),
+            Padding(padding: EdgeInsets.all(10),),
+            Container(
+                width: MediaQuery.of(context).size.width,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+
+
+                    Text("Team ID : ", style: TextStyle(fontWeight: FontWeight.bold,fontSize: MediaQuery.of(context).size.width/30),),
+                    Text(id,style: TextStyle(fontSize: MediaQuery.of(context).size.width/30),),
+
+                  ],
+                )
+            )
           ],
-        )
+        ),
       )
+
     ],),
     )
     );
@@ -123,7 +160,7 @@ Widget noQrPage(){
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        Text("Log in to redeem your coupons."),
+        Text("Log in to redeem your coupons.",style: TextStyle(fontSize: 16),),
          GestureDetector(
                       child: Container(
                         // margin: EdgeInsets.only(top: MediaQuery.of(context).size.height/20),

@@ -94,6 +94,7 @@ class _PartnersPageState extends State<PartnersPage> {
 //      centerTitle: true,
       pinned: true,
       flexibleSpace: FlexibleSpaceBar(
+        titlePadding: EdgeInsets.only(left: 20,bottom: 30),
 //        centerTitle: true,
         title: Text("About",
             style: TextStyle(
@@ -125,7 +126,7 @@ class _PartnersPageState extends State<PartnersPage> {
                     unselectedLabelColor: Colors.grey,
                     tabs: [
                       Tab(child:Container(
-                          margin: EdgeInsets.only(left: 64,right: 32),
+                          margin: EdgeInsets.only(left: 4,right: 32),
                           child: Text("Partners", style: TextStyle(fontSize: 26.0),)),),
                       Tab(child:Container(
                         margin: EdgeInsets.only(left: 32,right: 32),
@@ -325,9 +326,7 @@ Widget PromotionsPage(){
                       boxShadow:<BoxShadow>[
                         BoxShadow(blurRadius: 2.0,
                             color:Colors.grey[400] ,
-                            offset: Offset(0.5,0.5))
-
-                      ],
+                            offset: Offset(0.5,0.5))],
                       shape: BoxShape.rectangle,
                       color: Colors.white ,
                       borderRadius: BorderRadius.all(Radius.circular(10))

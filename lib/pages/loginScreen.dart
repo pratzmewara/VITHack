@@ -87,9 +87,12 @@ class _LoginScreenState extends State<LoginScreen> {
     return  Scaffold(
       appBar: AppBar(title:Text("Login",style: TextStyle(color: Colors.black),),
       centerTitle: true,
+        iconTheme: IconThemeData(
+          color: Colors.black, //change your color here
+        ),
         backgroundColor: background,
         elevation: 0,
-        automaticallyImplyLeading: false,
+        automaticallyImplyLeading: true,
       ),
     body:Stack(
       children: <Widget>[
@@ -360,6 +363,7 @@ Color(0xFF2196F3),
           }
           else{
             s.setEmail(data["email"]);
+            s.setPersonID(code);
             s.setToken(data["token"]);
             setState(() {
               _load=false;
@@ -445,6 +449,7 @@ Color(0xFF2196F3),
           final data = json.decode(response.body);
           s.setEmail(data["email"]);
           s.setToken(data["token"]);
+          s.setPersonID(val);
           setState(() { 
             _load=false;
           });

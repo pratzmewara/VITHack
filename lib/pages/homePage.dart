@@ -136,11 +136,17 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
 
   logOut() async{
     if(currentIndex == 0){
+      s.setEmail("");
+      s.setLogincheck("false");
+      s.setToken("");
       Navigator.of(context).popUntil((route) => route.isFirst);
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => LoginScreen()));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => IntroScreen()));
     }
      
      else{
+      setState(() {
+        _load=true;
+      });
        Future fetchPosts(http.Client client) async {
         print("In logout");
       
@@ -148,9 +154,7 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
 
         print(response.statusCode);
         print(response.body);
-        setState(() {
-         _load=true; 
-        });
+
         
         if (response.statusCode == 200) {
           setState(() {
@@ -210,7 +214,10 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
       expandedHeight: 120.0,
       elevation: 0,
       pinned: true,
+
       flexibleSpace: FlexibleSpaceBar(
+
+        titlePadding: EdgeInsets.only(left: 20,bottom: 30),
         title: Container(
           margin: EdgeInsets.all(0),
           padding: EdgeInsets.all(0),
@@ -218,15 +225,17 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
             style: TextStyle(
             color: Colors.black,
             fontSize: 18.0,
-            )
+            ),
+
       ),),
     ),
-    actions: <Widget>[
+      actions: <Widget>[
         new IconButton(
-          icon: Icon(Icons.power_settings_new, color: Colors.black, ),
+          icon: Icon(Icons.power_settings_new, color: Colors.black, size: 30,),
           onPressed: logOut,
         )
       ],
+
     );
 
 
@@ -260,6 +269,7 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
         ))):new Container();
 
     return  Scaffold(
+
       backgroundColor: background,
       body: Stack(
         children: <Widget>[
@@ -281,7 +291,7 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
                     tabs: [
                       Tab(child:Container(
                         color:background,
-                          padding: EdgeInsets.only(left: 32,right: 32),
+                          padding: EdgeInsets.only(left:4 ,right: 32),
                           child: Text("Day 1", style: TextStyle(fontSize: 26.0,fontWeight: FontWeight.w500),)),),
                       Tab(child:Container(
                         color:background,
@@ -462,13 +472,16 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
   }
   Widget DayOne(){
     return Container(
-        //padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
+
+
         margin: EdgeInsets.only(top: 10.0, left:  MediaQuery.of(context).size.width/20),
+
         alignment: Alignment.centerLeft,
         child : Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+
             Container(
               margin: EdgeInsets.only(top: 10.0, bottom: 20.0),
               child : Column(
@@ -480,7 +493,11 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
                       child : Text('Bootcamp'  , style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold,)),
                     ),
                     Container(
+
                         margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left:  MediaQuery.of(context).size.width/20),
+
+
+
                         child : Row(
                           children: <Widget>[
                             bullet(),
@@ -492,11 +509,13 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
                         )
                     ),
                     Container(
+
                       margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left:  MediaQuery.of(context).size.width/20),
                       child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
                     ),
                     Container(
                         margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left:  MediaQuery.of(context).size.width/20),
+
                         child : Row(
                           children: <Widget>[
                             bullet(),
@@ -508,11 +527,13 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
                         )
                     ),
                     Container(
+
                       margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left:  MediaQuery.of(context).size.width/20),
                       child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
                     ),
                     Container(
                         margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left:  MediaQuery.of(context).size.width/20),
+
                         child : Row(
                           children: <Widget>[
                             bullet(),
@@ -524,7 +545,10 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
                         )
                     ),
                     Container(
+
                       margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left:  MediaQuery.of(context).size.width/20),
+
+
                       child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
                     ),
 
