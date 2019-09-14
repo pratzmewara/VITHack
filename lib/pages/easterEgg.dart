@@ -39,6 +39,7 @@ class EasterEggState extends State<EasterEgg>{
             child: Text("From left to right:"),
           ),
 
+
           Container(
             padding: EdgeInsets.only(top: 10.0, bottom: 5.0),
             child: Text("Angad Sharma", style: TextStyle(fontWeight: FontWeight.bold),),
@@ -74,6 +75,7 @@ class EasterEggState extends State<EasterEgg>{
           Container(
             child: Text("Frontend Developer"),
           ),
+
 
         ],
       ),
