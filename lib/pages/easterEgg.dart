@@ -32,8 +32,9 @@ class EasterEggState extends State<EasterEgg>{
           ),
           Text("Angad Sharma- Backend Developer"),
           Text("Prateek Mewara- Andriod Developer"),
+           Text("Ayush Priya- Tech Lead"),
           Text("Satkriti Singh- Android Developer"),
-          Text("Ayush Priya- Tech Lead"),
+         
           Text("Nikhil Singh- Frontend Developer")
         ],
       ),

@@ -639,30 +639,26 @@ indicator:BoxDecoration(color: background),
         ));
   }
   Widget DayOne(){
-    return  Container(
+    return Container(
+        padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
+        margin: EdgeInsets.only(top: 10.0, left: 32.0),
+        alignment: Alignment.centerLeft,
+        child : Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
 
-            padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
-            margin: EdgeInsets.only(top: 10.0, left: 32.0),
-
-            alignment: Alignment.centerLeft,
-          child : Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-       
-              Container(
-                margin: EdgeInsets.only(top: 10.0, bottom: 20.0),
-                child : Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Container(
-                        padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/20,right: MediaQuery.of(context).size.width/20),
+            Container(
+              margin: EdgeInsets.only(top: 10.0, bottom: 20.0),
+              child : Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Container(
                       margin: EdgeInsets.only(top: 10.0, bottom: 20.0),
-                        child : Text('Bootcamp'  , style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold,)),
-                      ),
-                      Container(
-
+                      child : Text('Bootcamp'  , style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold,)),
+                    ),
+                    Container(
                         margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left: 12),
                         child : Row(
                           children: <Widget>[
@@ -673,47 +669,47 @@ indicator:BoxDecoration(color: background),
                             Text('10:00 am - 3:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
                           ],
                         )
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left: 12),
-                          child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
-                      ),
-                      Container(
-                          margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left: 12),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left: 12),
+                      child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
+                    ),
+                    Container(
+                        margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left: 12),
+                        child : Row(
+                          children: <Widget>[
+                            bullet(),
+                            Padding(
+                              padding: EdgeInsets.only(left: 10.0),
+                            ),
+                            Text('10:00 am - 3:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
+                          ],
+                        )
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left: 12),
+                      child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
+                    ),
+                    Container(
+                        margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left: 12),
+                        child : Row(
+                          children: <Widget>[
+                            bullet(),
+                            Padding(
+                              padding: EdgeInsets.only(left: 10.0),
+                            ),
+                            Text('10:00 am - 3:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
+                          ],
+                        )
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left: 12),
+                      child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
+                    ),
 
-                          child : Row(
-                            children: <Widget>[
-                              bullet(),
-                              Padding(
-                                padding: EdgeInsets.only(left: 10.0),
-                              ),
-                              Text('10:00 am - 3:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
-                            ],
-                          )
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left: 12),
-                        child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
-                      ),
-                      Container(
-                          margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left: 12),
-                          child : Row(
-                            children: <Widget>[
-                              bullet(),
-                              Padding(
-                                padding: EdgeInsets.only(left: 10.0),
-                              ),
-                              Text('10:00 am - 3:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
-                            ],
-                          )
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left: 12),
-                        child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
-                      ),
                   ]
               ),),
-            ],
-          ));
+          ],
+        ));
   }
 }
