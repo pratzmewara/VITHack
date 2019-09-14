@@ -325,9 +325,7 @@ Widget PromotionsPage(){
                       boxShadow:<BoxShadow>[
                         BoxShadow(blurRadius: 2.0,
                             color:Colors.grey[400] ,
-                            offset: Offset(0.5,0.5))
-
-                      ],
+                            offset: Offset(0.5,0.5))],
                       shape: BoxShape.rectangle,
                       color: Colors.white ,
                       borderRadius: BorderRadius.all(Radius.circular(10))
