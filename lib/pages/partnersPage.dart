@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:vit_hack/Presentation/util.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class PartnersPage extends StatefulWidget {
   PartnersPage({Key key,this.restaurantID,this.workerID}) : super(key: key);
@@ -398,8 +399,169 @@ Widget PromotionsPage(){
                Image.asset('lib/assests/Honeywell.jpg' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
              ],
            )),),
-           
 
+           Container(
+          // color: Colors.white,
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/4)*3,
+                    height: (MediaQuery.of(context).size.width/4)*3,
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 2.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10))
+          ),
+           child: Column(
+             mainAxisAlignment: MainAxisAlignment.center,
+             children: <Widget>[
+               Image.asset('lib/assests/servify.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+             ],
+           )),
+           Container(
+          // color: Colors.white,
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/4)*3,
+                    height: (MediaQuery.of(context).size.width/4)*3,
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 2.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10))
+          ),
+           child: Column(
+             mainAxisAlignment: MainAxisAlignment.center,
+             children: <Widget>[
+               Image.asset('lib/assests/inversion.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+             ],
+           )),
+           Container(
+          // color: Colors.white,
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/4)*3,
+                    height: (MediaQuery.of(context).size.width/4)*3,
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 2.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10))
+          ),
+           child: Column(
+             mainAxisAlignment: MainAxisAlignment.center,
+             children: <Widget>[
+               Image.asset('lib/assests/deevia.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+             ],
+           )),
+           Container(
+          // color: Colors.white,
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/4)*3,
+                    height: (MediaQuery.of(context).size.width/4)*3,
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 2.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10))
+          ),
+           child: Column(
+             mainAxisAlignment: MainAxisAlignment.center,
+             children: <Widget>[
+               Image.asset('lib/assests/aihub.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+             ],
+           )),
+           Container(
+          // color: Colors.white,
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/4)*3,
+                    height: (MediaQuery.of(context).size.width/4)*3,
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 2.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10))
+          ),
+           child: Column(
+             mainAxisAlignment: MainAxisAlignment.center,
+             children: <Widget>[
+               Image.asset('lib/assests/agri.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+             ],
+           )),
+           Container(
+          // color: Colors.white,
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/4)*3,
+                    height: (MediaQuery.of(context).size.width/4)*3,
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 2.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10))
+          ),
+           child: Column(
+             mainAxisAlignment: MainAxisAlignment.center,
+             children: <Widget>[
+               Image.asset('lib/assests/vicara.jpg' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+             ],
+           )),
+           Container(
+          // color: Colors.white,
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/4)*3,
+                    height: (MediaQuery.of(context).size.width/4)*3,
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 2.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10))
+          ),
+           child: Column(
+             mainAxisAlignment: MainAxisAlignment.center,
+             children: <Widget>[
+               SvgPicture.asset('lib/assests/hpe.svg', semanticsLabel: "Logo",width: (MediaQuery.of(context).size.width/2)-32, height: 100.0),
+               //Image.asset('lib/assests/hpe.svg' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+             ],
+           )),
             ],),
         )
     );
@@ -451,6 +613,53 @@ Widget PromotionsPage(){
                                   Image.asset('lib/assests/challengeRocket.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
                                 ],
                               )),),
+                        Container(
+                            // color: Colors.white,
+                              margin: EdgeInsets.all(12),
+                              width: (MediaQuery.of(context).size.width/4)*3,
+                              height: (MediaQuery.of(context).size.width/4)*3,
+                              padding: EdgeInsets.only(top: 10.0),
+                              decoration: BoxDecoration(
+                                  boxShadow:<BoxShadow>[
+                                    BoxShadow(blurRadius: 2.0,
+                                        color:Colors.grey[400] ,
+                                        offset: Offset(0.5,0.5))
+
+                                  ],
+                                  shape: BoxShape.rectangle,
+                                  color: Colors.white ,
+                                  borderRadius: BorderRadius.all(Radius.circular(10))
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Image.asset('lib/assests/github.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+                                ],
+                              )),
+                              Container(
+                            // color: Colors.white,
+                              margin: EdgeInsets.all(12),
+                              width: (MediaQuery.of(context).size.width/4)*3,
+                              height: (MediaQuery.of(context).size.width/4)*3,
+                              padding: EdgeInsets.only(top: 10.0),
+                              decoration: BoxDecoration(
+                                  boxShadow:<BoxShadow>[
+                                    BoxShadow(blurRadius: 2.0,
+                                        color:Colors.grey[400] ,
+                                        offset: Offset(0.5,0.5))
+
+                                  ],
+                                  shape: BoxShape.rectangle,
+                                  color: Colors.white ,
+                                  borderRadius: BorderRadius.all(Radius.circular(10))
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  SvgPicture.asset('lib/assests/zeit.svg', semanticsLabel: "Logo",width: (MediaQuery.of(context).size.width/2)-32, height: 100.0),
+                                 // Image.asset('lib/assests/zeit.svg' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+                                ],
+                              )),
                       ],),
                   )
               );
@@ -556,6 +765,52 @@ Widget CollaboratorsPage(){
                       Image.asset('lib/assests/edtimes.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
                     ],
                   )),),
+        Container(
+                // color: Colors.white,
+                  margin: EdgeInsets.all(12),
+                  width: (MediaQuery.of(context).size.width/4)*3,
+                  height:(MediaQuery.of(context).size.width/4)*3,
+                  padding: EdgeInsets.only(top: 10.0),
+                  decoration: BoxDecoration(
+                      boxShadow:<BoxShadow>[
+                        BoxShadow(blurRadius: 2.0,
+                            color:Colors.grey[400] ,
+                            offset: Offset(0.5,0.5))
+
+                      ],
+                      shape: BoxShape.rectangle,
+                      color: Colors.white ,
+                      borderRadius: BorderRadius.all(Radius.circular(10))
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Image.asset('lib/assests/tbi.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+                    ],
+                  )),
+                   Container(
+                // color: Colors.white,
+                  margin: EdgeInsets.all(12),
+                  width: (MediaQuery.of(context).size.width/4)*3,
+                  height:(MediaQuery.of(context).size.width/4)*3,
+                  padding: EdgeInsets.only(top: 10.0),
+                  decoration: BoxDecoration(
+                      boxShadow:<BoxShadow>[
+                        BoxShadow(blurRadius: 2.0,
+                            color:Colors.grey[400] ,
+                            offset: Offset(0.5,0.5))
+
+                      ],
+                      shape: BoxShape.rectangle,
+                      color: Colors.white ,
+                      borderRadius: BorderRadius.all(Radius.circular(10))
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Image.asset('lib/assests/yourstory.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+                    ],
+                  ))
             ],),
         )
     );

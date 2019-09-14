@@ -35,6 +35,8 @@ dependencies:
   snaplist:
   indexed_list_view:
 
+  flutter_svg:
+
 
 dev_dependencies:
   http: ^0.12.0+1
@@ -62,27 +64,38 @@ flutter:
     - lib/assests/valeo.png
     - lib/assests/logo.png
     - lib/assests/qr.png
-    - lib/reliance.png
-    - lib/tekno.png
-    - lib/edtimes.png
-    - lib/challengeRocket.png
-    - lib/Ayush_Priya.jpg
-    - lib/Bhavitha_kosaraju.jpg
-    - lib/Dhruvika_Sharma.JPG
-    - lib/Druvang_Wagh.jpg
-    - lib/Ekaansh_Arora.jpg
-    - lib/Hardik_Kataria.jpg
-    - lib/Kriti_Kacker.jpg
-    - lib/Naynika_Wason.jpg
-    - lib/Pranav_Sharma.jpg
-    - lib/Rohan_Kumar.jpg
-    - lib/Samarth_Nayyar.jpg
-    - lib/Sameeran_Bandishti.jpg
-    - lib/Vipul_Kothari.jpg
-    - lib/Shreyansh_Ojha.jpg
-    - lib/Shaanvi_mehta.jpg
-    - lib/Harshil_parekh.jpg
-    - lib/group_picture.jpg
+    - lib/assests/reliance.png
+    - lib/assests/tekno.png
+    - lib/assests/edtimes.png
+    - lib/assests/challengeRocket.png
+    - lib/assests/Ayush_Priya.jpg
+    - lib/assests/Bhavitha_kosaraju.jpg
+    - lib/assests/Dhruvika_Sharma.JPG
+    - lib/assests/Druvang_Wagh.jpg
+    - lib/assests/Ekaansh_Arora.jpg
+    - lib/assests/Hardik_Kataria.jpg
+    - lib/assests/Kriti_Kacker.jpg
+    - lib/assests/Naynika_Wason.jpg
+    - lib/assests/Pranav_Sharma.jpg
+    - lib/assests/Rohan_Kumar.jpg
+    - lib/assests/Samarth_Nayyar.jpg
+    - lib/assests/Sameeran_Bandishti.jpg
+    - lib/assests/Vipul_Kothari.jpg
+    - lib/assests/Shreyansh_Ojha.jpg
+    - lib/assests/Shaanvi_mehta.jpg
+    - lib/assests/Harshil_parekh.jpg
+    - lib/assests/group_picture.jpg
+    - lib/assests/github.png
+    - lib/assests/agri.png
+    - lib/assests/aihub.png
+    - lib/assests/deevia.png
+    - lib/assests/inversion.png
+    - lib/assests/servify.png
+    - lib/assests/hpe.svg
+    - lib/assests/tbi.png
+    - lib/assests/yourstory.png
+    - lib/assests/zeit.svg
+    - lib/assests/vicara.jpg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
