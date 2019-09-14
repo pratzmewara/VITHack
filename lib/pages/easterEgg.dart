@@ -20,7 +20,7 @@ class EasterEggState extends State<EasterEgg>{
         iconTheme: IconThemeData(
         color: Colors.black, //change your color here
         ),
-      title: Text("Tech Team",style: TextStyle(color: Colors.black),),backgroundColor: background,centerTitle: true,
+      title: Text("The Tech Team",style: TextStyle(color: Colors.black),),backgroundColor: background,centerTitle: true,
       elevation: 0,
     ),
     backgroundColor: background,
@@ -33,45 +33,45 @@ class EasterEggState extends State<EasterEgg>{
             padding: EdgeInsets.all(10.0),
             child: Text("Some text"),
           ),
-          Image.asset("lib/group_picture.jpg"),
+          Image.asset("lib/assests/group_picture.jpg"),
           Container(
             padding: EdgeInsets.all(10.0),
             child: Text("From left to right:"),
           ),
           Container(
             padding: EdgeInsets.only(top: 10.0, bottom: 5.0),
-            child: Text("Angad Sharma", style: TextStyle(fontWeight: FontWeight.bold),),
+            child: Text("Angad Sharma", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue, fontSize: 17.0),),
           ),
           Container(
-            child: Text("Backend Developer"),
-          ),
-          Container(
-            padding: EdgeInsets.only(top: 10.0, bottom: 5.0),
-            child: Text("Prateek Mewara", style: TextStyle(fontWeight: FontWeight.bold),),
-          ),
-          Container(
-            child: Text("Andriod Developer"),
+            child: Text("(Backend Developer)"),
           ),
           Container(
             padding: EdgeInsets.only(top: 10.0, bottom: 5.0),
-            child: Text("Ayush Priya", style: TextStyle(fontWeight: FontWeight.bold),),
+            child: Text("Prateek Mewara", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue, fontSize: 17.0),),
           ),
           Container(
-            child: Text("Tech Lead"),
-          ),
-          Container(
-            padding: EdgeInsets.only(top: 10.0, bottom: 5.0),
-            child: Text("Satkriti Singh", style: TextStyle(fontWeight: FontWeight.bold),),
-          ),
-          Container(
-            child: Text("Andriod Developer"),
+            child: Text("(Andriod Developer)"),
           ),
           Container(
             padding: EdgeInsets.only(top: 10.0, bottom: 5.0),
-            child: Text("Nikhil Singh", style: TextStyle(fontWeight: FontWeight.bold),),
+            child: Text("Ayush Priya", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue, fontSize: 17.0),),
           ),
           Container(
-            child: Text("Frontend Developer"),
+            child: Text("(Tech Lead)"),
+          ),
+          Container(
+            padding: EdgeInsets.only(top: 10.0, bottom: 5.0),
+            child: Text("Satkriti Singh", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue, fontSize: 17.0),),
+          ),
+          Container(
+            child: Text("(Andriod Developer)"),
+          ),
+          Container(
+            padding: EdgeInsets.only(top: 10.0, bottom: 5.0),
+            child: Text("Nikhil Singh", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue, fontSize: 17.0),),
+          ),
+          Container(
+            child: Text("(Frontend Developer)"),
           ),
         ],
       ),

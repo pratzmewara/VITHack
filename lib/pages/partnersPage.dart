@@ -286,65 +286,32 @@ Widget PromotionsPage(){
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
+            Container(
+          // color: Colors.white,
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/4)*3,
+                    height: (MediaQuery.of(context).size.width/4)*3,
+          padding: EdgeInsets.all(40.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 2.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
 
-            GestureDetector(
-              onTap : (){
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10))
+          ),
+           child: Column(
+             mainAxisAlignment: MainAxisAlignment.center,
+             children: <Widget>[
+               SvgPicture.asset('lib/assests/hpe.svg', semanticsLabel: "Logo",width: (MediaQuery.of(context).size.width/2)-32, height: 100.0),
+               //Image.asset('lib/assests/hpe.svg' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+             ],
+           )),
 
-              },
-              child : Container(
-                // color: Colors.white,
-                  margin: EdgeInsets.all(12),
-                  width: (MediaQuery.of(context).size.width/4)*3,
-                  height: (MediaQuery.of(context).size.width/4)*3,
-                  padding: EdgeInsets.only(top: 10.0),
-                  decoration: BoxDecoration(
-                      boxShadow:<BoxShadow>[
-                        BoxShadow(blurRadius: 2.0,
-                            color:Colors.grey[400] ,
-                            offset: Offset(0.5,0.5))
-
-                      ],
-                      shape: BoxShape.rectangle,
-                      color: Colors.white ,
-                      borderRadius: BorderRadius.all(Radius.circular(10))
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Image.asset('lib/assests/codeasylums.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
-                    ],
-                  )),),
-
-            GestureDetector(
-              onTap : (){
-
-              },
-              child : Container(
-                // color: Colors.white,
-                  margin: EdgeInsets.all(12),
-                  width: (MediaQuery.of(context).size.width/4)*3,
-                  height: (MediaQuery.of(context).size.width/4)*3,
-                  padding: EdgeInsets.only(top: 10.0),
-                  decoration: BoxDecoration(
-                      boxShadow:<BoxShadow>[
-                        BoxShadow(blurRadius: 2.0,
-                            color:Colors.grey[400] ,
-                            offset: Offset(0.5,0.5))
-
-                      ],
-                      shape: BoxShape.rectangle,
-                      color: Colors.white ,
-                      borderRadius: BorderRadius.all(Radius.circular(10))
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Image.asset('lib/assests/crodera.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
-                    ],
-                  )),),
-
-
-            GestureDetector(
+           GestureDetector(
               onTap : (){
 
               },
@@ -399,6 +366,85 @@ Widget PromotionsPage(){
                Image.asset('lib/assests/Honeywell.jpg' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
              ],
            )),),
+
+            GestureDetector(
+              onTap : (){
+
+              },
+              child : Container(
+                // color: Colors.white,
+                  margin: EdgeInsets.all(12),
+                  width: (MediaQuery.of(context).size.width/4)*3,
+                  height: (MediaQuery.of(context).size.width/4)*3,
+                  padding: EdgeInsets.only(top: 10.0),
+                  decoration: BoxDecoration(
+                      boxShadow:<BoxShadow>[
+                        BoxShadow(blurRadius: 2.0,
+                            color:Colors.grey[400] ,
+                            offset: Offset(0.5,0.5))
+
+                      ],
+                      shape: BoxShape.rectangle,
+                      color: Colors.white ,
+                      borderRadius: BorderRadius.all(Radius.circular(10))
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Image.asset('lib/assests/crodera.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+                    ],
+                  )),),
+          GestureDetector(
+              onTap : (){
+
+              },
+              child : Container(
+                // color: Colors.white,
+                  margin: EdgeInsets.all(12),
+                  width: (MediaQuery.of(context).size.width/4)*3,
+                  height: (MediaQuery.of(context).size.width/4)*3,
+                  padding: EdgeInsets.only(top: 10.0),
+                  decoration: BoxDecoration(
+                      boxShadow:<BoxShadow>[
+                        BoxShadow(blurRadius: 2.0,
+                            color:Colors.grey[400] ,
+                            offset: Offset(0.5,0.5))
+
+                      ],
+                      shape: BoxShape.rectangle,
+                      color: Colors.white ,
+                      borderRadius: BorderRadius.all(Radius.circular(10))
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Image.asset('lib/assests/codeasylums.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+                    ],
+                  )),),
+
+          Container(
+          // color: Colors.white,
+          margin: EdgeInsets.all(12),
+          width: (MediaQuery.of(context).size.width/4)*3,
+                    height: (MediaQuery.of(context).size.width/4)*3,
+          padding: EdgeInsets.only(top: 10.0),
+          decoration: BoxDecoration(
+            boxShadow:<BoxShadow>[
+              BoxShadow(blurRadius: 2.0,
+              color:Colors.grey[400] ,
+              offset: Offset(0.5,0.5))
+
+            ],
+            shape: BoxShape.rectangle,
+            color: Colors.white ,
+            borderRadius: BorderRadius.all(Radius.circular(10))
+          ),
+           child: Column(
+             mainAxisAlignment: MainAxisAlignment.center,
+             children: <Widget>[
+               Image.asset('lib/assests/deevia.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+             ],
+           )),
 
            Container(
           // color: Colors.white,
@@ -466,32 +512,10 @@ Widget PromotionsPage(){
            child: Column(
              mainAxisAlignment: MainAxisAlignment.center,
              children: <Widget>[
-               Image.asset('lib/assests/deevia.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+               Image.asset('lib/assests/vicara.jpg' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
              ],
            )),
-           Container(
-          // color: Colors.white,
-          margin: EdgeInsets.all(12),
-          width: (MediaQuery.of(context).size.width/4)*3,
-                    height: (MediaQuery.of(context).size.width/4)*3,
-          padding: EdgeInsets.only(top: 10.0),
-          decoration: BoxDecoration(
-            boxShadow:<BoxShadow>[
-              BoxShadow(blurRadius: 2.0,
-              color:Colors.grey[400] ,
-              offset: Offset(0.5,0.5))
 
-            ],
-            shape: BoxShape.rectangle,
-            color: Colors.white ,
-            borderRadius: BorderRadius.all(Radius.circular(10))
-          ),
-           child: Column(
-             mainAxisAlignment: MainAxisAlignment.center,
-             children: <Widget>[
-               Image.asset('lib/assests/aihub.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
-             ],
-           )),
            Container(
           // color: Colors.white,
           margin: EdgeInsets.all(12),
@@ -515,6 +539,7 @@ Widget PromotionsPage(){
                Image.asset('lib/assests/agri.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
              ],
            )),
+           
            Container(
           // color: Colors.white,
           margin: EdgeInsets.all(12),
@@ -535,33 +560,12 @@ Widget PromotionsPage(){
            child: Column(
              mainAxisAlignment: MainAxisAlignment.center,
              children: <Widget>[
-               Image.asset('lib/assests/vicara.jpg' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+               Image.asset('lib/assests/aihub.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
              ],
            )),
-           Container(
-          // color: Colors.white,
-          margin: EdgeInsets.all(12),
-          width: (MediaQuery.of(context).size.width/4)*3,
-                    height: (MediaQuery.of(context).size.width/4)*3,
-          padding: EdgeInsets.only(top: 10.0),
-          decoration: BoxDecoration(
-            boxShadow:<BoxShadow>[
-              BoxShadow(blurRadius: 2.0,
-              color:Colors.grey[400] ,
-              offset: Offset(0.5,0.5))
-
-            ],
-            shape: BoxShape.rectangle,
-            color: Colors.white ,
-            borderRadius: BorderRadius.all(Radius.circular(10))
-          ),
-           child: Column(
-             mainAxisAlignment: MainAxisAlignment.center,
-             children: <Widget>[
-               SvgPicture.asset('lib/assests/hpe.svg', semanticsLabel: "Logo",width: (MediaQuery.of(context).size.width/2)-32, height: 100.0),
-               //Image.asset('lib/assests/hpe.svg' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
-             ],
-           )),
+           
+           
+           
             ],),
         )
     );
@@ -613,6 +617,32 @@ Widget PromotionsPage(){
                                   Image.asset('lib/assests/challengeRocket.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
                                 ],
                               )),),
+
+                        Container(
+                            // color: Colors.white,
+                              margin: EdgeInsets.all(12),
+                              width: (MediaQuery.of(context).size.width/4)*3,
+                              height: (MediaQuery.of(context).size.width/4)*3,
+                              padding: EdgeInsets.all(40.0),
+                              decoration: BoxDecoration(
+                                  boxShadow:<BoxShadow>[
+                                    BoxShadow(blurRadius: 2.0,
+                                        color:Colors.grey[400] ,
+                                        offset: Offset(0.5,0.5))
+
+                                  ],
+                                  shape: BoxShape.rectangle,
+                                  color: Colors.white ,
+                                  borderRadius: BorderRadius.all(Radius.circular(10))
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  SvgPicture.asset('lib/assests/zeit.svg', semanticsLabel: "Logo",width: (MediaQuery.of(context).size.width/2)-32, height: 100.0),
+                                 // Image.asset('lib/assests/zeit.svg' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+                                ],
+                              )),
+
                         Container(
                             // color: Colors.white,
                               margin: EdgeInsets.all(12),
@@ -634,30 +664,6 @@ Widget PromotionsPage(){
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
                                   Image.asset('lib/assests/github.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
-                                ],
-                              )),
-                              Container(
-                            // color: Colors.white,
-                              margin: EdgeInsets.all(12),
-                              width: (MediaQuery.of(context).size.width/4)*3,
-                              height: (MediaQuery.of(context).size.width/4)*3,
-                              padding: EdgeInsets.only(top: 10.0),
-                              decoration: BoxDecoration(
-                                  boxShadow:<BoxShadow>[
-                                    BoxShadow(blurRadius: 2.0,
-                                        color:Colors.grey[400] ,
-                                        offset: Offset(0.5,0.5))
-
-                                  ],
-                                  shape: BoxShape.rectangle,
-                                  color: Colors.white ,
-                                  borderRadius: BorderRadius.all(Radius.circular(10))
-                              ),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  SvgPicture.asset('lib/assests/zeit.svg', semanticsLabel: "Logo",width: (MediaQuery.of(context).size.width/2)-32, height: 100.0),
-                                 // Image.asset('lib/assests/zeit.svg' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
                                 ],
                               )),
                       ],),
@@ -683,34 +689,6 @@ Widget CollaboratorsPage(){
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-
-            GestureDetector(
-              onTap : (){
-
-              },
-              child : Container(
-                // color: Colors.white,
-                  margin: EdgeInsets.all(12),
-                  width: (MediaQuery.of(context).size.width/4)*3,
-                  height: (MediaQuery.of(context).size.width/4)*3,
-                  padding: EdgeInsets.only(top: 10.0),
-                  decoration: BoxDecoration(
-                      boxShadow:<BoxShadow>[
-                        BoxShadow(blurRadius: 2.0,
-                            color:Colors.grey[400] ,
-                            offset: Offset(0.5,0.5))
-
-                      ],
-                      shape: BoxShape.rectangle,
-                      color: Colors.white ,
-                      borderRadius: BorderRadius.all(Radius.circular(10))
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
-                    ],
-                  )),),
             GestureDetector(
               onTap : (){
 
@@ -738,6 +716,57 @@ Widget CollaboratorsPage(){
                       Image.asset('lib/assests/tekno.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
                     ],
                   )),),
+            Container(
+                // color: Colors.white,
+                  margin: EdgeInsets.all(12),
+                  width: (MediaQuery.of(context).size.width/4)*3,
+                  height:(MediaQuery.of(context).size.width/4)*3,
+                  padding: EdgeInsets.only(top: 10.0),
+                  decoration: BoxDecoration(
+                      boxShadow:<BoxShadow>[
+                        BoxShadow(blurRadius: 2.0,
+                            color:Colors.grey[400] ,
+                            offset: Offset(0.5,0.5))
+
+                      ],
+                      shape: BoxShape.rectangle,
+                      color: Colors.white ,
+                      borderRadius: BorderRadius.all(Radius.circular(10))
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Image.asset('lib/assests/yourstory.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+                    ],
+                  )),
+            GestureDetector(
+              onTap : (){
+
+              },
+              child : Container(
+                // color: Colors.white,
+                  margin: EdgeInsets.all(12),
+                  width: (MediaQuery.of(context).size.width/4)*3,
+                  height: (MediaQuery.of(context).size.width/4)*3,
+                  padding: EdgeInsets.only(top: 10.0),
+                  decoration: BoxDecoration(
+                      boxShadow:<BoxShadow>[
+                        BoxShadow(blurRadius: 2.0,
+                            color:Colors.grey[400] ,
+                            offset: Offset(0.5,0.5))
+
+                      ],
+                      shape: BoxShape.rectangle,
+                      color: Colors.white ,
+                      borderRadius: BorderRadius.all(Radius.circular(10))
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Image.asset('lib/assests/reliance.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
+                    ],
+                  )),),
+            
             GestureDetector(
               onTap : (){
 
@@ -788,29 +817,7 @@ Widget CollaboratorsPage(){
                       Image.asset('lib/assests/tbi.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
                     ],
                   )),
-                   Container(
-                // color: Colors.white,
-                  margin: EdgeInsets.all(12),
-                  width: (MediaQuery.of(context).size.width/4)*3,
-                  height:(MediaQuery.of(context).size.width/4)*3,
-                  padding: EdgeInsets.only(top: 10.0),
-                  decoration: BoxDecoration(
-                      boxShadow:<BoxShadow>[
-                        BoxShadow(blurRadius: 2.0,
-                            color:Colors.grey[400] ,
-                            offset: Offset(0.5,0.5))
-
-                      ],
-                      shape: BoxShape.rectangle,
-                      color: Colors.white ,
-                      borderRadius: BorderRadius.all(Radius.circular(10))
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Image.asset('lib/assests/yourstory.png' , width: (MediaQuery.of(context).size.width/2)-32, height: 100.0,),
-                    ],
-                  ))
+                   
             ],),
         )
     );
