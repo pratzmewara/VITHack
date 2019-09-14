@@ -136,11 +136,17 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
 
   logOut() async{
     if(currentIndex == 0){
+      s.setEmail("");
+      s.setLogincheck("false");
+      s.setToken("");
       Navigator.of(context).popUntil((route) => route.isFirst);
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => LoginScreen()));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => IntroScreen()));
     }
      
      else{
+      setState(() {
+        _load=true;
+      });
        Future fetchPosts(http.Client client) async {
         print("In logout");
       
@@ -148,9 +154,7 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
 
         print(response.statusCode);
         print(response.body);
-        setState(() {
-         _load=true; 
-        });
+
         
         if (response.statusCode == 200) {
           setState(() {
@@ -210,7 +214,10 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
       expandedHeight: 120.0,
       elevation: 0,
       pinned: true,
+
       flexibleSpace: FlexibleSpaceBar(
+
+        titlePadding: EdgeInsets.only(left: 20),
         title: Container(
           margin: EdgeInsets.all(0),
           padding: EdgeInsets.all(0),
@@ -281,7 +288,7 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
                     tabs: [
                       Tab(child:Container(
                         color:background,
-                          padding: EdgeInsets.only(left: 32,right: 32),
+                          padding: EdgeInsets.only(left:4 ,right: 32),
                           child: Text("Day 1", style: TextStyle(fontSize: 26.0,fontWeight: FontWeight.w500),)),),
                       Tab(child:Container(
                         color:background,

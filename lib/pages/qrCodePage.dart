@@ -64,7 +64,7 @@ child:Row(
   crossAxisAlignment: CrossAxisAlignment.start,
   children: <Widget>[
 
-  Container( margin: EdgeInsets.fromLTRB(60, 8, 16, 8),
+  Container( margin: EdgeInsets.fromLTRB(20, 8, 16, 8),
   child: Text("QR Code" , style: TextStyle(fontSize:26.0, fontWeight: FontWeight.w600, color: Colors.black),textAlign: TextAlign.left,),),
       
 ],)),
