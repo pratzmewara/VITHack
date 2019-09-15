@@ -308,7 +308,9 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
               ),
             ];
           },
-          body:Container(
+          body:SingleChildScrollView(
+            child:  Container(
+              height: MediaQuery.of(context).size.height,
             //padding: EdgeInsets.only(left: MediaQuery.of(context).size.width*0.05, right: MediaQuery.of(context).size.width*0.05),
               color: background,
               child: new TabBarView(
@@ -318,7 +320,7 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
                 DayThree()
             ],
           )),
-        ),
+        ),),
       ),
       loadingIndicator
       ]
@@ -326,7 +328,7 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
     );
   }
    Widget DayThree(){
-    return Container(
+    return  Container(
         //padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/10,right: MediaQuery.of(context).size.width/10),
         margin: EdgeInsets.only(top: 10.0, left:  MediaQuery.of(context).size.width/20),
         alignment: Alignment.centerLeft,
@@ -352,13 +354,13 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
                             Padding(
                               padding: EdgeInsets.only(left: 10.0),
                             ),
-                            Text('10:00 am - 3:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
+                            Text('7:30 am - 9:00 am', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
                           ],
                         )
                     ),
                     Container(
                       margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left:  MediaQuery.of(context).size.width/20),
-                      child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
+                      child : Text('Breakfast' ,  style: TextStyle(fontSize: 15.0, )),
                     ),
                     Container(
                         margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left:  MediaQuery.of(context).size.width/20),
@@ -368,13 +370,13 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
                             Padding(
                               padding: EdgeInsets.only(left: 10.0),
                             ),
-                            Text('10:00 am - 3:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
+                            Text('1:00 pm - 2:30 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
                           ],
                         )
                     ),
                     Container(
                       margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left:  MediaQuery.of(context).size.width/20),
-                      child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
+                      child : Text('Lunch' ,  style: TextStyle(fontSize: 15.0, )),
                     ),
                     Container(
                         margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left:  MediaQuery.of(context).size.width/20),
@@ -384,15 +386,46 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
                             Padding(
                               padding: EdgeInsets.only(left: 10.0),
                             ),
-                            Text('10:00 am - 3:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
+                            Text('4:30 am - 6:30 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
                           ],
                         )
                     ),
                     Container(
                       margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left:  MediaQuery.of(context).size.width/20),
-                      child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
+                      child : Text('Pitching Session' ,  style: TextStyle(fontSize: 15.0, )),
                     ),
-
+                      Container(
+                        margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left: MediaQuery.of(context).size.width/20),
+                        child : Row(
+                          children: <Widget>[
+                            bullet(),
+                            Padding(
+                              padding: EdgeInsets.only(left: 10.0),
+                            ),
+                            Text('7:00 pm - 8:30 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
+                          ],
+                        )
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left:  MediaQuery.of(context).size.width/20),
+                      child : Text('Valedictory Ceremony' ,  style: TextStyle(fontSize: 15.0, )),
+                    ),
+                      Container(
+                        margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left: MediaQuery.of(context).size.width/20),
+                        child : Row(
+                          children: <Widget>[
+                            bullet(),
+                            Padding(
+                              padding: EdgeInsets.only(left: 10.0),
+                            ),
+                            Text('8:30 pm - 10:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
+                          ],
+                        )
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left:  MediaQuery.of(context).size.width/20),
+                      child : Text('Dinner' ,  style: TextStyle(fontSize: 15.0, )),
+                    ),
                   ]
               ),),
           ],
@@ -425,13 +458,13 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
                             Padding(
                               padding: EdgeInsets.only(left: 10.0),
                             ),
-                            Text('10:00 am - 3:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
+                            Text('7:30 am - 8:00 am', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
                           ],
                         )
                     ),
                     Container(
                       margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left:  MediaQuery.of(context).size.width/20),
-                      child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
+                      child : Text('Breakfast' ,  style: TextStyle(fontSize: 15.0, )),
                     ),
                     Container(
                         margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left:  MediaQuery.of(context).size.width/20),
@@ -441,13 +474,13 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
                             Padding(
                               padding: EdgeInsets.only(left: 10.0),
                             ),
-                            Text('10:00 am - 3:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
+                            Text('8:00 am onwards', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
                           ],
                         )
                     ),
                     Container(
                       margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left:  MediaQuery.of(context).size.width/20),
-                      child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
+                      child : Text('Hack begins' ,  style: TextStyle(fontSize: 15.0, )),
                     ),
                     Container(
                         margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left:  MediaQuery.of(context).size.width/20),
@@ -457,15 +490,62 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
                             Padding(
                               padding: EdgeInsets.only(left: 10.0),
                             ),
-                            Text('10:00 am - 3:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
+                            Text('10:00 am - 12:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
                           ],
                         )
                     ),
                     Container(
                       margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left:  MediaQuery.of(context).size.width/20),
-                      child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
+                      child : Text('Case Partners Speaker Session' ,  style: TextStyle(fontSize: 15.0, )),
                     ),
-
+                      Container(
+                        margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left: MediaQuery.of(context).size.width/20),
+                        child : Row(
+                          children: <Widget>[
+                            bullet(),
+                            Padding(
+                              padding: EdgeInsets.only(left: 10.0),
+                            ),
+                            Text('12:00 pm - 2:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
+                          ],
+                        )
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left:  MediaQuery.of(context).size.width/20),
+                      child : Text('Lunch Break' ,  style: TextStyle(fontSize: 15.0, )),
+                    ),
+                      Container(
+                        margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left: MediaQuery.of(context).size.width/20),
+                        child : Row(
+                          children: <Widget>[
+                            bullet(),
+                            Padding(
+                              padding: EdgeInsets.only(left: 10.0),
+                            ),
+                            Text('6:00 pm - 8:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
+                          ],
+                        )
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left:  MediaQuery.of(context).size.width/20),
+                      child : Text('Mentoring Session' ,  style: TextStyle(fontSize: 15.0, )),
+                    ),
+                      Container(
+                        margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left: MediaQuery.of(context).size.width/20),
+                        child : Row(
+                          children: <Widget>[
+                            bullet(),
+                            Padding(
+                              padding: EdgeInsets.only(left: 10.0),
+                            ),
+                            Text('8:00 pm - 10:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
+                          ],
+                        )
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left:  MediaQuery.of(context).size.width/20),
+                      child : Text('Dinner' ,  style: TextStyle(fontSize: 15.0, )),
+                    ),
                   ]
               ),),
           ],
@@ -505,14 +585,14 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
                             Padding(
                               padding: EdgeInsets.only(left: 10.0),
                             ),
-                            Text('10:00 am - 3:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
+                            Text('10:00 am - 1:30 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
                           ],
                         )
                     ),
                     Container(
 
                       margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left:  MediaQuery.of(context).size.width/20),
-                      child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
+                      child : Text('Registration Process' ,  style: TextStyle(fontSize: 15.0, )),
                     ),
                     Container(
                         margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left:  MediaQuery.of(context).size.width/20),
@@ -523,14 +603,14 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
                             Padding(
                               padding: EdgeInsets.only(left: 10.0),
                             ),
-                            Text('10:00 am - 3:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
+                            Text('1:30 pm - 3:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
                           ],
                         )
                     ),
                     Container(
 
                       margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left:  MediaQuery.of(context).size.width/20),
-                      child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
+                      child : Text('Inaugration Ceremony' ,  style: TextStyle(fontSize: 15.0, )),
                     ),
                     Container(
                         margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left:  MediaQuery.of(context).size.width/20),
@@ -541,7 +621,7 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
                             Padding(
                               padding: EdgeInsets.only(left: 10.0),
                             ),
-                            Text('10:00 am - 3:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
+                            Text('3:00 pm - 4:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
                           ],
                         )
                     ),
@@ -550,9 +630,68 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
                       margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left:  MediaQuery.of(context).size.width/20),
 
 
-                      child : Text('Registration' ,  style: TextStyle(fontSize: 15.0, )),
+                      child : Text('About VITHack' ,  style: TextStyle(fontSize: 15.0, )),
                     ),
+                    Container(
+                        margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left:  MediaQuery.of(context).size.width/20),
 
+                        child : Row(
+                          children: <Widget>[
+                            bullet(),
+                            Padding(
+                              padding: EdgeInsets.only(left: 10.0),
+                            ),
+                            Text('4:00 pm - 5:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
+                          ],
+                        )
+                    ),
+                    Container(
+
+                      margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left:  MediaQuery.of(context).size.width/20),
+
+
+                      child : Text('Tea/Coffee Break' ,  style: TextStyle(fontSize: 15.0, )),
+                    ),
+                    Container(
+                        margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left:  MediaQuery.of(context).size.width/20),
+
+                        child : Row(
+                          children: <Widget>[
+                            bullet(),
+                            Padding(
+                              padding: EdgeInsets.only(left: 10.0),
+                            ),
+                            Text('5:00 pm - 7:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
+                          ],
+                        )
+                    ),
+                    Container(
+
+                      margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left:  MediaQuery.of(context).size.width/20),
+
+
+                      child : Text('Speaker Sessions' ,  style: TextStyle(fontSize: 15.0, )),
+                    ),
+                    Container(
+                        margin: EdgeInsets.only(top: 10.0, bottom: 2.0,left:  MediaQuery.of(context).size.width/20),
+
+                        child : Row(
+                          children: <Widget>[
+                            bullet(),
+                            Padding(
+                              padding: EdgeInsets.only(left: 10.0),
+                            ),
+                            Text('7:00 pm - 10:00 pm', style: TextStyle(fontSize: 15.0,  color: Colors.blue),),
+                          ],
+                        )
+                    ),
+                    Container(
+
+                      margin: EdgeInsets.only(top: 5.0, bottom: 20.0,left:  MediaQuery.of(context).size.width/20),
+
+
+                      child : Text('Gala Dinner' ,  style: TextStyle(fontSize: 15.0, )),
+                    ),
                   ]
               ),),
           ],
