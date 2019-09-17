@@ -148,11 +148,12 @@ class IntroScreenState extends State<IntroScreen> {
                 // ),
                 margin: EdgeInsets.only(top: 20.0),
               ),
-              GestureDetector(
+              Container(
+
                   child: Image.asset(
                 currentSlide.pathImage,
-                width: 200.0,
-                height: 200.0,
+                width:(MediaQuery.of(context).size.height/4)*3,
+                height: (MediaQuery.of(context).size.height/7)*3,
                 fit: BoxFit.contain,
               )),
               

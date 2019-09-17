@@ -157,10 +157,10 @@ Color(0xFF2196F3),
                         child : Text("Login", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
                         padding: EdgeInsets.all(20.0),
                       ),
-                      onTap: (){
-                        sendToServer();
-                        }, 
-                    ),
+                    onTap: (){
+                       sendToServer();
+                    },
+                  ),
                     GestureDetector(
                       child: Container(
                         margin: EdgeInsets.only(top: MediaQuery.of(context).size.height/20),
