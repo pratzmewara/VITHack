@@ -40,7 +40,7 @@ class IntroScreenState extends State<IntroScreen> {
           ],
         ),),
         description:
-            "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.",
+            "VITHack is a 36-hour hackathon spread over the course of 3 days. Participants are continually encouraged to network with industry professionals in this confluence of knowledge and ideas.",
         styleDescription: TextStyle(
             color: Colors.black,
             fontSize: 16.0,
@@ -68,12 +68,12 @@ class IntroScreenState extends State<IntroScreen> {
             fontWeight: FontWeight.bold,
             fontFamily: 'RobotoMono'),
         description:
-            "Ye indulgence unreserved connection alteration appearance",
+            "Real-world problem statements aimed towards challenging your abilities and tons more is in store for you.",
          styleDescription: TextStyle(
             color: Colors.black,
             fontSize: 16.0,
             fontFamily: 'Raleway'),
-        pathImage: 'lib/assests/aboutus.png',
+        pathImage: 'lib/assests/talks.png',
       ),
     );
     slides.add(
@@ -96,12 +96,12 @@ class IntroScreenState extends State<IntroScreen> {
             fontWeight: FontWeight.bold,
             fontFamily: 'RobotoMono'),
         description:
-            "Much evil soon high in hope do view. Out may few northward believing attempted. Yet timed being songs marry one defer men our. Although finished blessing do of",
+            "The hackathon will be focusing on the feasibility, application, resourcefulness, and fundability of each project idea presented by the participants.",
          styleDescription: TextStyle(
             color: Colors.black,
             fontSize: 16.0,
             fontFamily: 'Raleway'),
-        pathImage: 'lib/assests/aboutus.png',
+        pathImage: 'lib/assests/chair.png',
       ),
     );
   }

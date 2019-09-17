@@ -87,7 +87,7 @@ class EasterEggState extends State<EasterEgg>{
 Padding(padding: EdgeInsets.all(2),),
 Icon(MyFlutterApp.heart_1,size: 16,color: Colors.blue,),
                 Padding(padding: EdgeInsets.all(2),),
-                Text(" from "),
+                Text(" by "),
                 Image.asset("lib/assests/dsclogo.png",height: 16,),
                 Text(" DSC-VIT")
 

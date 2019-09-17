@@ -116,7 +116,7 @@ child:Row(
             }
             if(index==4){
                Fluttertoast.showToast(
-                 msg: "Some text"
+                 msg: "You've stumbled into a treasure hunt!"
                );
             }
           },
