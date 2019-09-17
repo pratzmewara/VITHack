@@ -37,9 +37,14 @@ class _QRCodePageState extends State<QRCodePage> {
   int currentIndex=0;
   String email="";
   String id="";
+  int index=0;
+  Future<int> futureIndex;
+
   SharedPreferencesTest s = new SharedPreferencesTest();
   Future<String> futureEmail;
+  Future<List<String>> futureEmailList;
   Future<String> futureID;
+  List<String> emailList;
   getEmail() async{
 
     futureEmail=s.getEmail();
@@ -59,6 +64,14 @@ class _QRCodePageState extends State<QRCodePage> {
     });
        }
     });
+
+
+    futureEmailList=s.getListEmail();
+    futureEmailList.then((res){
+      setState(() {
+        emailList=res;
+      });
+    });
     futureEmail=s.getPersonID();
     futureEmail.then((res){
 
@@ -69,8 +82,17 @@ class _QRCodePageState extends State<QRCodePage> {
         });
 
     });
+    futureIndex=s.getIndex();
+    futureIndex.then((res){
+      setState(() {
+        index=res;
+        selectedEmail=emailList[index];
+      });
+    });
 
   }
+
+  String selectedEmail;
 
   @override
   Widget build(BuildContext context) {
@@ -150,8 +172,44 @@ Widget qrPage(){
     crossAxisAlignment: CrossAxisAlignment.center,
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: <Widget>[
+      Container(
+        child: Column(
+          children: <Widget>[
+            Text("Select Email"),
+            DropdownButton<String>(
+              value: selectedEmail,
+              icon: Icon(Icons.arrow_drop_down),
+              iconSize: 24,
+              elevation: 16,
+              style: TextStyle(
+                  color: Colors.grey
+              ),
+              underline: Container(
+                height: 2,
+                color: Colors.black,
+              ),
+              onChanged: (String newValue) {
+                setState(() {
+                  selectedEmail= newValue;
+                  int i= emailList.indexOf(newValue);
+                  s.setIndex(i);
+                });
+              },
+              items: emailList
+                  .map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              })
+                  .toList(),
+            ),
+          ],
+        ),
+      ),
+
       QrImage(
-        data: email,
+        data: selectedEmail,
         //version: 3,
         size: 200.0,
       ),
@@ -164,7 +222,7 @@ Widget qrPage(){
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text("Email : ", style: TextStyle(fontWeight: FontWeight.bold,fontSize: MediaQuery.of(context).size.width/25),),
-                    Text(email,style: TextStyle(fontSize: MediaQuery.of(context).size.width/25),),
+                    Text(selectedEmail,style: TextStyle(fontSize: MediaQuery.of(context).size.width/25),),
 
 
                   ],

@@ -7,6 +7,7 @@ import 'package:vit_hack/pages/homePage.dart';
 import 'package:vit_hack/pages/loginScreen.dart';
 import 'package:vit_hack/pages/partnersPage.dart';
 import 'package:vit_hack/pages/qrCodePage.dart';
+import 'package:flutter/services.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'package:vit_hack/pages/introductoryPage.dart';
@@ -68,9 +69,14 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 
   @override
   void initState() {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
     super.initState();
 
 }
+
 
   bool boolToString(String value){
     if(value == "true"){
