@@ -8,6 +8,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:vit_hack/models/sharedPref.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:vit_hack/models/logincl.dart';
 import 'package:vit_hack/models/global.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -31,6 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   SharedPreferencesTest s=new SharedPreferencesTest();
 
+  Logincl logincl;
 
 
   @override
@@ -69,7 +71,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: <Widget>[
                   new CircularProgressIndicator(),
                   Padding(padding: EdgeInsets.all(5),),
-                  Text("Logging in",style: TextStyle(fontSize: 16.0 ,fontWeight: FontWeight.w500,decoration: TextDecoration.none),)
+                  Text("Logging in...",style: TextStyle(fontSize: 16.0 ,fontWeight: FontWeight.w500,decoration: TextDecoration.none),)
                 ],
               )
           ) )),
@@ -257,7 +259,7 @@ Color(0xFF2196F3),
       new Align(child: loadingIndicator,alignment: FractionalOffset.center,),
     ]));
   }
-
+List<String> emailList;
   String validateEM(String value) {
     String patttern = r'(^[0-9]*$)';
     RegExp regExp = new RegExp(patttern);
@@ -355,9 +357,15 @@ Color(0xFF2196F3),
               textColor: Colors.white);
           }
           else{
+            logincl=Logincl.fromJson(data);
+            emailList=logincl.teamMates;
+            emailList.add(logincl.email);
             s.setEmail(data["email"]);
+            print(emailList);
             s.setPersonID(code);
+            s.setListEmail(emailList);
             s.setToken(data["token"]);
+            s.setIndex(0);
             setState(() {
               _load=false;
             });
@@ -437,16 +445,52 @@ Color(0xFF2196F3),
         print(response.statusCode);
         if (response.statusCode == 200) {
           final data = json.decode(response.body);
+          if (data["err"] == "Max team login size reached")
+          {
+            setState(() {
+              _load=false;
+            });
+            s.setLogincheck('false');
+            Fluttertoast.showToast(
+                msg: "Max team login size reached",
+                toastLength: Toast.LENGTH_SHORT,
+                gravity: ToastGravity.BOTTOM,
+                timeInSecForIos: 1,
+                backgroundColor: Colors.grey[700],
+                textColor: Colors.white);
+          }
+          else if(data["err"] == "Not found"){
+            setState(() {
+              _load=false;
+            });
+            s.setLogincheck('false');
+            Fluttertoast.showToast(
+                msg: "Code not found",
+                toastLength: Toast.LENGTH_SHORT,
+                gravity: ToastGravity.BOTTOM,
+                timeInSecForIos: 1,
+                backgroundColor: Colors.grey[700],
+                textColor: Colors.white);
+          }
+        else {
+          print(data);
+          logincl=Logincl.fromJson(data);
+          emailList=logincl.teamMates;
+          emailList.add(logincl.email);
           s.setEmail(data["email"]);
-          s.setToken(data["token"]);
           s.setPersonID(val);
-          setState(() { 
-            _load=false;
+          print(emailList);
+          s.setListEmail(emailList);
+          s.setToken(data["token"]);
+          s.setIndex(0);
+          setState(() {
+            _load = false;
           });
           s.setLogincheck('true');
-          Navigator.of(context).pushNamedAndRemoveUntil('/homepage', (Route<dynamic> route) => false);
-
+          Navigator.of(context).pushNamedAndRemoveUntil(
+              '/homepage', (Route<dynamic> route) => false);
         }
+      }
         else {
           setState(() {
             _load=false;

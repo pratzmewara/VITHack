@@ -35,6 +35,36 @@ class SharedPreferencesTest {
 
  }
 
+ Future<int>  getIndex() async {
+   final SharedPreferences prefs = await SharedPreferences.getInstance();
+
+   final key = 'index';
+   int value = prefs.getInt(key);
+   return value;
+ }
+
+ setIndex(int value) async {
+   final SharedPreferences prefs = await SharedPreferences.getInstance();
+
+   final key = 'index';
+   prefs.setInt(key, value);
+
+ }
+
+ Future<List<String>>  getListEmail() async {
+   final SharedPreferences prefs = await SharedPreferences.getInstance();
+
+   final key = 'emailList';
+   List<String> value = prefs.getStringList(key);
+   return value;
+ }
+
+ setListEmail(List<String> value) async {
+   final SharedPreferences prefs = await SharedPreferences.getInstance();
+
+   final key = 'emailList';
+   prefs.setStringList(key, value);
+ }
  Future<String>  getEmail() async {
    final SharedPreferences prefs = await SharedPreferences.getInstance();
 

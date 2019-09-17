@@ -139,6 +139,7 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
       s.setEmail("");
       s.setLogincheck("false");
       s.setToken("");
+      s.setListEmail([]);
       Navigator.of(context).popUntil((route) => route.isFirst);
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => IntroScreen()));
     }
@@ -163,6 +164,7 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
             s.setEmail("");
             s.setLogincheck("false");
             s.setToken("");
+          s.setListEmail([]);
             Navigator.of(context).popUntil((route) => route.isFirst);
             Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => IntroScreen()));
         }
