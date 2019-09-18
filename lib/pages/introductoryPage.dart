@@ -45,7 +45,7 @@ class IntroScreenState extends State<IntroScreen> {
             color: Colors.black,
             fontSize: 16.0,
             fontFamily: 'Raleway'),
-        pathImage: 'lib/assests/aboutus.png',
+        pathImage: 'lib/assests/aboutus.webp',
       ),
     );
     slides.add(
